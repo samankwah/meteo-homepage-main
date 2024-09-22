@@ -60,8 +60,6 @@ const SeasonalForecast = () => {
             develop during September to November and persist into early 2025 and
             a neutral Indian Ocean Dipole. The distribution is expected to be
             poor over most parts of the country with prolonged dry spells and
-            cases of isolated storms. Temperature is expected to be warmer than
-            average over most parts of the country, except over a few areas in
             the western sector where temperature is expected to be near normal.
             Higher probabilities for warmer than average temperatures are
             expected over central and eastern sectors of the country. The
