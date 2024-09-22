@@ -73,7 +73,7 @@ const ClimateReport = () => {
   const regionClimate = climateData[selectedRegion] || {};
 
   return (
-    <div className="bg-gray-50 min-h-screen p-8">
+    <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8">
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-6">
         <h1 className="text-blue-600 text-3xl font-bold mb-4 text-center">
           Climate Report - {selectedRegion}

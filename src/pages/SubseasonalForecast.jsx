@@ -18,7 +18,7 @@ const SubseasonalForecast = () => {
   };
 
   return (
-    <div className="relative main-content bg-gray-100 min-h-screen p-4 flex flex-col items-center">
+    <div className="relative main-content bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-4 flex flex-col items-center">
       {/* Download Button */}
       <button
         onClick={handleDownload}

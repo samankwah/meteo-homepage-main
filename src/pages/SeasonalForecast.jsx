@@ -3,11 +3,11 @@ import { FaDownload } from "react-icons/fa"; // For download icon
 
 const SeasonalForecast = () => {
   return (
-    <div className="main-content bg-gray-50 p-8 min-h-screen">
+    <div className="main-content bg-gradient-to-br from-blue-50 to-blue-100 p-2 min-h-screen">
       {/* Title Section */}
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-blue-600 text-3xl font-bold">
-          SEASONAL WEATHER FORECAST FOR OCTOBER, NOVEMBER, DECEMBER (OND) 2024
+          SEASONAL WEATHER FORECAST FOR SEPTEMBER OCTOBER NOVEMBER (SON) 2024
         </h1>
         {/* Download Button */}
         <a
@@ -22,12 +22,12 @@ const SeasonalForecast = () => {
 
       {/* Image Section */}
       <div className="flex flex-col lg:flex-row items-start">
-        <div className="flex-1 mb-6 lg:mb-0 lg:mr-6">
+        <div className="flex-2 lg:mb-6 lg:mr-4 h-auto">
           <img
             src={forecastImage}
             alt="Seasonal Forecast"
             className="forecast-image rounded shadow-lg"
-            style={{ maxWidth: "100%", height: "auto" }}
+            style={{ maxWidth: "100%", height: "760px" }}
           />
         </div>
 
@@ -54,7 +54,28 @@ const SeasonalForecast = () => {
             few areas in the western sector where temperature is expected to be
             near normal. Higher probabilities for warmer than average
             temperatures are expected over central and eastern sectors of the
-            country.
+            country. The Coastal region, most of the Southeastern lowlands and
+            Northeastern Ghana are expected to receive below average rainfall.
+            This will be driven by weak La Nina conditions which are likely to
+            develop during September to November and persist into early 2025 and
+            a neutral Indian Ocean Dipole. The distribution is expected to be
+            poor over most parts of the country with prolonged dry spells and
+            cases of isolated storms. Temperature is expected to be warmer than
+            average over most parts of the country, except over a few areas in
+            the western sector where temperature is expected to be near normal.
+            Higher probabilities for warmer than average temperatures are
+            expected over central and eastern sectors of the country. The
+            Coastal region, most of the Southeastern lowlands and Northeastern
+            Ghana are expected to receive below average rainfall. This will be
+            driven by weak La Nina conditions which are likely to develop during
+            September to November and persist into early 2025 and a neutral
+            Indian Ocean Dipole. The distribution is expected to be poor over
+            most parts of the country with prolonged dry spells and cases of
+            isolated storms. Temperature is expected to be warmer than average
+            over most parts of the country, except over a few areas in the
+            western sector where temperature is expected to be near normal.
+            Higher probabilities for warmer than average temperatures are
+            expected over central and eastern sectors of the country.
           </p>
         </div>
       </div>
