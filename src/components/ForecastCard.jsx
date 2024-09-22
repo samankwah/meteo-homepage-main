@@ -1,5 +1,3 @@
-import React from "react";
-
 const ForecastCard = ({ date, highTemp, lowTemp, condition }) => (
   <div className="bg-white rounded-lg shadow-md p-4 m-2">
     <h3 className="text-lg font-semibold">{date}</h3>

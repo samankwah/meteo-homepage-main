@@ -9,6 +9,15 @@ import About from "./pages/About";
 import CropCalendar from "./pages/CropCalendar";
 import Weather from "./pages/Weather";
 import NewsUpdates from "./pages/NewsUpdates";
+import SeasonalForecast from "./pages/SeasonalForecast";
+import FiveDaysForecast from "./pages/FiveDaysForecast";
+import SevenDaysForecast from "./pages/SevenDaysForecast";
+import AgroBulletins from "./pages/AgroBulletins";
+import FloodDrought from "./pages/FloodDrought";
+import SubseasonalForecast from "./pages/SubseasonalForecast";
+import MonthlyForecast from "./pages/MonthlyForecast";
+import ClimateReport from "./pages/Climate";
+import DistrictCalendar from "./pages/DistrictCalendar";
 
 function App() {
   return (
@@ -24,6 +33,18 @@ function App() {
             <Route path="/weather" element={<Weather />} />
             <Route path="/crop-calendar" element={<CropCalendar />} />
             <Route path="/news" element={<NewsUpdates />} />
+            <Route path="/5-days-forecast" element={<FiveDaysForecast />} />
+            <Route path="/7-days-forecast" element={<SevenDaysForecast />} />
+            <Route path="/agro-bulletins" element={<AgroBulletins />} />
+            <Route path="/flood-drought" element={<FloodDrought />} />
+            <Route
+              path="/subseasonal-forecast"
+              element={<SubseasonalForecast />}
+            />
+            <Route path="/monthly-forecast" element={<MonthlyForecast />} />
+            <Route path="/climate-report" element={<ClimateReport />} />
+            <Route path="/district-calendar" element={<DistrictCalendar />} />
+            <Route path="/seasonal-forecast" element={<SeasonalForecast />} />
           </Routes>
         </main>
         <Footer />

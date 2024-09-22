@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-// Full farming activities (Base activities common to all regions/crops)
+// Full farming activities (Base activities common to all districts/crops)
 const baseActivities = [
   {
     activity: "Land Preparation",
@@ -15,99 +15,85 @@ const baseActivities = [
     color: "bg-green-300",
   },
   {
-    activity: "Planting",
-    start: "March",
+    activity: "Planting Beans",
+    start: "February",
     end: "March",
     color: "bg-yellow-300",
   },
   {
     activity: "Fertilizing",
-    start: "April",
+    start: "March",
     end: "April",
     color: "bg-blue-300",
   },
-  { activity: "Weeding", start: "April", end: "May", color: "bg-orange-300" },
-  { activity: "Pest Control", start: "May", end: "June", color: "bg-red-300" },
+  { activity: "Weeding", start: "April", end: "April", color: "bg-orange-300" },
+  { activity: "Pest Control", start: "April", end: "May", color: "bg-red-300" },
   {
-    activity: "Harvesting",
-    start: "July",
-    end: "July",
+    activity: "Harvesting Early Crops",
+    start: "May",
+    end: "May",
     color: "bg-purple-300",
   },
   {
-    activity: "Irrigation",
-    start: "August",
-    end: "September",
-    color: "bg-teal-300",
+    activity: "Planting Maize",
+    start: "June",
+    end: "June",
+    color: "bg-green-200",
   },
-  {
-    activity: "Weeding",
-    start: "September",
-    end: "September",
-    color: "bg-orange-300",
-  },
+  { activity: "Irrigation", start: "June", end: "July", color: "bg-teal-300" },
+  { activity: "Weeding", start: "July", end: "July", color: "bg-orange-300" },
   {
     activity: "Fertilizing",
-    start: "October",
-    end: "October",
+    start: "August",
+    end: "September",
     color: "bg-blue-300",
   },
   {
     activity: "Pest Monitoring",
-    start: "November",
-    end: "November",
+    start: "September",
+    end: "September",
     color: "bg-red-300",
   },
   {
     activity: "Crop Maintenance",
-    start: "November",
-    end: "December",
+    start: "September",
+    end: "October",
     color: "bg-purple-300",
   },
   {
+    activity: "Harvesting Maize",
+    start: "October",
+    end: "October",
+    color: "bg-green-200",
+  },
+  {
     activity: "Preparing for Next Season",
+    start: "November",
+    end: "November",
+    color: "bg-gray-300",
+  },
+  {
+    activity: "Soil Testing",
     start: "December",
     end: "December",
-    color: "bg-gray-300",
+    color: "bg-yellow-300",
   },
 ];
 
-// Regions of Ghana
-const regionsOfGhana = [
-  "Greater Accra",
-  "Ashanti",
-  "Northern",
-  "Eastern",
-  "Western",
-  "Volta",
-  "Upper East",
-  "Upper West",
-  "Central",
-  "Brong Ahafo",
-  "Western North",
-  "Ahafo",
-  "Savannah",
-  "Oti",
-  "Bono East",
-  "North East",
-];
-
-// Function to generate region-specific activity times based on climate (offsetting activity months)
-const generateRegionActivities = () => {
-  const regions = {};
+// Function to generate district-specific activity times based on climate (offsetting activity months)
+const generateDistrictActivities = () => {
+  const districts = {};
 
   // Example climate offset data (simulating climate differences)
   const climateOffsets = {
-    "Greater Accra": 0, // No offset
-    Ashanti: 1, // Starts 1 month later
-    Northern: 2, // Starts 2 months later
-    Eastern: -1, // Starts 1 month earlier
-    Western: 3, // Starts 3 months later
-    // You can add more offsets for all other regions
-    // For simplicity, we will assign all remaining regions an offset of 0 for now
+    "District 1": 0, // No offset
+    "District 2": 1, // Starts 1 month later
+    "District 3": 2, // Starts 2 months later
+    "District 4": -1, // Starts 1 month earlier
+    "District 5": 3, // Starts 3 months later
+    // Add more offsets for other districts if needed
   };
 
-  // Array of months
   const months = [
     "January",
     "February",
@@ -123,50 +109,50 @@ const generateRegionActivities = () => {
     "December",
   ];
 
-  // Helper function to adjust the month based on climate offset
   const adjustMonth = (month, offset) => {
     const index = months.indexOf(month);
-    return months[(index + offset + 12) % 12]; // Ensure it wraps around the year correctly
+    return months[(index + offset + 12) % 12]; // Ensure it wraps around the year
   };
 
-  // Generate activities for each region based on the climate offset
-  regionsOfGhana.forEach((region) => {
-    const offset = climateOffsets[region] || 0; // Default to 0 if no specific offset
-    regions[region] = baseActivities.map((activity) => ({
+  for (let i = 1; i <= 5; i++) {
+    const districtName = `District ${i}`;
+    const offset = climateOffsets[districtName] || 0;
+
+    districts[districtName] = baseActivities.map((activity) => ({
       ...activity,
       start: adjustMonth(activity.start, offset),
       end: adjustMonth(activity.end, offset),
     }));
-  });
+  }
 
-  return regions;
+  return districts;
 };
 
-// Declare region calendars once
-const regionCalendars = generateRegionActivities();
+// Declare district calendars once
+const districtCalendars = generateDistrictActivities();
 
-const CropCalendar = () => {
+const DistrictCalendar = () => {
   const [selectedCrop, setSelectedCrop] = useState("maize");
-  const [selectedRegion, setSelectedRegion] = useState("Greater Accra");
-  const farmingActivities = regionCalendars[selectedRegion] || [];
+  const [selectedDistrict, setSelectedDistrict] = useState("District 1");
+  const farmingActivities = districtCalendars[selectedDistrict] || [];
 
-  const handleRegionChange = (event) => {
-    setSelectedRegion(event.target.value);
+  const handleDistrictChange = (event) => {
+    setSelectedDistrict(event.target.value);
   };
 
   const handleCropChange = (event) => {
     setSelectedCrop(event.target.value);
-    setSelectedRegion("Greater Accra"); // Reset to the first region on crop change
+    setSelectedDistrict("District 1"); // Reset to the first district on crop change
   };
 
   return (
     <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8">
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-6">
         <h1 className="text-blue-600 text-3xl font-bold mb-4 text-center">
-          Ghana Regional Crop Calendar
+          District Crop Calendar
         </h1>
 
-        {/* Dropdown for Crop and Region Selection - Same Row */}
+        {/* Dropdown for Crop and District Selection - Same Row */}
         <div className="flex mb-4 justify-between">
           {/* Dropdown for Crop Selection */}
           <div className="w-1/2 mr-4">
@@ -178,24 +164,25 @@ const CropCalendar = () => {
             >
               <option value="maize">Maize</option>
               <option value="soyabean">Sorghum</option>
-              <option value="soyabean">Soyabean</option>
-
+              <option value="soybeans">Soybeans</option>
               <option value="rice">Rice</option>
               <option value="tomatoes">Tomatoes</option>
             </select>
           </div>
 
-          {/* Dropdown for Region Selection */}
+          {/* Dropdown for District Selection */}
           <div className="w-1/2">
-            <label className="text-lg font-semibold mr-2">Select Region:</label>
+            <label className="text-lg font-semibold mr-2">
+              Select District:
+            </label>
             <select
-              value={selectedRegion}
-              onChange={handleRegionChange}
+              value={selectedDistrict}
+              onChange={handleDistrictChange}
               className="border border-gray-300 rounded p-2 w-full"
             >
-              {regionsOfGhana.map((region) => (
-                <option key={region} value={region}>
-                  {region}
+              {Object.keys(districtCalendars).map((district) => (
+                <option key={district} value={district}>
+                  {district}
                 </option>
               ))}
             </select>
@@ -244,4 +231,4 @@ const CropCalendar = () => {
   );
 };
 
-export default CropCalendar;
+export default DistrictCalendar;

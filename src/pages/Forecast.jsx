@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ForecastCard from "../components/ForecastCard";
 import { getForecast } from "../services/weatherApi";
 

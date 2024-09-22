@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from "react";
 import { CloudSun, CloudRainWind, Sun, Search } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css"; // Import Leaflet styles
@@ -12,6 +11,12 @@ import logo4 from "../assets/images/gmetlogo.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
+import facebook from "../assets/icons/facebook.png";
+import linkedIn from "../assets/icons/linkedin.png";
+import xTwitter from "../assets/icons/x.png";
+import youTube from "../assets/icons/youtube.png";
+import whatsapp from "../assets/icons/whatsapp.png";
 
 import thermometer from "../assets/images/thermometer.svg";
 const WeatherIcon = ({ condition }) => {
@@ -37,6 +42,10 @@ const WeatherIcon = ({ condition }) => {
     default:
       return <CloudSun className="w-8 h-8 text-white" />;
   }
+};
+const getFormattedDate = () => {
+  const options = { day: "2-digit", month: "long", year: "numeric" };
+  return new Date().toLocaleDateString("en-US", options);
 };
 
 const WeatherCard = ({ city, condition, minTemp, maxTemp }) => (
@@ -105,7 +114,6 @@ const Home = () => {
   ];
 
   const settings = {
-    // dots: true,
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -120,85 +128,66 @@ const Home = () => {
           <img src={logo2} alt="Mofa logo" className="h-12 md:h-16" />
           <img src={logo3} alt="Fsrp logo" className="h-12 md:h-16" />
           <img src={logo4} alt="GMet logo" className="h-12 md:h-16" />
-          {/* <div>
-            <h1 className="text-red-600 font-bold text-lg md:text-xl">
-              MoFA-FSRP
-            </h1>
-            <h2 className="text-green-600 font-bold text-md md:text-lg">
-              AND GMet
-            </h2>
-            <p className="text-sm">GhAAP</p>
-          </div> */}
         </div>
         <nav className="space-x-2 md:space-x-4 mr-52 text-sm mt-4 md:mt-0">
-          <a href="#" className="text-blue-600">
-            HOME
-          </a>
-          <a href="#" className="text-blue-600">
-            FORECAST
-          </a>
-          <a href="#" className="text-blue-600">
-            CLIMATE
-          </a>
-          <a href="#" className="text-blue-600">
-            CONTACT US
-          </a>
-          <Search className="inline-block w-4 h-4 text-blue-600" />
+          <div className="flex justify-center md:justify-end space-x-2 md:space-x-4 my-4">
+            <a href="#">
+              <img
+                src={facebook}
+                alt="Facebook"
+                className="h-5 w-5 md:h-6 md:w-6"
+              />
+            </a>
+            <a href="#">
+              <img
+                src={linkedIn}
+                alt="LinkedIn"
+                className="h-5 w-5 md:h-6 md:w-6"
+              />
+            </a>
+            <a href="#">
+              <img
+                src={xTwitter}
+                alt="XTwitter"
+                className="h-5 w-5 md:h-6 md:w-6"
+              />
+            </a>
+            <a href="#">
+              <img
+                src={youTube}
+                alt="YouTube"
+                className="h-5 w-5 md:h-6 md:w-6"
+              />
+            </a>
+            <a href="#">
+              <img
+                src={whatsapp}
+                alt="whatsapp"
+                className="h-5 w-5 md:h-6 md:w-6"
+              />
+            </a>
+            <Search className="inline-block w-4 h-4 text-blue-600" />
+          </div>
         </nav>
       </header>
 
       <main className="container mx-auto px-4">
-        <h1 className="text-2xl md:text-3xl text-white text-center my-4 md:my-6">
+        <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold text-white text-center my-4 md:my-6">
           Climate Information Services
         </h1>
-
-        {/* Social Icons - Responsive */}
-        <div className="flex justify-center md:justify-end space-x-2 md:space-x-4 my-4">
-          <a href="#">
-            <img
-              src="/path-to-facebook-icon.png"
-              alt="Facebook"
-              className="h-5 w-5 md:h-6 md:w-6"
-            />
-          </a>
-          <a href="#">
-            <img
-              src="/path-to-twitter-icon.png"
-              alt="Twitter"
-              className="h-5 w-5 md:h-6 md:w-6"
-            />
-          </a>
-          <a href="#">
-            <img
-              src="/path-to-instagram-icon.png"
-              alt="Instagram"
-              className="h-5 w-5 md:h-6 md:w-6"
-            />
-          </a>
-          <a href="#">
-            <img
-              src="/path-to-ncap-icon.png"
-              alt="NCAP"
-              className="h-5 w-5 md:h-6 md:w-6"
-            />
-          </a>
-        </div>
 
         <div className="bg-[#11487e] rounded-lg shadow-lg p-4 mb-8">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-white text-lg md:text-xl">
-              Weather for 11 Sep 2024, Afternoon
+              Weather for {getFormattedDate()}
             </h2>
-            {/* <button className="bg-blue-600 text-white px-3 md:px-4 py-1 md:py-2 rounded">
-              More Towns &gt;&gt;
-            </button> */}
           </div>
 
           <div className="slider-container">
             <Slider {...settings}>
-              {weatherData.map((data, index) => {
-                return <WeatherCard key={index} {...data} />;
-              })}
+              {weatherData.map((data, index) => (
+                <WeatherCard key={index} {...data} />
+              ))}
             </Slider>
           </div>
         </div>
@@ -254,6 +243,24 @@ const Home = () => {
               <Marker position={[9.0913, -1.827]}>
                 <Popup>Damongo: Sunny Intervals</Popup>
               </Marker>
+              <Marker position={[7.3349, -2.3123]}>
+                <Popup>Sunyani: Sunny Intervals</Popup>
+              </Marker>
+              <Marker position={[6.8018, -2.5148]}>
+                <Popup>Goaso: Sunny Intervals</Popup>
+              </Marker>
+              <Marker position={[7.8014, -0.0513]}>
+                <Popup>Kete Krachi: Sunny Intervals</Popup>
+              </Marker>
+              <Marker position={[5.1231, -1.2689]}>
+                <Popup>Cape Coast: Sunny Intervals</Popup>
+              </Marker>
+              <Marker position={[10.7875, -0.858]}>
+                <Popup>Bolgatanga: Sunny Intervals</Popup>
+              </Marker>
+              <Marker position={[6.0784, -0.2714]}>
+                <Popup>Koforidua: Sunny Intervals</Popup>
+              </Marker>
             </MapContainer>
 
             <button className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-md">
@@ -266,85 +273,151 @@ const Home = () => {
             <h2 className="text-blue-600 font-bold mb-2">Other Forecasts</h2>
             <ul className="space-y-4">
               <li>
-                <a href="#" className="text-blue-600">
+                <Link to="/5-days-forecast" className="text-blue-600">
                   5 Days Forecast
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-blue-600">
+                <Link to="/7-days-forecast" className="text-blue-600">
                   7 Days Forecast
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-blue-600">
+                <Link to="/agro-bulletins" className="text-blue-600">
                   Agrometeorological Bulletins
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-blue-600">
+                <Link to="/flood-drought" className="text-blue-600">
                   Flood and Drought Bulletins
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-blue-600">
+                <Link to="/subseasonal-forecast" className="text-blue-600">
                   Subseasonal 2 Seasonal Forecast
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-blue-600">
+                <Link to="/monthly-forecast" className="text-blue-600">
                   Monthly Forecast
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-blue-600">
+                <Link to="/seasonal-forecast" className="text-blue-600">
                   Seasonal Forecast
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-blue-600">
+                <Link to="/climate-report" className="text-blue-600">
                   State of the Climate Report 2023
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-blue-600">
-                  Regional Crop & Poulty Calendar 2024
-                </a>
+                <Link to="/crop-calendar" className="text-blue-600">
+                  Regional Crop & Poultry Calendar 2024
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-blue-600">
-                  District Crop & Poulty Calendar 2024
-                </a>
+                <Link to="/district-calendar" className="text-blue-600">
+                  District Crop & Poultry Calendar 2024
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between gap-8 mt-24">
-          <div className="bg-yellow-600 p-4 rounded-lg text-center w-80 md:w-auto">
-            <h3 className="font-bold text-base">Daily Weather Forecast</h3>
-            <img
-              src={weather}
-              alt="Weather Alert"
-              className="mt-2 w-80 h-70 object-cover"
-            />
-          </div>
-          <div className="bg-yellow-600 p-4 rounded-lg text-center w-80 md:w-auto">
-            <h3 className="font-bold text-base">Weekly Forecast</h3>
-            <img
-              src={weather}
-              alt="Weather Alert"
-              className="mt-2 w-80 h-70 object-cover"
-            />
-          </div>
-          <div className="bg-yellow-600 p-4 rounded-lg text-center w-80 md:w-auto">
-            <h3 className="font-bold text-base">
-              Get Weather Advisories & Alerts
-            </h3>
-            <img
-              src={flood}
-              alt="Weather Alert"
-              className="mt-2 w-80 h-70 object-cover"
-            />
+        <div className="flex flex-col space-y-4 m-8 p-4">
+          {/* <div className="bg-blue-500 text-white p-4 rounded-lg"></div> */}
+
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+            <div className="flex-1 bg-white shadow rounded-lg overflow-hidden">
+              <div className="p-4 border-b">
+                <h3 className="text-lg font-semibold">Latest News</h3>
+              </div>
+              <div className="p-4 space-y-4">
+                <div className="flex items-center space-x-2">
+                  <img
+                    src="/api/placeholder/80/60"
+                    alt="News 1"
+                    className="w-20 h-15 object-cover rounded"
+                  />
+                  <p className="text-sm">
+                    Visit to KMD by Ministry of Environment, Climate change and
+                    Forestry CS Hon. Aden Duale and PS DR. Eng. Festus Ng'eno
+                  </p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <img
+                    src="/api/placeholder/80/60"
+                    alt="News 2"
+                    className="w-20 h-15 object-cover rounded"
+                  />
+                  <p className="text-sm">
+                    National Assembly committee on Environment, Forestry and
+                    Mining visit to the Meteorological Department
+                  </p>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <img
+                    src="/api/placeholder/80/60"
+                    alt="News 3"
+                    className="w-20 h-15 object-cover rounded"
+                  />
+                  <p className="text-sm">
+                    Release Of the OND seasonal forecast
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-1 bg-white shadow rounded-lg overflow-hidden">
+              <div className="p-4 border-b">
+                <h3 className="text-lg font-semibold">Events</h3>
+              </div>
+              <div className="p-4 space-y-4">
+                <div className="flex items-center space-x-2">
+                  <img
+                    src="/api/placeholder/80/60"
+                    alt="Event 1"
+                    className="w-20 h-15 object-cover rounded"
+                  />
+                  <div>
+                    <p className="font-semibold">
+                      WORLD METEOROLOGICAL ORGANIZATION(WMO) SATELLITE TRAINING
+                      COURSE ON METEOSAT THIRD GENERATION (MTG)
+                    </p>
+                    <p className="text-sm">20 Nov 2023 - 24 Nov 2023</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <img
+                    src="/api/placeholder/80/60"
+                    alt="Event 2"
+                    className="w-20 h-15 object-cover rounded"
+                  />
+                  <div>
+                    <p className="font-semibold">
+                      ASMET SATELLITE APPLICATION TRAINING COURSE AT IMTR IN
+                      ACCRA-GHANA
+                    </p>
+                    <p className="text-sm">26 Feb 2024 - 01 Mar 2024</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <img
+                    src="/api/placeholder/80/60"
+                    alt="Event 3"
+                    className="w-20 h-15 object-cover rounded"
+                  />
+                  <div>
+                    <p className="font-semibold">
+                      World Meteorological Day 2024
+                    </p>
+                    <p className="text-sm">23 Mar 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
@@ -352,7 +425,7 @@ const Home = () => {
       <footer className="bg-blue-900 text-white mt-8 p-8 text-center md:text-left">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Description */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start ">
             <img src={logo} alt="Ghaap logo" className="h-16 mb-4" />
             <p className="text-sm">
               GhAAP is committed to providing top-notch solutions that drive
@@ -418,7 +491,7 @@ const Home = () => {
         </div>
 
         {/* Copyright Notice */}
-        <div className="mt-8 border-t border-gray-700 pt-4 text-xs text-gray-400 align-middle">
+        <div className="mt-8 border-t border-gray-700 pt-4 text-xs text-gray-400 flex justify-center">
           <p>&copy; 2024 GhAAP. All rights reserved.</p>
         </div>
       </footer>
