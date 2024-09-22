@@ -219,6 +219,7 @@ const Home = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               />
+
               <Marker position={[5.614818, -0.205874]}>
                 <Popup>Accra: Sunny Intervals</Popup>
               </Marker>
