@@ -2,8 +2,10 @@
 import { CloudSun, CloudRainWind, Sun, Search } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css"; // Import Leaflet styles
-import weather from "../assets/images/weather warning.jpg";
-import flood from "../assets/images/flood.png";
+import L from "leaflet";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import logo from "../assets/images/ghaaplogo.png";
 import logo2 from "../assets/images/mofalog.png";
 import logo3 from "../assets/images/fsrp.png";
@@ -17,7 +19,6 @@ import linkedIn from "../assets/icons/linkedin.png";
 import xTwitter from "../assets/icons/x.png";
 import youTube from "../assets/icons/youtube.png";
 import whatsapp from "../assets/icons/whatsapp.png";
-
 import thermometer from "../assets/images/thermometer.svg";
 const WeatherIcon = ({ condition }) => {
   switch (condition) {
@@ -47,6 +48,17 @@ const getFormattedDate = () => {
   const options = { day: "2-digit", month: "long", year: "numeric" };
   return new Date().toLocaleDateString("en-US", options);
 };
+const DefaultIcon = L.icon({
+  iconUrl: markerIcon,
+  iconRetinaUrl: markerIcon2x,
+  shadowUrl: markerShadow,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 const WeatherCard = ({ city, condition, minTemp, maxTemp }) => (
   <div className="flex flex-col text-left  justify-center gap-2 text-white px-10 border-r border-r-white">
