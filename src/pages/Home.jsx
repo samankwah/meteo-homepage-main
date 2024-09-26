@@ -94,7 +94,7 @@ const Home = () => {
     },
     {
       city: "Cape Coast",
-      condition: "Sunny Intervals , Showers",
+      condition: "Sunny Intervals, Showers",
       minTemp: 23,
       maxTemp: 30,
     },
@@ -107,7 +107,7 @@ const Home = () => {
     },
     {
       city: "Accra",
-      condition: "Sunny Intervals",
+      condition: "Partly Cloudy",
       minTemp: 23,
       maxTemp: 31,
     },
@@ -127,21 +127,47 @@ const Home = () => {
 
   const settings = {
     infinite: true,
-    slidesToShow: 5,
+    slidesToShow: 5, // Default for larger screens
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 1200, // At screen width less than 1200px
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 992, // At screen width less than 992px (tablet)
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768, // At screen width less than 768px (large mobile)
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576, // At screen width less than 576px (mobile)
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-400 to-blue-600 ">
-      <header className="bg-white p-4 flex flex-col md:flex-row justify-between items-center ">
-        <div className="flex items-center ml-52 space-x-4">
+    <div className="min-h-screen bg-gradient-to-b from-blue-400 to-blue-600 mx-auto px-4 py-6 md:px-8 lg:px-12">
+      <header className="bg-white p-4 flex flex-col md:flex-row justify-between items-center">
+        <div className="flex items-center space-x-4 mb-2 md:mb-0 md:ml-0">
           <img src={logo2} alt="Mofa logo" className="h-12 md:h-16" />
           <img src={logo3} alt="Fsrp logo" className="h-12 md:h-16" />
           <img src={logo4} alt="GMet logo" className="h-12 md:h-16" />
         </div>
-        <nav className="space-x-2 md:space-x-4 mr-52 text-sm mt-4 md:mt-0">
+        <nav className="space-x-2 md:space-x-4 text-sm">
           <div className="flex justify-center md:justify-end space-x-2 md:space-x-4 my-4">
             <a href="#">
               <img
@@ -183,7 +209,7 @@ const Home = () => {
         </nav>
       </header>
 
-      <main className="container mx-auto px-4">
+      <main className="container mx-auto">
         <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold text-white text-center my-4 md:my-6">
           Climate Information Services
         </h1>
@@ -355,8 +381,8 @@ const Home = () => {
                     className="w-20 h-15 object-cover rounded"
                   />
                   <p className="text-sm">
-                    Visit to KMD by Ministry of Environment, Climate change and
-                    Forestry CS Hon. Aden Duale and PS DR. Eng. Festus Ng'eno
+                    Visit to GMet by Ministry of Environment, Climate change and
+                    Forestry CS Hon. Aden Duale and PS DR. Eng. Festus
                   </p>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -367,7 +393,7 @@ const Home = () => {
                   />
                   <p className="text-sm">
                     National Assembly committee on Environment, Forestry and
-                    Mining visit to the Meteorological Department
+                    Mining visit to the Meteorological Agency
                   </p>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -377,7 +403,7 @@ const Home = () => {
                     className="w-20 h-15 object-cover rounded"
                   />
                   <p className="text-sm">
-                    Release Of the OND seasonal forecast
+                    Release Of the SON seasonal forecast
                   </p>
                 </div>
               </div>
@@ -410,8 +436,7 @@ const Home = () => {
                   />
                   <div>
                     <p className="font-semibold">
-                      ASMET SATELLITE APPLICATION TRAINING COURSE AT IMTR IN
-                      ACCRA-GHANA
+                      ASMET SATELLITE APPLICATION TRAINING COURSE AT ACCRA-GHANA
                     </p>
                     <p className="text-sm">26 Feb 2024 - 01 Mar 2024</p>
                   </div>
@@ -435,7 +460,7 @@ const Home = () => {
         </div>
       </main>
 
-      <footer className="bg-blue-900 text-white mt-8 p-8 text-center md:text-left">
+      <footer className="bg-blue-900 text-white mb-1 mt-2 p-8 text-center md:text-left">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Description */}
           <div className="flex flex-col items-center md:items-start ">
@@ -448,7 +473,7 @@ const Home = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-center">
             <h5 className="font-semibold mb-3 text-lg">Quick Links</h5>
             <ul className="space-y-2 text-sm">
               <li>

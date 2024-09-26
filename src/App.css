@@ -61,3 +61,81 @@ footer {
 .mysvg {
   fill: white !important;
 }
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.text-left {
+  text-align: left;
+}
+.justify-center {
+  justify-content: center;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.gap-6 {
+  gap: 1.5rem;
+}
+.text-white {
+  color: white;
+}
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.border-r {
+  border-right-width: 1px;
+}
+.border-r-white {
+  border-right-color: white;
+}
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.align-middle {
+  align-items: center;
+}
+.items-center {
+  align-items: center;
+}
+.items-end {
+  align-items: flex-end;
+}
+.mysvg {
+  height: 30px;
+  width: 30px;
+}
+
+@media (max-width: 768px) {
+  .px-10 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .flex-col-reverse {
+    flex-direction: column-reverse;
+  }
+  .items-start {
+    align-items: flex-start;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .gap-4 {
+    gap: 1rem;
+  }
+}
