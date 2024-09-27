@@ -20,6 +20,13 @@ import xTwitter from "../assets/icons/x.png";
 import youTube from "../assets/icons/youtube.png";
 import whatsapp from "../assets/icons/whatsapp.png";
 import thermometer from "../assets/images/thermometer.svg";
+import event1 from "../assets/images/event1.png";
+import event2 from "../assets/images/event2.png";
+import event3 from "../assets/images/event3.png";
+import image1 from "../assets/images/image1.png";
+import image2 from "../assets/images/image2.png";
+import image3 from "../assets/images/image3.png";
+
 const WeatherIcon = ({ condition }) => {
   switch (condition) {
     case "Cloudy, Sunny Intervals":
@@ -374,7 +381,7 @@ const Home = () => {
           {/* <div className="bg-blue-500 text-white p-4 rounded-lg"></div> */}
 
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-            <div className="flex-1 bg-white shadow rounded-lg overflow-hidden">
+            {/* <div className="flex-1 bg-white shadow rounded-lg overflow-hidden">
               <div className="p-4 border-b">
                 <h3 className="text-lg font-semibold">Latest News</h3>
               </div>
@@ -412,9 +419,9 @@ const Home = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="flex-1 bg-white shadow rounded-lg overflow-hidden">
+            {/* <div className="flex-1 bg-white shadow rounded-lg overflow-hidden">
               <div className="p-4 border-b">
                 <h3 className="text-lg font-semibold">Events</h3>
               </div>
@@ -457,6 +464,123 @@ const Home = () => {
                       World Meteorological Day 2024
                     </p>
                     <p className="text-sm">23 Mar 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div> */}
+            <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden">
+              {/* Card Header */}
+              <div className="p-4 border-b bg-blue-50">
+                <h3 className="text-lg font-semibold text-blue-600">
+                  Latest News
+                </h3>
+              </div>
+
+              {/* News List */}
+              <div className="p-4 space-y-6">
+                {/* News Item 1 */}
+                <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                  <img
+                    src={image1}
+                    alt="News 1"
+                    className="w-24 h-16 object-cover rounded-lg"
+                  />
+                  <div className="text-sm">
+                    <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                      Visit to GMet by Ministry of Environment, Climate Change
+                      and Forestry CS Hon. Aden Duale and PS DR. Eng. Festus
+                    </p>
+                  </div>
+                </div>
+
+                {/* News Item 2 */}
+                <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                  <img
+                    src={image2}
+                    alt="News 2"
+                    className="w-24 h-16 object-cover rounded-lg"
+                  />
+                  <div className="text-sm">
+                    <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                      National Assembly committee on Environment, Forestry and
+                      Mining visit to the Meteorological Agency
+                    </p>
+                  </div>
+                </div>
+
+                {/* News Item 3 */}
+                <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                  <img
+                    src={image3}
+                    alt="News 3"
+                    className="w-24 h-16 object-cover rounded-lg"
+                  />
+                  <div className="text-sm">
+                    <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                      Release of the SON seasonal forecast
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden">
+              {/* Header */}
+              <div className="p-4 border-b border-gray-200 bg-blue-50">
+                <h3 className="text-lg font-semibold text-blue-600">
+                  Upcoming Events
+                </h3>
+              </div>
+
+              {/* Event List */}
+              <div className="p-4 space-y-6">
+                {/* Event 1 */}
+                <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                  <img
+                    src={event1}
+                    alt="Event 1"
+                    className="w-24 h-16 object-cover rounded-lg"
+                  />
+                  <div>
+                    <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                      WORLD METEOROLOGICAL ORGANIZATION(WMO) SATELLITE TRAINING
+                      COURSE ON METEOSAT THIRD GENERATION (MTG)
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      20 Nov 2023 - 24 Nov 2023
+                    </p>
+                  </div>
+                </div>
+
+                {/* Event 2 */}
+                <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                  <img
+                    src={event2}
+                    alt="Event 2"
+                    className="w-24 h-16 object-cover rounded-lg"
+                  />
+                  <div>
+                    <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                      CLIMATE DATA TRAINING COURSE AT ACCRA-GHANA
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      26 Feb 2024 - 01 Mar 2024
+                    </p>
+                  </div>
+                </div>
+
+                {/* Event 3 */}
+                <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                  <img
+                    src={event3}
+                    alt="Event 3"
+                    className="w-24 h-16 object-cover rounded-lg"
+                  />
+                  <div>
+                    <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                      World Meteorological Day 2024
+                    </p>
+                    <p className="text-sm text-gray-500">23 Mar 2024</p>
                   </div>
                 </div>
               </div>
