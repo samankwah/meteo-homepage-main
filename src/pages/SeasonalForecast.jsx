@@ -1,4 +1,4 @@
-import forecastImage from "../assets/images/weather warning.jpg";
+import forecastImage from "../assets/images/minorfcst2024.png";
 import { FaDownload } from "react-icons/fa"; // For download icon
 
 const SeasonalForecast = () => {
@@ -11,7 +11,7 @@ const SeasonalForecast = () => {
         </h1>
         {/* Download Button */}
         <a
-          href="/path/to/your/file.pdf"
+          href="/public/FORECAST FOR THE MINOR RAINY SEASON-2024-1 final.pdf" // Correct path to the PDF in the public folder
           download
           className="bg-blue-600 text-white px-2 py-2 rounded flex items-center hover:bg-blue-700"
         >
@@ -38,42 +38,21 @@ const SeasonalForecast = () => {
             1. <strong>Rainfall Outlook</strong> for the
             September-October-November 2024 Minor Rains Season.
             <br />
-            The Climate Outlook for the September-October-November (SON) 2024
-            Minor Rains season indicates that the western sector of the country
-            is expected to receive near to slightly above average rainfall while
-            the central parts of the country and isolated areas over northeast
-            and southeastern lowlands are predicted to receive near to below
-            average rainfall. The Coastal region, most of the Southeastern
-            lowlands and Northeastern Ghana are expected to receive below
-            average rainfall. This will be driven by weak La Nina conditions
-            which are likely to develop during September to November and persist
-            into early 2025 and a neutral Indian Ocean Dipole. The distribution
-            is expected to be poor over most parts of the country with prolonged
-            dry spells and cases of isolated storms. Temperature is expected to
-            be warmer than average over most parts of the country, except over a
-            few areas in the western sector where temperature is expected to be
-            near normal. Higher probabilities for warmer than average
-            temperatures are expected over central and eastern sectors of the
-            country. The Coastal region, most of the Southeastern lowlands and
-            Northeastern Ghana are expected to receive below average rainfall.
-            This will be driven by weak La Nina conditions which are likely to
-            develop during September to November and persist into early 2025 and
-            a neutral Indian Ocean Dipole. The distribution is expected to be
-            poor over most parts of the country with prolonged dry spells and
-            the western sector where temperature is expected to be near normal.
-            Higher probabilities for warmer than average temperatures are
-            expected over central and eastern sectors of the country. The
-            Coastal region, most of the Southeastern lowlands and Northeastern
-            Ghana are expected to receive below average rainfall. This will be
-            driven by weak La Nina conditions which are likely to develop during
-            September to November and persist into early 2025 and a neutral
-            Indian Ocean Dipole. The distribution is expected to be poor over
-            most parts of the country with prolonged dry spells and cases of
-            isolated storms. Temperature is expected to be warmer than average
-            over most parts of the country, except over a few areas in the
-            western sector where temperature is expected to be near normal.
-            Higher probabilities for warmer than average temperatures are
-            expected over central and eastern sectors of the country.
+            The 2024 Minor Season is expected to have above normal to normal
+            rainfall for the extreme north and the forest zone. The transition,
+            most portions of the north and east coast are forecasted to
+            experience normal to above normal rainfall. Late to normal onset of
+            rains are expected over most areas in the southern part of the
+            country. Most parts of the southern sector are expected to have
+            short to normal dry spells with the transition likely to record long
+            to normal dry spells within the early part of the season. The second
+            dry spell for the entire coast is expected to be long to normal,
+            whereas the transition and the forest zone is expected to have
+            normal to short dry spells. Normal to late cessation is predicted
+            for the southern half of the country. The east coast will experience
+            late to normal cessation. At the end of these forecasts,
+            recommendations are made to the various stakeholders to help manage
+            risks and take advantage of the benefits of the season.
           </p>
         </div>
       </div>

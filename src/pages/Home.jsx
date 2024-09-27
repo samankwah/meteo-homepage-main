@@ -63,7 +63,7 @@ L.Marker.prototype.options.icon = DefaultIcon;
 const WeatherCard = ({ city, condition, minTemp, maxTemp }) => (
   <div className="flex flex-col text-left  justify-center gap-2 text-white px-10 border-r border-r-white">
     <div className="flex gap-6 align-middle items-end ">
-      <h3 className="text-left font-montserrat font-semibold text-lg">
+      <h3 className="text-left font-montserrat font-semibold text-lg  w-16 h-16">
         {city}
       </h3>
 
@@ -98,10 +98,15 @@ const Home = () => {
       minTemp: 23,
       maxTemp: 30,
     },
-    { city: "Ho", condition: "Sunny Intervals", minTemp: 19, maxTemp: 32 },
+    {
+      city: "Ho",
+      condition: "Cloudy, Sunny Intervals",
+      minTemp: 19,
+      maxTemp: 32,
+    },
     {
       city: "Takoradi",
-      condition: "Sunny Intervals",
+      condition: "Rainfall",
       minTemp: 21,
       maxTemp: 33,
     },
@@ -119,7 +124,7 @@ const Home = () => {
     },
     {
       city: "Tamale",
-      condition: "Sunny Intervals",
+      condition: "Partly Cloudy",
       minTemp: 24,
       maxTemp: 36,
     },
