@@ -16,7 +16,7 @@ import FloodDrought from "./pages/FloodDrought";
 import SubseasonalForecast from "./pages/SubseasonalForecast";
 import MonthlyForecast from "./pages/MonthlyForecast";
 import ClimateReport from "./pages/Climate";
-import DistrictCalendar from "./pages/DistrictCalendar";
+import PoultryCalendar from "./pages/PoultryCalendar";
 
 function App() {
   return (
@@ -42,7 +42,7 @@ function App() {
             />
             <Route path="/monthly-forecast" element={<MonthlyForecast />} />
             <Route path="/climate-report" element={<ClimateReport />} />
-            <Route path="/district-calendar" element={<DistrictCalendar />} />
+            <Route path="/poultry-calendar" element={<PoultryCalendar />} />
             <Route path="/seasonal-forecast" element={<SeasonalForecast />} />
           </Routes>
         </main>

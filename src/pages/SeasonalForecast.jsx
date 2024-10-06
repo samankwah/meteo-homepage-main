@@ -1,60 +1,133 @@
-import forecastImage from "../assets/images/minorfcst2024.png";
-import { FaDownload } from "react-icons/fa"; // For download icon
+import React from "react";
 
 const SeasonalForecast = () => {
   return (
-    <div className="main-content bg-gradient-to-br from-blue-50 to-blue-100 p-2 min-h-screen">
-      {/* Title Section */}
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-blue-600 text-3xl font-bold">
-          SEASONAL WEATHER FORECAST FOR SEPTEMBER OCTOBER NOVEMBER (SON) 2024
-        </h1>
-        {/* Download Button */}
-        <a
-          href="/public/FORECAST FOR THE MINOR RAINY SEASON-2024-1 final.pdf" // Correct path to the PDF in the public folder
-          download
-          className="bg-blue-600 text-white px-2 py-2 rounded flex items-center hover:bg-blue-700"
-        >
-          <FaDownload className="mr-2" />
-          Download Seasonal Forecast
-        </a>
+    <div className="container mx-auto p-6 bg-teal-900 text-white">
+      {/* Header Section */}
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-bold">East Coast (MAM & AMJ)</h1>
+        <p className="text-xl text-yellow-400">
+          NORMAL ONSET AND EARLY CESSATION
+        </p>
       </div>
 
-      {/* Image Section */}
-      <div className="flex flex-col lg:flex-row items-start">
-        <div className="flex-2 lg:mb-6 lg:mr-4 h-auto">
+      {/* Content Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Map Section */}
+        <div className="bg-white text-black rounded-lg p-4">
           <img
-            src={forecastImage}
-            alt="Seasonal Forecast"
-            className="forecast-image rounded shadow-lg"
-            style={{ maxWidth: "100%", height: "760px" }}
+            src="/path-to-your-map-image" // Update with correct path
+            alt="Map"
+            className="w-full h-auto mb-4"
           />
         </div>
 
-        {/* Highlights Section */}
-        <div className="highlights bg-white p-6 rounded shadow-lg flex-1 ">
-          <h2 className="text-2xl font-semibold mb-4">Highlights</h2>
-          <p className="text-lg">
-            1. <strong>Rainfall Outlook</strong> for the
-            September-October-November 2024 Minor Rains Season.
-            <br />
-            The 2024 Minor Season is expected to have above normal to normal
-            rainfall for the extreme north and the forest zone. The transition,
-            most portions of the north and east coast are forecasted to
-            experience normal to above normal rainfall. Late to normal onset of
-            rains are expected over most areas in the southern part of the
-            country. Most parts of the southern sector are expected to have
-            short to normal dry spells with the transition likely to record long
-            to normal dry spells within the early part of the season. The second
-            dry spell for the entire coast is expected to be long to normal,
-            whereas the transition and the forest zone is expected to have
-            normal to short dry spells. Normal to late cessation is predicted
-            for the southern half of the country. The east coast will experience
-            late to normal cessation. At the end of these forecasts,
-            recommendations are made to the various stakeholders to help manage
-            risks and take advantage of the benefits of the season.
-          </p>
+        {/* LTM and Forecast Table */}
+        <div className="bg-white text-black rounded-lg p-6">
+          <table className="w-full table-auto">
+            <thead>
+              <tr>
+                <th className="p-2 bg-gray-200">START</th>
+                <th className="p-2 bg-gray-200">END</th>
+                <th className="p-2 bg-gray-200">LENGTH OF SEASON (Days)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-2 text-center">
+                  1st Week of March - 3rd Week of April
+                </td>
+                <td className="p-2 text-center">
+                  1st Week of July - 3rd Week of July
+                </td>
+                <td className="p-2 text-center">91-112</td>
+              </tr>
+              <tr className="bg-gray-100">
+                <td className="p-2 text-center">2024 Forecast</td>
+                <td className="p-2 text-center">2024 Forecast</td>
+                <td className="p-2 text-center">121-147</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+
+        {/* Cumulative Rainfall */}
+        <div className="bg-white text-black rounded-lg p-6">
+          <h3 className="text-xl font-bold text-teal-900 mb-4">
+            Cumulative Rainfall
+          </h3>
+          <table className="w-full table-auto">
+            <thead>
+              <tr>
+                <th className="p-2 bg-gray-200">PERIOD</th>
+                <th className="p-2 bg-gray-200">LTM (mm)</th>
+                <th className="p-2 bg-gray-200">2024 (mm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-2 text-center">MAM</td>
+                <td className="p-2 text-center">217-420</td>
+                <td className="p-2 text-center">283-430</td>
+              </tr>
+              <tr className="bg-gray-100">
+                <td className="p-2 text-center">AMJ</td>
+                <td className="p-2 text-center">391-478</td>
+                <td className="p-2 text-center">346-580</td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="mt-4">
+            <h4 className="font-bold text-red-600">Advisories:</h4>
+            <ul className="list-disc ml-5">
+              <li>Harvest rainwater and store for irrigation.</li>
+              <li>Cultivate early short cycle crops.</li>
+              <li>Contact agricultural experts for information.</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Dry Spells */}
+        <div className="bg-white text-black rounded-lg p-6">
+          <h3 className="text-xl font-bold text-teal-900 mb-4">Dry Spells</h3>
+          <table className="w-full table-auto">
+            <thead>
+              <tr>
+                <th className="p-2 bg-gray-200">PERIOD</th>
+                <th className="p-2 bg-gray-200">LTM (Days)</th>
+                <th className="p-2 bg-gray-200">2024 (Days)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-2 text-center">EARLY (1st)</td>
+                <td className="p-2 text-center">9</td>
+                <td className="p-2 text-center">10</td>
+              </tr>
+              <tr className="bg-gray-100">
+                <td className="p-2 text-center">LATE (2nd)</td>
+                <td className="p-2 text-center">13</td>
+                <td className="p-2 text-center">14-18</td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="mt-4">
+            <h4 className="font-bold text-red-600">Advisories:</h4>
+            <ul className="list-disc ml-5">
+              <li>Plant cover crops or leguminous crops.</li>
+              <li>Adopt mulching practices.</li>
+              <li>Plant drought-resistant varieties of crops.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer: Long-term Mean Explanation */}
+      <div className="mt-8 text-center text-sm">
+        <p>
+          <span className="font-bold">Long term mean (LTM)</span> is the 30-year
+          average condition of a given Zone from 1991-2020.
+        </p>
       </div>
     </div>
   );

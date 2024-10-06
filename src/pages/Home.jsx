@@ -173,7 +173,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-400 to-blue-600 mx-auto px-4 py-6 md:px-8 lg:px-12">
-      <header className="bg-white p-4 flex flex-col md:flex-row justify-between items-center">
+      <header className="bg-white  p-4 flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center space-x-4 mb-2 md:mb-0 md:ml-0">
           <img src={logo2} alt="Mofa logo" className="h-12 md:h-16" />
           <img src={logo3} alt="Fsrp logo" className="h-12 md:h-16" />
@@ -244,14 +244,14 @@ const Home = () => {
 
         {/* Responsive Map Section */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-          <div className="col-span-3 bg-white rounded-lg shadow-lg p-4">
+          {/* <div className="col-span-3 bg-white rounded-lg shadow-lg p-4">
             <h2 className="text-blue-600 font-bold mb-2">
               Today&apos;s Weather
             </h2>
             <MapContainer
               center={[7.9465, -1.0232]}
               zoom={6}
-              className="h-64 md:h-96"
+              className="h-96 md:h-[40rem] lg:h-[50rem] w-full"
             >
               <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -317,60 +317,244 @@ const Home = () => {
             <button className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-md">
               Reset Map
             </button>
+          </div> */}
+
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 h-screen">
+            {/* Left Sidebar: Weather Warnings */}
+            <div className="lg:col-span-1 bg-white rounded-lg shadow-lg p-4 overflow-auto">
+              <h2 className="text-red-600 font-bold mb-4">
+                <i className="fas fa-bell mr-2"></i> Latest Weather Warnings
+              </h2>
+              <ul className="space-y-4">
+                <li className="bg-yellow-100 border border-yellow-300 rounded-lg p-4 flex justify-between items-center">
+                  <div>
+                    <p className="font-bold text-blue-700">
+                      Ongoing: Thunderstorms/Squall lines (J...)
+                    </p>
+                    <p className="text-sm text-gray-500">Minor severity</p>
+                  </div>
+                  <i className="fas fa-arrow-right text-blue-500"></i>
+                </li>
+                <li className="bg-yellow-100 border border-yellow-300 rounded-lg p-4 flex justify-between items-center">
+                  <div>
+                    <p className="font-bold text-blue-700">
+                      Ongoing: Thunderstorms/Squall lines (T...)
+                    </p>
+                    <p className="text-sm text-gray-500">Yellow severity</p>
+                  </div>
+                  <i className="fas fa-arrow-right text-blue-500"></i>
+                </li>
+                <li className="bg-yellow-100 border border-yellow-300 rounded-lg p-4 flex justify-between items-center">
+                  <div>
+                    <p className="font-bold text-blue-700">
+                      Ongoing: Thunderstorms/Squall lines (K...)
+                    </p>
+                    <p className="text-sm text-gray-500">Minor severity</p>
+                  </div>
+                  <i className="fas fa-arrow-right text-blue-500"></i>
+                </li>
+                {/* Add more list items similarly */}
+              </ul>
+            </div>
+
+            {/* Right: Interactive Map */}
+            <div className="lg:col-span-3 bg-white rounded-lg shadow-lg p-4 relative">
+              <h2 className="text-gray-700 font-bold mb-2">
+                <i className="fas fa-calendar-alt mr-2"></i> Sat Oct 05 2024 -
+                16:00
+              </h2>
+              <MapContainer
+                center={[7.9465, -1.0232]}
+                zoom={6}
+                className="h-full w-full"
+              >
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                />
+                {/* Add your markers and popups here */}
+                <Marker position={[5.614818, -0.205874]}>
+                  <Popup>Accra: Sunny Intervals</Popup>
+                </Marker>
+                <Marker position={[4.9016, -1.7831]}>
+                  <Popup>Takoradi: Sunny Intervals</Popup>
+                </Marker>
+
+                <Marker position={[6.6666, -1.6163]}>
+                  <Popup>Kumasi: Sunny Intervals</Popup>
+                </Marker>
+
+                <Marker position={[9.4034, -0.8424]}>
+                  <Popup>Tamale: Sunny Intervals</Popup>
+                </Marker>
+
+                <Marker position={[6.6101, 0.4785]}>
+                  <Popup>Ho: Sunny Intervals</Popup>
+                </Marker>
+                <Marker position={[7.5909, -1.9344]}>
+                  <Popup>Techiman: Sunny Intervals</Popup>
+                </Marker>
+                <Marker position={[10.3516, -0.7985]}>
+                  <Popup>Walewale: Sunny Intervals</Popup>
+                </Marker>
+
+                <Marker position={[6.2159, -2.4851]}>
+                  <Popup>Sefwi Wiawso: Sunny Intervals</Popup>
+                </Marker>
+
+                <Marker position={[10.0601, -2.5099]}>
+                  <Popup>Wa: Sunny Intervals</Popup>
+                </Marker>
+
+                <Marker position={[9.0913, -1.827]}>
+                  <Popup>Damongo: Sunny Intervals</Popup>
+                </Marker>
+                <Marker position={[7.3349, -2.3123]}>
+                  <Popup>Sunyani: Sunny Intervals</Popup>
+                </Marker>
+                <Marker position={[6.8018, -2.5148]}>
+                  <Popup>Goaso: Sunny Intervals</Popup>
+                </Marker>
+                <Marker position={[7.8014, -0.0513]}>
+                  <Popup>Kete Krachi: Sunny Intervals</Popup>
+                </Marker>
+                <Marker position={[5.1231, -1.2689]}>
+                  <Popup>Cape Coast: Sunny Intervals</Popup>
+                </Marker>
+                <Marker position={[10.7875, -0.858]}>
+                  <Popup>Bolgatanga: Sunny Intervals</Popup>
+                </Marker>
+                <Marker position={[6.0784, -0.2714]}>
+                  <Popup>Koforidua: Sunny Intervals</Popup>
+                </Marker>
+              </MapContainer>
+
+              <div className="absolute bottom-4 right-4 bg-white p-2 rounded-lg shadow-md">
+                <h3 className="text-sm font-bold">Alert Severity</h3>
+                <ul className="text-xs">
+                  <li className="flex items-center">
+                    <span className="block w-4 h-4 bg-red-600 mr-2"></span>{" "}
+                    Extreme
+                  </li>
+                  <li className="flex items-center">
+                    <span className="block w-4 h-4 bg-orange-600 mr-2"></span>{" "}
+                    Severe
+                  </li>
+                  <li className="flex items-center">
+                    <span className="block w-4 h-4 bg-yellow-500 mr-2"></span>{" "}
+                    Moderate
+                  </li>
+                  <li className="flex items-center">
+                    <span className="block w-4 h-4 bg-blue-300 mr-2"></span>{" "}
+                    Minor
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           {/* Sidebar Forecast */}
           <div className="bg-white rounded-lg shadow-lg p-4">
-            <h2 className="text-blue-600 font-bold mb-2">Other Forecasts</h2>
+            <h2 className="text-blue-600 font-bold text-xl">Other Forecasts</h2>
             <ul className="space-y-4">
               <li>
-                <Link to="/5-days-forecast" className="text-blue-600">
-                  5 Days Forecast
+                <Link
+                  to="/5-days-forecast"
+                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                >
+                  <h3 className="text-blue-600 font-semibold">
+                    5 Days Forecast
+                  </h3>
                 </Link>
               </li>
               <li>
-                <Link to="/7-days-forecast" className="text-blue-600">
-                  7 Days Forecast
+                <Link
+                  to="/7-days-forecast"
+                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                >
+                  <h3 className="text-blue-600 font-semibold">
+                    7 Days Forecast
+                  </h3>
                 </Link>
               </li>
               <li>
-                <Link to="/agro-bulletins" className="text-blue-600">
-                  Agrometeorological Bulletins
+                <Link
+                  to="/agro-bulletins"
+                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                >
+                  <h3 className="text-blue-600 font-semibold">
+                    Agrometeorological Bulletins
+                  </h3>
                 </Link>
               </li>
               <li>
-                <Link to="/flood-drought" className="text-blue-600">
-                  Flood and Drought Bulletins
+                <Link
+                  to="/flood-drought"
+                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                >
+                  <h3 className="text-blue-600 font-semibold">
+                    Flood and Drought Bulletins
+                  </h3>
                 </Link>
               </li>
               <li>
-                <Link to="/subseasonal-forecast" className="text-blue-600">
-                  Subseasonal 2 Seasonal Forecast
+                <Link
+                  to="/subseasonal-forecast"
+                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                >
+                  <h3 className="text-blue-600 font-semibold">
+                    Subseasonal 2 Seasonal Forecast
+                  </h3>
                 </Link>
               </li>
               <li>
-                <Link to="/monthly-forecast" className="text-blue-600">
-                  Monthly Forecast
+                <Link
+                  to="/monthly-forecast"
+                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                >
+                  <h3 className="text-blue-600 font-semibold">
+                    Monthly Forecast
+                  </h3>
                 </Link>
               </li>
               <li>
-                <Link to="/seasonal-forecast" className="text-blue-600">
-                  Seasonal Forecast
+                <Link
+                  to="/seasonal-forecast"
+                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                >
+                  <h3 className="text-blue-600 font-semibold">
+                    Seasonal Forecast
+                  </h3>
                 </Link>
               </li>
               <li>
-                <Link to="/climate-report" className="text-blue-600">
-                  State of the Climate Report 2023
+                <Link
+                  to="/climate-report"
+                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                >
+                  <h3 className="text-blue-600 font-semibold">
+                    State of the Climate Report 2023
+                  </h3>
                 </Link>
               </li>
               <li>
-                <Link to="/crop-calendar" className="text-blue-600">
-                  Regional Crop & Poultry Calendar 2024
+                <Link
+                  to="/crop-calendar"
+                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                >
+                  <h3 className="text-blue-600 font-semibold">
+                    Crop Calendar 2024
+                  </h3>
                 </Link>
               </li>
               <li>
-                <Link to="/district-calendar" className="text-blue-600">
-                  District Crop & Poultry Calendar 2024
+                <Link
+                  to="/poultry-calendar"
+                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                >
+                  <h3 className="text-blue-600 font-semibold">
+                    Poultry Calendar 2024
+                  </h3>
                 </Link>
               </li>
             </ul>
@@ -381,93 +565,6 @@ const Home = () => {
           {/* <div className="bg-blue-500 text-white p-4 rounded-lg"></div> */}
 
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-            {/* <div className="flex-1 bg-white shadow rounded-lg overflow-hidden">
-              <div className="p-4 border-b">
-                <h3 className="text-lg font-semibold">Latest News</h3>
-              </div>
-              <div className="p-4 space-y-4">
-                <div className="flex items-center space-x-2">
-                  <img
-                    src="/api/placeholder/80/60"
-                    alt="News 1"
-                    className="w-20 h-15 object-cover rounded"
-                  />
-                  <p className="text-sm">
-                    Visit to GMet by Ministry of Environment, Climate change and
-                    Forestry CS Hon. Aden Duale and PS DR. Eng. Festus
-                  </p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <img
-                    src="/api/placeholder/80/60"
-                    alt="News 2"
-                    className="w-20 h-15 object-cover rounded"
-                  />
-                  <p className="text-sm">
-                    National Assembly committee on Environment, Forestry and
-                    Mining visit to the Meteorological Agency
-                  </p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <img
-                    src="/api/placeholder/80/60"
-                    alt="News 3"
-                    className="w-20 h-15 object-cover rounded"
-                  />
-                  <p className="text-sm">
-                    Release Of the SON seasonal forecast
-                  </p>
-                </div>
-              </div>
-            </div> */}
-
-            {/* <div className="flex-1 bg-white shadow rounded-lg overflow-hidden">
-              <div className="p-4 border-b">
-                <h3 className="text-lg font-semibold">Events</h3>
-              </div>
-              <div className="p-4 space-y-4">
-                <div className="flex items-center space-x-2">
-                  <img
-                    src="/api/placeholder/80/60"
-                    alt="Event 1"
-                    className="w-20 h-15 object-cover rounded"
-                  />
-                  <div>
-                    <p className="font-semibold">
-                      WORLD METEOROLOGICAL ORGANIZATION(WMO) SATELLITE TRAINING
-                      COURSE ON METEOSAT THIRD GENERATION (MTG)
-                    </p>
-                    <p className="text-sm">20 Nov 2023 - 24 Nov 2023</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <img
-                    src="/api/placeholder/80/60"
-                    alt="Event 2"
-                    className="w-20 h-15 object-cover rounded"
-                  />
-                  <div>
-                    <p className="font-semibold">
-                      ASMET SATELLITE APPLICATION TRAINING COURSE AT ACCRA-GHANA
-                    </p>
-                    <p className="text-sm">26 Feb 2024 - 01 Mar 2024</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <img
-                    src="/api/placeholder/80/60"
-                    alt="Event 3"
-                    className="w-20 h-15 object-cover rounded"
-                  />
-                  <div>
-                    <p className="font-semibold">
-                      World Meteorological Day 2024
-                    </p>
-                    <p className="text-sm">23 Mar 2024</p>
-                  </div>
-                </div>
-              </div>
-            </div> */}
             <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden">
               {/* Card Header */}
               <div className="p-4 border-b bg-blue-50">
