@@ -1,24 +1,18 @@
 /* eslint-disable react/prop-types */
-import { CloudSun, CloudRainWind, Sun, Search } from "lucide-react";
+import { CloudSun, CloudRainWind, Sun } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css"; // Import Leaflet styles
 import L from "leaflet";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
-import logo from "../assets/images/ghaaplogo.png";
-import logo2 from "../assets/images/mofalog.png";
-import logo3 from "../assets/images/fsrp.png";
-import logo4 from "../assets/images/gmetlogo.jpg";
+import { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import facebook from "../assets/icons/facebook.png";
-import linkedIn from "../assets/icons/linkedin.png";
-import xTwitter from "../assets/icons/x.png";
-import youTube from "../assets/icons/youtube.png";
-import whatsapp from "../assets/icons/whatsapp.png";
+import backgroundImage from "../assets/images/Rainy.jpg";
+
 import thermometer from "../assets/images/thermometer.svg";
 import event1 from "../assets/images/event1.png";
 import event2 from "../assets/images/event2.png";
@@ -171,82 +165,62 @@ const Home = () => {
     ],
   };
 
+  const [currentDateTime, setCurrentDateTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 1000); // Update every second
+
+    return () => clearInterval(timer); // Clean up the interval on component unmount
+  }, []);
+
+  const formattedDate = currentDateTime.toLocaleDateString("en-US", {
+    weekday: "short", // "Sat"
+    month: "short", // "Oct"
+    day: "numeric", // "05"
+    year: "numeric", // "2024"
+  });
+
+  const formattedTime = currentDateTime.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-400 to-blue-600 mx-auto px-4 py-6 md:px-8 lg:px-12">
-      <header className="bg-white  p-4 flex flex-col md:flex-row justify-between items-center">
-        <div className="flex items-center space-x-4 mb-2 md:mb-0 md:ml-0">
-          <img src={logo2} alt="Mofa logo" className="h-12 md:h-16" />
-          <img src={logo3} alt="Fsrp logo" className="h-12 md:h-16" />
-          <img src={logo4} alt="GMet logo" className="h-12 md:h-16" />
-        </div>
-        <nav className="space-x-2 md:space-x-4 text-sm">
-          <div className="flex justify-center md:justify-end space-x-2 md:space-x-4 my-4">
-            <a href="#">
-              <img
-                src={facebook}
-                alt="Facebook"
-                className="h-5 w-5 md:h-6 md:w-6"
-              />
-            </a>
-            <a href="#">
-              <img
-                src={linkedIn}
-                alt="LinkedIn"
-                className="h-5 w-5 md:h-6 md:w-6"
-              />
-            </a>
-            <a href="#">
-              <img
-                src={xTwitter}
-                alt="XTwitter"
-                className="h-5 w-5 md:h-6 md:w-6"
-              />
-            </a>
-            <a href="#">
-              <img
-                src={youTube}
-                alt="YouTube"
-                className="h-5 w-5 md:h-6 md:w-6"
-              />
-            </a>
-            <a href="#">
-              <img
-                src={whatsapp}
-                alt="whatsapp"
-                className="h-5 w-5 md:h-6 md:w-6"
-              />
-            </a>
-            <Search className="inline-block w-4 h-4 text-blue-600" />
-          </div>
-        </nav>
-      </header>
-
+    // <div className="min-h-screen bg-gradient-to-b from-blue-400 to-blue-600 mx-auto px-4 py-6 md:px-8 lg:px-12">
+    <div
+      className="min-h-screen bg-cover bg-center mx-auto px-4 py-6 md:px-8 lg:px-12"
+      style={{
+        backgroundImage: `url(${backgroundImage})`, // Replace with your image path
+      }}
+    >
       <main className="container mx-auto">
-        <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold text-white text-center my-4 md:my-6">
-          Climate Information Services
-        </h1>
+        <div className="pt-16 md:pt-20">
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-white text-center my-4 md:my-6">
+            Climate Information Services
+          </h1>
 
-        <div className="bg-[#11487e] rounded-lg shadow-lg p-4 mb-8">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-white text-lg md:text-xl">
-              Weather for {getFormattedDate()}
-            </h2>
+          <div className="bg-[#11487e] rounded-lg shadow-lg p-4 mb-8">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-white text-lg md:text-xl">
+                Weather for {getFormattedDate()}
+              </h2>
+            </div>
+
+            <div className="slider-container">
+              <Slider {...settings}>
+                {weatherData.map((data, index) => (
+                  <WeatherCard key={index} {...data} />
+                ))}
+              </Slider>
+            </div>
           </div>
 
-          <div className="slider-container">
-            <Slider {...settings}>
-              {weatherData.map((data, index) => (
-                <WeatherCard key={index} {...data} />
-              ))}
-            </Slider>
-          </div>
-        </div>
-
-        {/* Responsive Map Section */}
-        <div className="grid grid-cols-3 lg:grid-cols-4 gap-4">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 h-screen">
+          {/* Responsive Map Section */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Left Sidebar: Weather Warnings */}
-            <div className="lg:col-span-1 bg-white rounded-lg shadow-lg p-4 overflow-auto">
+            <div className="lg:col-span-1 bg-white rounded-lg shadow-lg p-4">
               <h2 className="text-red-600 font-bold mb-4">
                 <i className="fas fa-bell mr-2"></i> Latest Weather Warnings
               </h2>
@@ -283,15 +257,21 @@ const Home = () => {
             </div>
 
             {/* Right: Interactive Map */}
-            <div className="lg:col-span-3 bg-white rounded-lg shadow-lg p-4 relative">
-              <h2 className="text-gray-700 font-bold mb-2">
+            <div className="lg:col-span-2 bg-white rounded-lg shadow-lg p-4 sticky h-full">
+              {/* <h2 className="text-gray-700 font-bold mb-2">
                 <i className="fas fa-calendar-alt mr-2"></i> Sat Oct 05 2024 -
                 16:00
+              </h2> */}
+
+              <h2 className="text-gray-700 font-bold mb-2">
+                <i className="fas fa-calendar-alt mr-2"></i>
+                {`${formattedDate} - ${formattedTime}`}
               </h2>
+
               <MapContainer
                 center={[7.9465, -1.0232]}
                 zoom={6}
-                className="h-full w-full"
+                className="h-96 lg:h-[780px] w-full"
               >
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -353,7 +333,6 @@ const Home = () => {
                   <Popup>Koforidua: Sunny Intervals</Popup>
                 </Marker>
               </MapContainer>
-
               <div className="absolute bottom-4 right-4 bg-white p-2 rounded-lg shadow-md">
                 <h3 className="text-sm font-bold">Alert Severity</h3>
                 <ul className="text-xs">
@@ -376,233 +355,236 @@ const Home = () => {
                 </ul>
               </div>
             </div>
-          </div>
+            {/* </div> */}
 
-          {/* Sidebar Forecast */}
-          <div className="bg-white rounded-lg shadow-lg p-4">
-            <h2 className="text-blue-600 font-bold text-xl">Other Forecasts</h2>
-            <ul className="space-y-4">
-              <li>
-                <Link
-                  to="/5-days-forecast"
-                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
-                >
-                  <h3 className="text-blue-600 font-semibold">
-                    5 Days Forecast
-                  </h3>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/7-days-forecast"
-                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
-                >
-                  <h3 className="text-blue-600 font-semibold">
-                    7 Days Forecast
-                  </h3>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/agro-bulletins"
-                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
-                >
-                  <h3 className="text-blue-600 font-semibold">
-                    Agrometeorological Bulletins
-                  </h3>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/flood-drought"
-                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
-                >
-                  <h3 className="text-blue-600 font-semibold">
-                    Flood and Drought Bulletins
-                  </h3>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/subseasonal-forecast"
-                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
-                >
-                  <h3 className="text-blue-600 font-semibold">
-                    Subseasonal 2 Seasonal Forecast
-                  </h3>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/monthly-forecast"
-                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
-                >
-                  <h3 className="text-blue-600 font-semibold">
-                    Monthly Forecast
-                  </h3>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/seasonal-forecast"
-                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
-                >
-                  <h3 className="text-blue-600 font-semibold">
-                    Seasonal Forecast
-                  </h3>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/climate-report"
-                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
-                >
-                  <h3 className="text-blue-600 font-semibold">
-                    State of the Climate Report 2023
-                  </h3>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/crop-calendar"
-                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
-                >
-                  <h3 className="text-blue-600 font-semibold">
-                    Crop Calendar 2024
-                  </h3>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/poultry-calendar"
-                  className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
-                >
-                  <h3 className="text-blue-600 font-semibold">
-                    Poultry Calendar 2024
-                  </h3>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="flex flex-col space-y-4 m-8 p-4">
-          {/* <div className="bg-blue-500 text-white p-4 rounded-lg"></div> */}
-
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-            <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden">
-              {/* Card Header */}
-              <div className="p-4 border-b bg-blue-50">
-                <h3 className="text-lg font-semibold text-blue-600">
-                  Latest News
-                </h3>
-              </div>
-
-              {/* News List */}
-              <div className="p-4 space-y-6">
-                {/* News Item 1 */}
-                <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
-                  <img
-                    src={image1}
-                    alt="News 1"
-                    className="w-24 h-16 object-cover rounded-lg"
-                  />
-                  <div className="text-sm">
-                    <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                      Visit to GMet by Ministry of Environment, Climate Change
-                      and Forestry CS Hon. Aden Duale and PS DR. Eng. Festus
-                    </p>
-                  </div>
-                </div>
-
-                {/* News Item 2 */}
-                <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
-                  <img
-                    src={image2}
-                    alt="News 2"
-                    className="w-24 h-16 object-cover rounded-lg"
-                  />
-                  <div className="text-sm">
-                    <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                      National Assembly committee on Environment, Forestry and
-                      Mining visit to the Meteorological Agency
-                    </p>
-                  </div>
-                </div>
-
-                {/* News Item 3 */}
-                <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
-                  <img
-                    src={image3}
-                    alt="News 3"
-                    className="w-24 h-16 object-cover rounded-lg"
-                  />
-                  <div className="text-sm">
-                    <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                      Release of the SON seasonal forecast
-                    </p>
-                  </div>
-                </div>
-              </div>
+            {/* Sidebar Forecast */}
+            <div className="bg-white rounded-lg shadow-lg p-4">
+              <h2 className="text-blue-600 font-bold text-xl">
+                Other Forecasts
+              </h2>
+              <ul className="space-y-4">
+                <li>
+                  <Link
+                    to="/5-days-forecast"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      5 Days Forecast
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/7-days-forecast"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      7 Days Forecast
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/agro-bulletins"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      Agrometeorological Bulletins
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/flood-drought"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      Flood and Drought Bulletins
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/subseasonal-forecast"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      Subseasonal 2 Seasonal Forecast
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/monthly-forecast"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      Monthly Forecast
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/seasonal-forecast"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      Seasonal Forecast
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/climate-report"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      State of the Climate Report 2023
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/crop-calendar"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      Crop Calendar 2024
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/poultry-calendar"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      Poultry Calendar 2024
+                    </h3>
+                  </Link>
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden">
-              {/* Header */}
-              <div className="p-4 border-b border-gray-200 bg-blue-50">
-                <h3 className="text-lg font-semibold text-blue-600">
-                  Upcoming Events
-                </h3>
+          <div className="flex flex-col space-y-4 m-8 p-4">
+            {/* <div className="bg-blue-500 text-white p-4 rounded-lg"></div> */}
+
+            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+              <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden">
+                {/* Card Header */}
+                <div className="p-4 border-b bg-blue-50">
+                  <h3 className="text-lg font-semibold text-blue-600">
+                    Latest News
+                  </h3>
+                </div>
+
+                {/* News List */}
+                <div className="p-4 space-y-6">
+                  {/* News Item 1 */}
+                  <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                    <img
+                      src={image1}
+                      alt="News 1"
+                      className="w-24 h-16 object-cover rounded-lg"
+                    />
+                    <div className="text-sm">
+                      <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                        Visit to GMet by Ministry of Environment, Climate Change
+                        and Forestry CS Hon. Aden Duale and PS DR. Eng. Festus
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* News Item 2 */}
+                  <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                    <img
+                      src={image2}
+                      alt="News 2"
+                      className="w-24 h-16 object-cover rounded-lg"
+                    />
+                    <div className="text-sm">
+                      <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                        National Assembly committee on Environment, Forestry and
+                        Mining visit to the Meteorological Agency
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* News Item 3 */}
+                  <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                    <img
+                      src={image3}
+                      alt="News 3"
+                      className="w-24 h-16 object-cover rounded-lg"
+                    />
+                    <div className="text-sm">
+                      <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                        Release of the SON seasonal forecast
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Event List */}
-              <div className="p-4 space-y-6">
-                {/* Event 1 */}
-                <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
-                  <img
-                    src={event1}
-                    alt="Event 1"
-                    className="w-24 h-16 object-cover rounded-lg"
-                  />
-                  <div>
-                    <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                      WORLD METEOROLOGICAL ORGANIZATION(WMO) SATELLITE TRAINING
-                      COURSE ON METEOSAT THIRD GENERATION (MTG)
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      20 Nov 2023 - 24 Nov 2023
-                    </p>
-                  </div>
+              <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden">
+                {/* Header */}
+                <div className="p-4 border-b border-gray-200 bg-blue-50">
+                  <h3 className="text-lg font-semibold text-blue-600">
+                    Upcoming Events
+                  </h3>
                 </div>
 
-                {/* Event 2 */}
-                <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
-                  <img
-                    src={event2}
-                    alt="Event 2"
-                    className="w-24 h-16 object-cover rounded-lg"
-                  />
-                  <div>
-                    <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                      CLIMATE DATA TRAINING COURSE AT ACCRA-GHANA
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      26 Feb 2024 - 01 Mar 2024
-                    </p>
+                {/* Event List */}
+                <div className="p-4 space-y-6">
+                  {/* Event 1 */}
+                  <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                    <img
+                      src={event1}
+                      alt="Event 1"
+                      className="w-24 h-16 object-cover rounded-lg"
+                    />
+                    <div>
+                      <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                        WORLD METEOROLOGICAL ORGANIZATION(WMO) SATELLITE
+                        TRAINING COURSE ON METEOSAT THIRD GENERATION (MTG)
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        20 Nov 2023 - 24 Nov 2023
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                {/* Event 3 */}
-                <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
-                  <img
-                    src={event3}
-                    alt="Event 3"
-                    className="w-24 h-16 object-cover rounded-lg"
-                  />
-                  <div>
-                    <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                      World Meteorological Day 2024
-                    </p>
-                    <p className="text-sm text-gray-500">23 Mar 2024</p>
+                  {/* Event 2 */}
+                  <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                    <img
+                      src={event2}
+                      alt="Event 2"
+                      className="w-24 h-16 object-cover rounded-lg"
+                    />
+                    <div>
+                      <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                        CLIMATE DATA TRAINING COURSE AT ACCRA-GHANA
+                      </p>
+                      <p className="text-sm text-gray-500">
+                        26 Feb 2024 - 01 Mar 2024
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Event 3 */}
+                  <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                    <img
+                      src={event3}
+                      alt="Event 3"
+                      className="w-24 h-16 object-cover rounded-lg"
+                    />
+                    <div>
+                      <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                        World Meteorological Day 2024
+                      </p>
+                      <p className="text-sm text-gray-500">23 Mar 2024</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -610,80 +592,6 @@ const Home = () => {
           </div>
         </div>
       </main>
-
-      <footer className="bg-blue-900 text-white mb-1 mt-2 p-8 text-center md:text-left">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Logo and Description */}
-          <div className="flex flex-col items-center md:items-start ">
-            <img src={logo} alt="Ghaap logo" className="h-16 mb-4" />
-            <p className="text-sm">
-              GhAAP is committed to providing top-notch solutions that drive
-              business success. Stay connected and discover more about our
-              services.
-            </p>
-          </div>
-
-          {/* Navigation Links */}
-          <div className="flex flex-col items-center md:items-center">
-            <h5 className="font-semibold mb-3 text-lg">Quick Links</h5>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="/about" className="hover:text-gray-400">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="/services" className="hover:text-gray-400">
-                  Our Services
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-gray-400">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="/careers" className="hover:text-gray-400">
-                  Careers
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social Media and Legal */}
-          <div className="flex flex-col items-center md:items-start">
-            <h5 className="font-semibold mb-3 text-lg">Connect With Us</h5>
-            <div className="flex space-x-4 mb-4">
-              <a href="#" className="hover:text-gray-400" aria-label="Facebook">
-                <i className="fab fa-facebook h-6 w-6"></i>
-              </a>
-              <a href="#" className="hover:text-gray-400" aria-label="Twitter">
-                <i className="fab fa-twitter h-6 w-6"></i>
-              </a>
-              <a href="#" className="hover:text-gray-400" aria-label="LinkedIn">
-                <i className="fab fa-linkedin h-6 w-6"></i>
-              </a>
-            </div>
-            <ul className="text-sm space-y-2">
-              <li>
-                <a href="/privacy" className="hover:text-gray-400">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="/terms" className="hover:text-gray-400">
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Copyright Notice */}
-        <div className="mt-8 border-t border-gray-700 pt-4 text-xs text-gray-400 flex justify-center">
-          <p>&copy; 2024 GhAAP. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 };

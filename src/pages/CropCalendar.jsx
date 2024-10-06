@@ -145,7 +145,7 @@ const generateRegionActivities = () => {
 const regionCalendars = generateRegionActivities();
 
 const CropCalendar = () => {
-  const [selectedCrop, setSelectedCrop] = useState("maize");
+  const [selectedCrop, setSelectedCrop] = useState("all");
   const [selectedRegion, setSelectedRegion] = useState("Northern");
   const [selectedDistrict, setSelectedDistrict] = useState("");
   const farmingActivities = regionCalendars[selectedRegion] || [];
@@ -250,6 +250,7 @@ const CropCalendar = () => {
               onChange={handleCropChange}
               className="border border-gray-300 rounded p-2 w-full"
             >
+              <option value="all">All crops</option> {/* Default option */}
               <option value="maize">Maize</option>
               <option value="soyabean">Soyabean</option>
               <option value="sorghum">Sorghum</option>
@@ -301,7 +302,7 @@ const CropCalendar = () => {
             <thead>
               <tr className="bg-gray-200">
                 <th className="border border-gray-300 p-2 text-left">
-                  Activity
+                  Stage of Activity
                 </th>
                 {Array.from({ length: 12 }, (_, i) => (
                   <th key={i} className="border border-gray-300 p-2 text-left">

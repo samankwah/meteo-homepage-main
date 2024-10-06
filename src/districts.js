@@ -1,4 +1,5 @@
 export const districtOfGhana = [
+  { name: "All-districts", region: "Northern" },
   { name: "Bunkpurugu-Nakpanduri", region: "Northern" },
   { name: "Central Gonja", region: "Northern" },
   { name: "Chereponi", region: "Northern" },
