@@ -12,7 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import backgroundImage from "../assets/images/Rainy.jpg";
-
+import { FaCloudSun, FaThermometerHalf } from "react-icons/fa";
 import thermometer from "../assets/images/thermometer.svg";
 import event1 from "../assets/images/event1.png";
 import event2 from "../assets/images/event2.png";
@@ -20,6 +20,7 @@ import event3 from "../assets/images/event3.png";
 import image1 from "../assets/images/image1.png";
 import image2 from "../assets/images/image2.png";
 import image3 from "../assets/images/image3.png";
+import "../components/PopupStyles.css";
 
 const WeatherIcon = ({ condition }) => {
   switch (condition) {
@@ -186,6 +187,18 @@ const Home = () => {
     hour: "2-digit",
     minute: "2-digit",
   });
+  const [currentDate, setCurrentDate] = useState("");
+
+  useEffect(() => {
+    // Auto update date in the format you want
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+    setCurrentDate(formattedDate);
+  }, []);
 
   return (
     // <div className="min-h-screen bg-gradient-to-b from-blue-400 to-blue-600 mx-auto px-4 py-6 md:px-8 lg:px-12">
@@ -279,7 +292,65 @@ const Home = () => {
                 />
                 {/* Add your markers and popups here */}
                 <Marker position={[5.614818, -0.205874]}>
-                  <Popup>Accra: Sunny Intervals</Popup>
+                  <Popup>
+                    {/* <div className="popup-container">
+                      <h2 className="city-name">Accra</h2>
+                      <div className="date">19 Sep 2024</div>
+                      <div className="weather-detail">
+                        <div className="weather-time">
+                          <span>Morning</span>
+                          <FaCloudSun className="weather-icon" />
+                          <span>Sunny Intervals</span>
+                        </div>
+                        <div className="weather-time">
+                          <span>Afternoon</span>
+                          <FaCloudSun className="weather-icon" />
+                          <span>Sunny Intervals</span>
+                        </div>
+                        <div className="temp-detail">
+                          <FaThermometerHalf className="temp-icon" />
+                          <span>23 - 30°C</span>
+                        </div>
+                      </div>
+                    </div> */}
+                    <div className="popup-content">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Accra</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        <div className="weather-info">
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                            <FaCloudSun className="weather-icon" />
+                          </p>
+                          {/* <FaCloudSun className="weather-icon" /> */}
+                          <hr className="my-2 border-gray-300" />
+                        </div>
+                        <div className="weather-info">
+                          <FaCloudSun className="weather-icon" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                          <hr className="my-2 border-gray-300" />
+                        </div>
+                        <div className="weather-info">
+                          <FaThermometerHalf className="temp-icon" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
                 <Marker position={[4.9016, -1.7831]}>
                   <Popup>Takoradi: Sunny Intervals</Popup>
