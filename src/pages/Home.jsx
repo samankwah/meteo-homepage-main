@@ -313,7 +313,7 @@ const Home = () => {
                         </div>
                       </div>
                     </div> */}
-                    <div className="popup-content">
+                    <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
                       <h2 className="location-title">Accra</h2>
 
@@ -327,23 +327,29 @@ const Home = () => {
                       <hr className="my-2 border-gray-300" />
 
                       <div className="weather-details">
-                        <div className="weather-info">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
-                            <FaCloudSun className="weather-icon" />
                           </p>
-                          {/* <FaCloudSun className="weather-icon" /> */}
-                          <hr className="my-2 border-gray-300" />
                         </div>
-                        <div className="weather-info">
-                          <FaCloudSun className="weather-icon" />
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
-                          <hr className="my-2 border-gray-300" />
                         </div>
-                        <div className="weather-info">
-                          <FaThermometerHalf className="temp-icon" />
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
                           <p>
                             <strong>Temp:</strong> 23 - 30°C
                           </p>
@@ -353,55 +359,715 @@ const Home = () => {
                   </Popup>
                 </Marker>
                 <Marker position={[4.9016, -1.7831]}>
-                  <Popup>Takoradi: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Takoradi</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
 
                 <Marker position={[6.6666, -1.6163]}>
-                  <Popup>Kumasi: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Kumasi</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
 
                 <Marker position={[9.4034, -0.8424]}>
-                  <Popup>Tamale: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Tamale</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
 
                 <Marker position={[6.6101, 0.4785]}>
-                  <Popup>Ho: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Ho</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
                 <Marker position={[7.5909, -1.9344]}>
-                  <Popup>Techiman: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Techiman</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
                 <Marker position={[10.3516, -0.7985]}>
-                  <Popup>Walewale: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Walewale</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
 
                 <Marker position={[6.2159, -2.4851]}>
-                  <Popup>Sefwi Wiawso: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Sefwi Wiawso</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
 
                 <Marker position={[10.0601, -2.5099]}>
-                  <Popup>Wa: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Wa</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
 
                 <Marker position={[9.0913, -1.827]}>
-                  <Popup>Damongo: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Damongo</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
                 <Marker position={[7.3349, -2.3123]}>
-                  <Popup>Sunyani: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Sunyani</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
                 <Marker position={[6.8018, -2.5148]}>
-                  <Popup>Goaso: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Goaso</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
                 <Marker position={[7.8014, -0.0513]}>
-                  <Popup>Kete Krachi: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Kete Krachi</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
                 <Marker position={[5.1231, -1.2689]}>
-                  <Popup>Cape Coast: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Cape Coast</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
                 <Marker position={[10.7875, -0.858]}>
-                  <Popup>Bolgatanga: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Bolgatanga</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
                 <Marker position={[6.0784, -0.2714]}>
-                  <Popup>Koforidua: Sunny Intervals</Popup>
+                  <Popup>
+                    <div className="popup-content flex flex-col">
+                      {/* Location and weather info */}
+                      <h2 className="location-title">Koforidua</h2>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      {/* Date Section */}
+                      <p className="text-blue-600 font-bold">{currentDate}</p>
+
+                      {/* Horizontal Rule */}
+                      <hr className="my-2 border-gray-300" />
+
+                      <div className="weather-details">
+                        {/* Morning Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Morning:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Afternoon Weather */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <p>
+                            <strong>Afternoon:</strong> Sunny Intervals
+                          </p>
+                        </div>
+
+                        <hr className="my-2 border-gray-300" />
+
+                        {/* Temperature Info */}
+                        <div className="weather-info flex items-center my-2">
+                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                          <p>
+                            <strong>Temp:</strong> 23 - 30°C
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Popup>
                 </Marker>
               </MapContainer>
               <div className="absolute bottom-4 right-4 bg-white p-2 rounded-lg shadow-md">
