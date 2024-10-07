@@ -201,7 +201,6 @@ const Home = () => {
   }, []);
 
   return (
-    // <div className="min-h-screen bg-gradient-to-b from-blue-400 to-blue-600 mx-auto px-4 py-6 md:px-8 lg:px-12">
     <div
       className="min-h-screen bg-cover bg-center mx-auto px-4 py-6 md:px-8 lg:px-12"
       style={{
@@ -271,11 +270,6 @@ const Home = () => {
 
             {/* Right: Interactive Map */}
             <div className="lg:col-span-2 bg-white rounded-lg shadow-lg p-4 sticky h-full">
-              {/* <h2 className="text-gray-700 font-bold mb-2">
-                <i className="fas fa-calendar-alt mr-2"></i> Sat Oct 05 2024 -
-                16:00
-              </h2> */}
-
               <h2 className="text-gray-700 font-bold mb-2">
                 <i className="fas fa-calendar-alt mr-2"></i>
                 {`${formattedDate} - ${formattedTime}`}
@@ -293,26 +287,6 @@ const Home = () => {
                 {/* Add your markers and popups here */}
                 <Marker position={[5.614818, -0.205874]}>
                   <Popup>
-                    {/* <div className="popup-container">
-                      <h2 className="city-name">Accra</h2>
-                      <div className="date">19 Sep 2024</div>
-                      <div className="weather-detail">
-                        <div className="weather-time">
-                          <span>Morning</span>
-                          <FaCloudSun className="weather-icon" />
-                          <span>Sunny Intervals</span>
-                        </div>
-                        <div className="weather-time">
-                          <span>Afternoon</span>
-                          <FaCloudSun className="weather-icon" />
-                          <span>Sunny Intervals</span>
-                        </div>
-                        <div className="temp-detail">
-                          <FaThermometerHalf className="temp-icon" />
-                          <span>23 - 30°C</span>
-                        </div>
-                      </div>
-                    </div> */}
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
                       <h2 className="location-title">Accra</h2>
@@ -1227,8 +1201,8 @@ const Home = () => {
                     />
                     <div className="text-sm">
                       <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                        Visit to GMet by Ministry of Environment, Climate Change
-                        and Forestry CS Hon. Aden Duale and PS DR. Eng. Festus
+                        Visit to GMet by Ministry of Environment, Climate
+                        Change. Hon. Stephen Amankwah and PS DR. Eng. Festus
                       </p>
                     </div>
                   </div>
@@ -1287,7 +1261,7 @@ const Home = () => {
                         TRAINING COURSE ON METEOSAT THIRD GENERATION (MTG)
                       </p>
                       <p className="text-sm text-gray-500">
-                        20 Nov 2023 - 24 Nov 2023
+                        20 Nov 2024 - 24 Nov 2024
                       </p>
                     </div>
                   </div>
@@ -1304,7 +1278,7 @@ const Home = () => {
                         CLIMATE DATA TRAINING COURSE AT ACCRA-GHANA
                       </p>
                       <p className="text-sm text-gray-500">
-                        26 Feb 2024 - 01 Mar 2024
+                        26 Nov 2024 - 01 Dec 2024
                       </p>
                     </div>
                   </div>
