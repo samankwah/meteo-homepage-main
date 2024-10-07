@@ -2,7 +2,7 @@ import { FaDownload } from "react-icons/fa";
 
 const FloodDrought = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8">
+    <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8 pt-24">
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-10">
         <h1 className="text-blue-800 text-4xl font-bold mb-4 text-center">
           Flood and Drought Monitoring

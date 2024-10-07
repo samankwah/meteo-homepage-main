@@ -26,7 +26,7 @@ const SevenDaysForecast = () => {
   };
 
   return (
-    <div className="main-content bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-4 flex flex-col items-center">
+    <div className="main-content bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-4 flex flex-col items-center pt-24">
       <h1 className="text-blue-600 text-2xl sm:text-3xl font-bold mb-4">
         7 Days Forecast
       </h1>

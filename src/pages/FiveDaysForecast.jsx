@@ -22,7 +22,7 @@ const FiveDaysForecast = () => {
   };
 
   return (
-    <div className="main-content bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex flex-col items-center p-6 sm:p-10 relative pt-36">
+    <div className="main-content bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex flex-col items-center p-6 sm:p-10 relative pt-24">
       {"pt-36"}
       {/* Add padding-top here */}
       {/* Title Section */}
