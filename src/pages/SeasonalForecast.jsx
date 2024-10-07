@@ -120,10 +120,10 @@ const SeasonalForecast = () => {
     <div className="container mx-auto p-6 bg-teal-900 text-white pt-24">
       {/* Header Section */}
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold">{selectedZone} Forecast</h1>
-        <p className="text-xl text-yellow-400">
+        <h1 className="text-5xl font-bold">{selectedZone} Forecast</h1>
+        <strong className="text-2xl text-yellow-400">
           NORMAL ONSET AND EARLY CESSATION
-        </p>
+        </strong>
       </div>
       {/* Download Button */}
       <div className="flex justify-end mt-8">
@@ -165,7 +165,7 @@ const SeasonalForecast = () => {
         <div className="bg-white text-black rounded-lg p-6">
           <GiWaterDrop
             className="inline text-blue-500 mr-2 pt-12"
-            style={{ fontSize: "2.5rem" }}
+            style={{ fontSize: "1.5rem" }}
           />
           <FaCloudRain
             className="inline text-blue-500 mr-2"
@@ -173,7 +173,7 @@ const SeasonalForecast = () => {
           />
           <GiWaterDrop
             className="inline text-blue-500 mr-2"
-            style={{ fontSize: "2.5rem" }}
+            style={{ fontSize: "1.5rem" }}
           />
 
           <FaCloudSun
