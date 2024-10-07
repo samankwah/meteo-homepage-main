@@ -2,11 +2,11 @@ import logo from "../assets/images/ghaaplogo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white w-full py-8 md:py-12 md:px-12">
+    <footer className="bg-blue-900 text-white w-full py-4 md:py-6 md:px-12">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-        {/* Logo and Description */}
         <div className="flex flex-col items-center md:items-start">
-          <img src={logo} alt="Ghaap logo" className="h-16 mb-4" />
+          <img src={logo} alt="Ghaap logo" className="h-16 mb-2" />
+
           <p className="text-sm text-gray-300 text-center md:text-left">
             GhAAP is committed to providing top-notch solutions that drive
             business success. Stay connected and discover more about our
@@ -16,10 +16,10 @@ const Footer = () => {
 
         {/* Navigation Links */}
         <div className="flex flex-col items-center md:items-center">
-          <h5 className="font-semibold mb-3 text-lg text-gray-100">
+          <h5 className="font-semibold mb-2 text-lg text-gray-100">
             Quick Links
           </h5>
-          <ul className="space-y-2 text-sm text-gray-300">
+          <ul className="space-y-1 text-sm text-gray-300">
             <li>
               <a href="/about" className="hover:text-gray-400">
                 About Us
@@ -45,10 +45,10 @@ const Footer = () => {
 
         {/* Social Media and Legal */}
         <div className="flex flex-col items-center md:items-start">
-          <h5 className="font-semibold mb-3 text-lg text-gray-100">
+          <h5 className="font-semibold mb-2 text-lg text-gray-100">
             Connect With Us
           </h5>
-          <div className="flex space-x-4 mb-4">
+          <div className="flex space-x-4 mb-2">
             <a href="#" className="hover:text-gray-400" aria-label="Facebook">
               <i className="fab fa-facebook h-6 w-6"></i>
             </a>
@@ -59,7 +59,7 @@ const Footer = () => {
               <i className="fab fa-linkedin h-6 w-6"></i>
             </a>
           </div>
-          <ul className="text-sm space-y-2 text-gray-300">
+          <ul className="text-sm space-y-1 text-gray-300">
             <li>
               <a href="/privacy" className="hover:text-gray-400">
                 Privacy Policy
@@ -74,8 +74,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright Notice */}
-      <div className="mt-8 border-t border-gray-600 pt-4 text-xs text-gray-400 flex justify-center">
+      <div className="mt-4 border-t border-gray-600 pt-2 text-xs text-gray-400 flex justify-center">
         <p>&copy; 2024 GhAAP. All rights reserved.</p>
       </div>
     </footer>
