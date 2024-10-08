@@ -125,30 +125,7 @@ const SeasonalForecast = () => {
           NORMAL ONSET AND EARLY CESSATION
         </strong>
       </div>
-      {/* Download Button */}
-      {/* <div className="flex justify-end mt-8">
-        <button
-          onClick={handleDownload}
-          className="flex items-center bg-yellow-500 text-black px-4 py-2 rounded-md hover:bg-yellow-400"
-        >
-          <FaDownload className="mr-2" /> Download Forecast
-        </button>
-      </div> */}
 
-      {/* Zone Selection */}
-      {/* <div className="flex justify-start mb-8">
-        <select
-          value={selectedZone}
-          onChange={(e) => setSelectedZone(e.target.value)}
-          className="text-black p-2 rounded-md"
-        >
-          {Object.keys(forecastData).map((zone) => (
-            <option key={zone} value={zone}>
-              {zone}
-            </option>
-          ))}
-        </select>
-      </div> */}
       <div className="flex justify-between items-center mt-8">
         {" "}
         {/* Flexbox container to align both elements */}
