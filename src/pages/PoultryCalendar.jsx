@@ -193,7 +193,7 @@ const PoultryCalendar = () => {
             <select
               value={selectedPoultry}
               onChange={handlePoultryChange}
-              className="border border-gray-300 rounded p-2 w-full"
+              className="border border-gray-300 rounded p-2 w-2/3"
             >
               <option value="layers">Layers</option>
               <option value="broilers">Broilers</option>
@@ -206,7 +206,7 @@ const PoultryCalendar = () => {
             <select
               value={selectedRegion}
               onChange={handleRegionChange}
-              className="border border-gray-300 rounded p-2 w-full"
+              className="border border-gray-300 rounded p-2 w-2/3"
             >
               {regionsOfGhana.map((region) => (
                 <option key={region} value={region}>
@@ -224,7 +224,7 @@ const PoultryCalendar = () => {
             <select
               value={selectedDistrict}
               onChange={handleDistrictChange}
-              className="border border-gray-300 rounded p-2 w-full"
+              className="border border-gray-300 rounded p-2 w-2/3"
             >
               {districtOfGhana
                 .filter((d) => d.region === selectedRegion)

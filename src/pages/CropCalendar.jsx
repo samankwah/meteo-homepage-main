@@ -241,16 +241,34 @@ const CropCalendar = () => {
         </div>
 
         {/* Dropdown for Crop and Region Selection */}
-        <div className="flex flex-col md:flex-row mb-4 justify-between my-10">
+        <div className="flex flex-col md:flex-row mb-4 justify-between gap-4">
           {/* Dropdown for Crop Selection */}
-          <div className="w-full md:w-1/3 mb-4 md:mb-0">
+          {/* <div className="w-full md:w-1/2 mb-4 md:mb-0">
             <label className="text-lg font-semibold mr-2">Select Crop:</label>
             <select
               value={selectedCrop}
               onChange={handleCropChange}
-              className="border border-gray-300 rounded p-2 w-full"
+              className="border border-gray-300 rounded p-2 w-2/2"
             >
-              <option value="all">All crops</option> {/* Default option */}
+              <option value="all">All crops</option> 
+              <option value="maize">Maize</option>
+              <option value="soyabean">Soyabean</option>
+              <option value="sorghum">Sorghum</option>
+              <option value="rice">Rice</option>
+              <option value="tomatoes">Tomatoes</option>
+            </select>
+          </div> */}
+          <div className="w-full md:w-1/3 mb-4 md:mb-0">
+            <label className="text-lg font-semibold mr-2 block">
+              Select Crop:
+            </label>
+
+            <select
+              value={selectedCrop}
+              onChange={handleCropChange}
+              className="border border-gray-300 rounded p-2 w-3/3"
+            >
+              <option value="all">All-crops</option> {/* Default option */}
               <option value="maize">Maize</option>
               <option value="soyabean">Soyabean</option>
               <option value="sorghum">Sorghum</option>
@@ -261,11 +279,13 @@ const CropCalendar = () => {
 
           {/* Dropdown for Region Selection */}
           <div className="w-full md:w-1/3 mb-4 md:mb-0">
-            <label className="text-lg font-semibold mr-2">Select Region:</label>
+            <label className="text-lg font-semibold mr-2 block">
+              Select Region:
+            </label>
             <select
               value={selectedRegion}
               onChange={handleRegionChange}
-              className="border border-gray-300 rounded p-2 w-full"
+              className="border border-gray-300 rounded p-2 w-2/3"
             >
               {regionsOfGhana.map((region) => (
                 <option key={region} value={region}>
@@ -277,13 +297,13 @@ const CropCalendar = () => {
 
           {/* Dropdown for District Selection */}
           <div className="w-full md:w-1/3">
-            <label className="text-lg font-semibold mr-2">
+            <label className="text-lg font-semibold mr-2 block">
               Select District:
             </label>
             <select
               value={selectedDistrict}
               onChange={handleDistrictChange}
-              className="border border-gray-300 rounded p-2 w-full"
+              className="border border-gray-300 rounded p-2 w-2/3"
             >
               {districtOfGhana
                 .filter((d) => d.region === selectedRegion)

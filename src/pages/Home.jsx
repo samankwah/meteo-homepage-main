@@ -21,6 +21,7 @@ import image1 from "../assets/images/image1.png";
 import image2 from "../assets/images/image2.png";
 import image3 from "../assets/images/image3.png";
 import "../components/PopupStyles.css";
+import { FaArrowRight, FaExclamationTriangle } from "react-icons/fa";
 
 const WeatherIcon = ({ condition }) => {
   switch (condition) {
@@ -54,10 +55,10 @@ const DefaultIcon = L.icon({
   iconUrl: markerIcon,
   iconRetinaUrl: markerIcon2x,
   shadowUrl: markerShadow,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
+  iconSize: [12, 21],
+  iconAnchor: [8, 21],
+  popupAnchor: [1, 54],
+  shadowSize: [21, 21],
 });
 
 L.Marker.prototype.options.icon = DefaultIcon;
@@ -232,37 +233,20 @@ const Home = () => {
           {/* Responsive Map Section */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Left Sidebar: Weather Warnings */}
-            <div className="lg:col-span-1 bg-white rounded-lg shadow-lg p-4">
+            <div className="lg:col-span-0 bg-white rounded-lg shadow-lg p-4">
               <h2 className="text-red-600 font-bold mb-4">
                 <i className="fas fa-bell mr-2"></i> Latest Weather Warnings
               </h2>
               <ul className="space-y-4">
                 <li className="bg-yellow-100 border border-yellow-300 rounded-lg p-4 flex justify-between items-center">
-                  <div>
+                  <div className="flex items-center">
+                    <FaExclamationTriangle className="text-red-500 mr-2" />{" "}
+                    {/* Restricted icon */}
                     <p className="font-bold text-blue-700">
-                      Ongoing: Thunderstorms/Squall lines (J...)
+                      No active alerts currently
                     </p>
-                    <p className="text-sm text-gray-500">Minor severity</p>
                   </div>
-                  <i className="fas fa-arrow-right text-blue-500"></i>
-                </li>
-                <li className="bg-yellow-100 border border-yellow-300 rounded-lg p-4 flex justify-between items-center">
-                  <div>
-                    <p className="font-bold text-blue-700">
-                      Ongoing: Thunderstorms/Squall lines (T...)
-                    </p>
-                    <p className="text-sm text-gray-500">Yellow severity</p>
-                  </div>
-                  <i className="fas fa-arrow-right text-blue-500"></i>
-                </li>
-                <li className="bg-yellow-100 border border-yellow-300 rounded-lg p-4 flex justify-between items-center">
-                  <div>
-                    <p className="font-bold text-blue-700">
-                      Ongoing: Thunderstorms/Squall lines (K...)
-                    </p>
-                    <p className="text-sm text-gray-500">Minor severity</p>
-                  </div>
-                  <i className="fas fa-arrow-right text-blue-500"></i>
+                  <FaArrowRight className="text-blue-500" /> {/* Arrow icon */}
                 </li>
                 {/* Add more list items similarly */}
               </ul>
@@ -953,43 +937,45 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Bolgatanga</h2>
+                      <h2 className="location-title text-blue-900">
+                        Bolgatanga
+                      </h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -1044,7 +1030,7 @@ const Home = () => {
                   </Popup>
                 </Marker>
               </MapContainer>
-              <div className="absolute bottom-4 right-4 bg-white p-2 rounded-lg shadow-md">
+              {/* <div className="static bottom-4 right-4 bg-white p-2 rounded-lg shadow-md">
                 <h3 className="text-sm font-bold">Alert Severity</h3>
                 <ul className="text-xs">
                   <li className="flex items-center">
@@ -1064,7 +1050,7 @@ const Home = () => {
                     Minor
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
             {/* </div> */}
 
