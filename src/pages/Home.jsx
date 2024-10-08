@@ -261,7 +261,7 @@ const Home = () => {
 
               <MapContainer
                 center={[7.9465, -1.0232]}
-                zoom={6}
+                zoom={7}
                 className="h-96 lg:h-[780px] w-full"
               >
                 <TileLayer
