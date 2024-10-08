@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { CloudSun, CloudRainWind, Sun } from "lucide-react";
+import { CloudSun, CloudRainWind, Sun, CloudDrizzle } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css"; // Import Leaflet styles
 import L from "leaflet";
@@ -22,6 +22,26 @@ import image2 from "../assets/images/image2.png";
 import image3 from "../assets/images/image3.png";
 import "../components/PopupStyles.css";
 import { FaArrowRight, FaExclamationTriangle } from "react-icons/fa";
+import cap from "../assets/icons/CAP.png";
+import SeverityPolygon from "../components/SeverityPolygon";
+
+const lowSeverityCoordinates = [
+  // [7.9, -1.1],
+  // [6.15, -0.2],
+  // [5.88, -1.05],
+];
+
+const mediumSeverityCoordinates = [
+  // [7.7, -1.3],
+  // [7.65, -1.4],
+  // [7.68, -1.2],
+];
+
+const highSeverityCoordinates = [
+  // [7.5, -1.5],
+  // [7.48, -1.6],
+  // [7.52, -1.35],
+];
 
 const WeatherIcon = ({ condition }) => {
   switch (condition) {
@@ -39,14 +59,21 @@ const WeatherIcon = ({ condition }) => {
           ></path>
         </svg>
       );
+
     case "Sunny Intervals , Showers":
       return <CloudRainWind className="w-8 h-8 text-white" />;
+
     case "Sunny Intervals":
       return <Sun className="w-8 h-8 text-white" />;
+
+    case "Rains, Sunny Intervals":
+      return <CloudDrizzle className="w-8 h-8 text-white" />;
+
     default:
       return <CloudSun className="w-8 h-8 text-white" />;
   }
 };
+
 const getFormattedDate = () => {
   const options = { day: "2-digit", month: "long", year: "numeric" };
   return new Date().toLocaleDateString("en-US", options);
@@ -97,13 +124,13 @@ const Home = () => {
     },
     {
       city: "Cape Coast",
-      condition: "Sunny Intervals, Showers",
+      condition: "Cloudy, Sunny Intervals",
       minTemp: 23,
       maxTemp: 30,
     },
     {
       city: "Ho",
-      condition: "Cloudy, Sunny Intervals",
+      condition: "Rains, Sunny Intervals",
       minTemp: 19,
       maxTemp: 32,
     },
@@ -115,7 +142,7 @@ const Home = () => {
     },
     {
       city: "Accra",
-      condition: "Partly Cloudy",
+      condition: "Sun",
       minTemp: 23,
       maxTemp: 31,
     },
@@ -234,21 +261,20 @@ const Home = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Left Sidebar: Weather Warnings */}
             <div className="lg:col-span-0 bg-white rounded-lg shadow-lg p-4">
-              <h2 className="text-red-600 font-bold mb-4">
+              <h2 className="text-red-600 text-1xl font-bold mb-4 flex items-center">
+                <img src={cap} alt="Ghaap logo" className="h-6 w-6 mr-2" />
                 <i className="fas fa-bell mr-2"></i> Latest Weather Warnings
               </h2>
               <ul className="space-y-4">
                 <li className="bg-yellow-100 border border-yellow-300 rounded-lg p-4 flex justify-between items-center">
                   <div className="flex items-center">
-                    <FaExclamationTriangle className="text-red-500 mr-2" />{" "}
-                    {/* Restricted icon */}
+                    <FaExclamationTriangle className="text-red-500 mr-2" />
                     <p className="font-bold text-blue-700">
                       No active alerts currently
                     </p>
                   </div>
-                  <FaArrowRight className="text-blue-500" /> {/* Arrow icon */}
+                  <FaArrowRight className="text-blue-500" />
                 </li>
-                {/* Add more list items similarly */}
               </ul>
             </div>
 
@@ -266,8 +292,29 @@ const Home = () => {
               >
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                  attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> Future'
                 />
+                {/* Low severity zone */}
+                <SeverityPolygon
+                  coordinates={lowSeverityCoordinates}
+                  severity="low"
+                  message="Light Rainfall: 10-20mm"
+                />
+
+                {/* Medium severity zone */}
+                <SeverityPolygon
+                  coordinates={mediumSeverityCoordinates}
+                  severity="medium"
+                  message="Moderate Rainfall: 20-50mm"
+                />
+
+                {/* High severity zone */}
+                <SeverityPolygon
+                  coordinates={highSeverityCoordinates}
+                  severity="high"
+                  message="Heavy Rainfall: 50mm+"
+                />
+
                 {/* Add your markers and popups here */}
                 <Marker position={[5.614818, -0.205874]}>
                   <Popup>
