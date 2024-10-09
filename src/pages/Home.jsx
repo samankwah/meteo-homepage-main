@@ -367,43 +367,43 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Takoradi</h2>
+                      <h2 className="location-title text-blue-900">Takoradi</h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -415,43 +415,43 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Kumasi</h2>
+                      <h2 className="location-title text-blue-900">Kumasi</h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -463,43 +463,43 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Tamale</h2>
+                      <h2 className="location-title text-blue-900">Tamale</h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -511,43 +511,43 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Ho</h2>
+                      <h2 className="location-title text-blue-900">Ho</h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -558,43 +558,43 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Techiman</h2>
+                      <h2 className="location-title text-blue-900">Techiman</h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -605,43 +605,43 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Walewale</h2>
+                      <h2 className="location-title text-blue-900">Walewale</h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -653,43 +653,45 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Sefwi Wiawso</h2>
+                      <h2 className="location-title text-blue-900">
+                        Sefwi Wiawso
+                      </h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -701,43 +703,43 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Wa</h2>
+                      <h2 className="location-title text-blue-900">Wa</h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -749,43 +751,43 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Damongo</h2>
+                      <h2 className="location-title text-blue-900">Damongo</h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -796,43 +798,43 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Sunyani</h2>
+                      <h2 className="location-title text-blue-900">Sunyani</h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -843,43 +845,43 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Goaso</h2>
+                      <h2 className="location-title text-blue-900">Goaso</h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -890,43 +892,45 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Kete Krachi</h2>
+                      <h2 className="location-title text-blue-900">
+                        Kete-Krachi
+                      </h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -937,43 +941,45 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Cape Coast</h2>
+                      <h2 className="location-title text-blue-900">
+                        Cape Coast
+                      </h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -1033,43 +1039,45 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Koforidua</h2>
+                      <h2 className="location-title text-blue-900">
+                        Koforidua
+                      </h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Morning:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> Sunny Intervals
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 23 - 33°C
                           </p>
                         </div>
                       </div>
@@ -1226,48 +1234,52 @@ const Home = () => {
                 {/* News List */}
                 <div className="p-4 space-y-6">
                   {/* News Item 1 */}
-                  <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
-                    <img
-                      src={image1}
-                      alt="News 1"
-                      className="w-24 h-16 object-cover rounded-lg"
-                    />
-                    <div className="text-sm">
-                      <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                        Visit to GMet by Ministry of Environment, Climate
-                        Change. Hon. Stephen Amankwah and PS DR. Eng. Festus
-                      </p>
+                  <a href="/blog/gmet-visit" className="block">
+                    <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                      <img
+                        src={image1}
+                        alt="News 1"
+                        className="w-24 h-16 object-cover rounded-lg"
+                      />
+                      <div className="text-sm">
+                        <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                          Visit to GMet by Ministry of Environment, Climate
+                          Change. Hon. Stephen Amankwah and PS DR. Eng. Festus
+                        </p>
+                      </div>
                     </div>
-                  </div>
-
+                  </a>
                   {/* News Item 2 */}
-                  <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
-                    <img
-                      src={image2}
-                      alt="News 2"
-                      className="w-24 h-16 object-cover rounded-lg"
-                    />
-                    <div className="text-sm">
-                      <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                        National Assembly committee on Environment, Forestry and
-                        Mining visit to the Meteorological Agency
-                      </p>
+                  <a href="/blog/national-assembly-visit" className="block">
+                    <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                      <img
+                        src={image2}
+                        alt="News 2"
+                        className="w-24 h-16 object-cover rounded-lg"
+                      />
+                      <div className="text-sm">
+                        <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                          National Assembly committee on Environment, Forestry
+                          and Mining visit to the Meteorological Agency
+                        </p>
+                      </div>
                     </div>
-                  </div>
-
+                  </a>
                   {/* News Item 3 */}
-                  <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
-                    <img
-                      src={image3}
-                      alt="News 3"
-                      className="w-24 h-16 object-cover rounded-lg"
-                    />
-                    <div className="text-sm">
-                      <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                        Release of the SON seasonal forecast
-                      </p>
+                  <a href="/blog/son-forecast" className="block">
+                    <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                      <img
+                        src={image3}
+                        alt="News 3"
+                        className="w-24 h-16 object-cover rounded-lg"
+                      />
+                      <div className="text-sm">
+                        <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                          Release of the SON seasonal forecast
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
 
@@ -1282,54 +1294,60 @@ const Home = () => {
                 {/* Event List */}
                 <div className="p-4 space-y-6">
                   {/* Event 1 */}
-                  <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
-                    <img
-                      src={event1}
-                      alt="Event 1"
-                      className="w-24 h-16 object-cover rounded-lg"
-                    />
-                    <div>
-                      <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                        WORLD METEOROLOGICAL ORGANIZATION(WMO) SATELLITE
-                        TRAINING COURSE ON METEOSAT THIRD GENERATION (MTG)
-                      </p>
-                      <p className="text-sm text-gray-500">
-                        20 Nov 2024 - 24 Nov 2024
-                      </p>
+                  <a href="/events/wmo-training" className="block">
+                    <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                      <img
+                        src={event1}
+                        alt="Event 1"
+                        className="w-24 h-16 object-cover rounded-lg"
+                      />
+                      <div>
+                        <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                          WORLD METEOROLOGICAL ORGANIZATION(WMO) SATELLITE
+                          TRAINING COURSE ON METEOSAT THIRD GENERATION (MTG)
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          20 Nov 2024 - 24 Nov 2024
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </a>
 
                   {/* Event 2 */}
-                  <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
-                    <img
-                      src={event2}
-                      alt="Event 2"
-                      className="w-24 h-16 object-cover rounded-lg"
-                    />
-                    <div>
-                      <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                        CLIMATE DATA TRAINING COURSE AT ACCRA-GHANA
-                      </p>
-                      <p className="text-sm text-gray-500">
-                        26 Nov 2024 - 01 Dec 2024
-                      </p>
+                  <a href="/events/climate-data-training" className="block">
+                    <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                      <img
+                        src={event2}
+                        alt="Event 2"
+                        className="w-24 h-16 object-cover rounded-lg"
+                      />
+                      <div>
+                        <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                          CLIMATE DATA TRAINING COURSE AT ACCRA-GHANA
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          26 Nov 2024 - 01 Dec 2024
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </a>
 
                   {/* Event 3 */}
-                  <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
-                    <img
-                      src={event3}
-                      alt="Event 3"
-                      className="w-24 h-16 object-cover rounded-lg"
-                    />
-                    <div>
-                      <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                        World Meteorological Day 2024
-                      </p>
-                      <p className="text-sm text-gray-500">23 Mar 2024</p>
+                  <a href="/events/world-met-day" className="block">
+                    <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
+                      <img
+                        src={event3}
+                        alt="Event 3"
+                        className="w-24 h-16 object-cover rounded-lg"
+                      />
+                      <div>
+                        <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
+                          World Meteorological Day 2024
+                        </p>
+                        <p className="text-sm text-gray-500">23 Mar 2024</p>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>

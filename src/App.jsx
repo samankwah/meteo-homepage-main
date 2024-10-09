@@ -17,6 +17,12 @@ import SubseasonalForecast from "./pages/SubseasonalForecast";
 import MonthlyForecast from "./pages/MonthlyForecast";
 import ClimateReport from "./pages/Climate";
 import PoultryCalendar from "./pages/PoultryCalendar";
+import BlogGmetVisit from "./blog/BlogGmetVisit";
+import BlogNationalAssemblyVisit from "./blog/BlogNationalAssemblyVisit";
+import BlogSonForecast from "./blog/BlogSonForecast";
+import EventWMOTraining from "./events/EventWMOTraining";
+import EventClimateDataTraining from "./events/EventClimateDataTraining";
+import EventWorldMetDay from "./events/EventWorldMetDay";
 
 function App() {
   return (
@@ -44,6 +50,21 @@ function App() {
             <Route path="/climate-report" element={<ClimateReport />} />
             <Route path="/poultry-calendar" element={<PoultryCalendar />} />
             <Route path="/seasonal-forecast" element={<SeasonalForecast />} />
+            <Route path="/blog/gmet-visit" element={<BlogGmetVisit />} />
+            <Route
+              path="/blog/national-assembly-visit"
+              element={<BlogNationalAssemblyVisit />}
+            />
+            <Route path="/blog/son-forecast" element={<BlogSonForecast />} />
+            <Route path="/events/wmo-training" element={<EventWMOTraining />} />
+            <Route
+              path="/events/climate-data-training"
+              element={<EventClimateDataTraining />}
+            />
+            <Route
+              path="/events/world-met-day"
+              element={<EventWorldMetDay />}
+            />
           </Routes>
         </main>
         <Footer />

@@ -10,7 +10,7 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <header className="bg-white fixed top-0 left-0 w-full p-2 md:p-3 flex flex-col md:flex-row justify-between items-center z-50 shadow-md">
+    <header className="bg-white fixed top-0 left-0 w-full p-2 md:p-3 flex flex-col md:flex-row justify-between items-center z-10 shadow-md">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logos Section */}
         <div className="flex items-center justify-center space-x-2 mb-2 md:mb-0">
@@ -24,68 +24,6 @@ const Header = () => {
             <img src={logo4} alt="GMet logo" className="h-8 md:h-10" />
           </Link>
         </div>
-
-        {/* Navigation Section */}
-        {/* <nav className="relative inline-block text-left items-center justify-center space-x-2 md:space-x-4 text-sm">
-          <div>
-            <button
-              type="button"
-              onClick={toggleDropdown}
-              className="inline-flex justify-between items-center w-full rounded-md border border-gray-400 bg-blue-900 text-white px-4 py-2 text-sm font-medium hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              Select Agency
-              <svg
-                className="ml-2 h-4 w-4 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
-          {isOpen && (
-            <div
-              className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="menu-button"
-              tabIndex="-1"
-            >
-              <div className="py-1" role="none">
-                <a
-                  href="https://mofa.gov.gh/site/"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400"
-                >
-                  Ministry of Food and Agriculture
-                </a>
-                <a
-                  href="https://www.fsrp.org.gh/"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400"
-                >
-                  Food System and Resilience Project (FSRP)
-                </a>
-                <a
-                  href="https://www.meteo.gov.gh/"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400"
-                >
-                  Ghana Meteorological Agency
-                </a>
-                <a
-                  href="https://ghaap.com/"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400"
-                >
-                  GhAAP
-                </a>
-              </div>
-            </div>
-          )}
-        </nav> */}
 
         <nav className="relative inline-block text-left items-center justify-center space-x-2 md:space-x-4 text-sm">
           <div>
