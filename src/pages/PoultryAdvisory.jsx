@@ -22,12 +22,14 @@ const PoultryAdvisory = () => {
           <div className="bg-white shadow-md rounded-lg p-6">
             <FaLeaf className="text-blue-600 text-3xl mb-4" />
             <h2 className="text-xl font-semibold text-blue-800 mb-2">
-              Feeding Practices
+              Wind Direction, Sunshine & Precipitaion Amount
             </h2>
+            <h2>Site selection/Construction of appropriate housing</h2>
             <p className="text-gray-700">
-              Ensure a balanced diet with proper nutrition to maximize egg
-              production and growth. Use high-quality feed with protein,
-              vitamins, and minerals.
+              East-west orientation of house (To avoid direct sunshine into the
+              pen) Avoid swampy areas (Sandy loam area is recommended) Provision
+              of low side walls (Two course blocks) Topography (Gentle slope
+              land)
             </p>
           </div>
 

@@ -1323,11 +1323,10 @@ const Home = () => {
                       />
                       <div>
                         <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                          WORLD METEOROLOGICAL ORGANIZATION(WMO) SATELLITE
-                          TRAINING COURSE ON METEOSAT THIRD GENERATION (MTG)
+                          2025 POULTRY CALENDAR
                         </p>
                         <p className="text-sm text-gray-500">
-                          20 Nov 2024 - 24 Nov 2024
+                          20 Feb 2024 - 24 Nov 2024
                         </p>
                       </div>
                     </div>
@@ -1343,10 +1342,10 @@ const Home = () => {
                       />
                       <div>
                         <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                          CLIMATE DATA TRAINING COURSE AT ACCRA-GHANA
+                          2025 MAJOR SEASON CROP CALENDAR.
                         </p>
                         <p className="text-sm text-gray-500">
-                          26 Nov 2024 - 01 Dec 2024
+                          20 Feb 2024 - 24 Nov 2024
                         </p>
                       </div>
                     </div>
@@ -1362,9 +1361,9 @@ const Home = () => {
                       />
                       <div>
                         <p className="font-semibold text-gray-700 hover:text-blue-600 transition duration-200 ease-in-out">
-                          World Meteorological Day 2024
+                          2024 CLIMATE REPORT
                         </p>
-                        <p className="text-sm text-gray-500">23 Mar 2024</p>
+                        <p className="text-sm text-gray-500">26 Nov 2024</p>
                       </div>
                     </div>
                   </a>
