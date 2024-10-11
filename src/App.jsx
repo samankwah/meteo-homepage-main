@@ -23,7 +23,8 @@ import BlogSonForecast from "./blog/BlogSonForecast";
 import EventWMOTraining from "./events/EventWMOTraining";
 import EventClimateDataTraining from "./events/EventClimateDataTraining";
 import EventWorldMetDay from "./events/EventWorldMetDay";
-
+import PoultryAdvisory from "./pages/PoultryAdvisory";
+import CropAdvisory from "./pages/CropAdvisory";
 function App() {
   return (
     <Router>
@@ -65,6 +66,8 @@ function App() {
               path="/events/world-met-day"
               element={<EventWorldMetDay />}
             />
+            <Route path="/poultry-advisory" element={<PoultryAdvisory />} />
+            <Route path="/crop-advisory" element={<CropAdvisory />} />
           </Routes>
         </main>
         <Footer />

@@ -1110,11 +1110,11 @@ const Home = () => {
             {/* </div> */}
 
             {/* Sidebar Forecast */}
-            <div className="bg-white rounded-lg shadow-lg p-4">
+            <div className="bg-white rounded-lg shadow-lg p-3">
               <h2 className="text-blue-600 font-bold text-xl">
                 Other Forecasts
               </h2>
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 <li>
                   <Link
                     to="/5-days-forecast"
@@ -1212,6 +1212,26 @@ const Home = () => {
                   >
                     <h3 className="text-blue-600 font-semibold">
                       Poultry Calendar 2024
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/crop-advisory"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      Crop Advisories
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/poultry-advisory"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      Poultry Advisories
                     </h3>
                   </Link>
                 </li>
