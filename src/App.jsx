@@ -25,6 +25,8 @@ import EventClimateDataTraining from "./events/EventClimateDataTraining";
 import EventWorldMetDay from "./events/EventWorldMetDay";
 import PoultryAdvisory from "./pages/PoultryAdvisory";
 import CropAdvisory from "./pages/CropAdvisory";
+import NotFound from "./components/NotFound";
+
 function App() {
   return (
     <Router>
@@ -68,6 +70,7 @@ function App() {
             />
             <Route path="/poultry-advisory" element={<PoultryAdvisory />} />
             <Route path="/crop-advisory" element={<CropAdvisory />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
