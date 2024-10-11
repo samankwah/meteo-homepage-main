@@ -201,7 +201,7 @@ const Home = () => {
       setCurrentDateTime(new Date());
     }, 1000); // Update every second
 
-    return () => clearInterval(timer); // Clean up the interval on component unmount
+    return () => clearInterval(timer);
   }, []);
 
   const formattedDate = currentDateTime.toLocaleDateString("en-US", {
@@ -220,7 +220,7 @@ const Home = () => {
   useEffect(() => {
     // Auto update date in the format you want
     const today = new Date();
-    const formattedDate = today.toLocaleDateString("en-GB", {
+    const formattedDate = today.toLocaleDateString("en-US", {
       day: "2-digit",
       month: "short",
       year: "numeric",

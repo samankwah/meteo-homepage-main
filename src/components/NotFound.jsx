@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import notFound from "../assets/images/notfound.svg"; // Corrected image path
+import notFound from "../assets/images/notfound.svg";
 
 const NotFound = () => {
   return (
