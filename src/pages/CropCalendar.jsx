@@ -273,7 +273,7 @@ const CropCalendar = () => {
               <option value="soyabean">Soyabean</option>
               <option value="sorghum">Sorghum</option>
               <option value="rice">Rice</option>
-              <option value="tomatoes">Tomatoes</option>
+              {/* <option value="tomatoes">Tomatoes</option> */}
             </select>
           </div>
 

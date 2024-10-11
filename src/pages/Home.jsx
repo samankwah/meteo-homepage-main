@@ -1314,7 +1314,7 @@ const Home = () => {
                 {/* Event List */}
                 <div className="p-4 space-y-6">
                   {/* Event 1 */}
-                  <a href="/events/wmo-training" className="block">
+                  <a href="/events/poult-calendar" className="block">
                     <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
                       <img
                         src={event1}
@@ -1333,7 +1333,7 @@ const Home = () => {
                   </a>
 
                   {/* Event 2 */}
-                  <a href="/events/climate-data-training" className="block">
+                  <a href="/events/crop-calen" className="block">
                     <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
                       <img
                         src={event2}
@@ -1352,7 +1352,7 @@ const Home = () => {
                   </a>
 
                   {/* Event 3 */}
-                  <a href="/events/world-met-day" className="block">
+                  <a href="/events/clim-rep-rel" className="block">
                     <div className="flex items-center space-x-4 bg-gray-50 p-3 rounded-lg hover:shadow-md transition duration-300 ease-in-out">
                       <img
                         src={event3}

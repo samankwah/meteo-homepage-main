@@ -1,4 +1,4 @@
-import calendarImage from "../assets/images/event1.png"; // Add your image path
+import calendarImage from "../assets/images/event2.png"; // Add your image path
 
 const EventMajorSeasonCropCalendar = () => {
   return (

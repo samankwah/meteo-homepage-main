@@ -45,7 +45,7 @@ const EventClimateReportRelease = () => {
         </p>
 
         <p className="mb-6">
-          This year’s report emphasizes **Resilience in a Changing Climate**,
+          This years report emphasizes **Resilience in a Changing Climate**,
           focusing on strategies for mitigating the impacts of climate change
           and building resilience at both national and global levels. The event
           will bring together **leading climate scientists**, **policy makers**,

@@ -20,12 +20,12 @@ import PoultryCalendar from "./pages/PoultryCalendar";
 import BlogGmetVisit from "./blog/BlogGmetVisit";
 import BlogNationalAssemblyVisit from "./blog/BlogNationalAssemblyVisit";
 import BlogSonForecast from "./blog/BlogSonForecast";
-import EventWMOTraining from "./events/EventWMOTraining";
-import EventClimateDataTraining from "./events/EventClimateDataTraining";
-import EventWorldMetDay from "./events/EventWorldMetDay";
 import PoultryAdvisory from "./pages/PoultryAdvisory";
 import CropAdvisory from "./pages/CropAdvisory";
 import NotFound from "./components/NotFound";
+import EventClimateReportRelease from "./events/EventClimateReportRelease";
+import EventMajorSeasonCropCalendar from "./events/EventMajorSeasonCropCalendar";
+import EventPoultryCalendar from "./events/EventPoultryCalendar";
 
 function App() {
   return (
@@ -59,14 +59,17 @@ function App() {
               element={<BlogNationalAssemblyVisit />}
             />
             <Route path="/blog/son-forecast" element={<BlogSonForecast />} />
-            <Route path="/events/wmo-training" element={<EventWMOTraining />} />
             <Route
-              path="/events/climate-data-training"
-              element={<EventClimateDataTraining />}
+              path="/events/crop-calen"
+              element={<EventMajorSeasonCropCalendar />}
             />
             <Route
-              path="/events/world-met-day"
-              element={<EventWorldMetDay />}
+              path="/events/poult-calendar"
+              element={<EventPoultryCalendar />}
+            />
+            <Route
+              path="/events/clim-rep-rel"
+              element={<EventClimateReportRelease />}
             />
             <Route path="/poultry-advisory" element={<PoultryAdvisory />} />
             <Route path="/crop-advisory" element={<CropAdvisory />} />
