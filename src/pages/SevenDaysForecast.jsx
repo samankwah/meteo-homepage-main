@@ -14,7 +14,7 @@ const SevenDaysForecast = () => {
     day: formatDate(
       new Date(today.getFullYear(), today.getMonth(), today.getDate() + index)
     ),
-    summary: "Sample Weather", // This would ideally vary
+    summary: "Weather", // This would ideally vary
     temperature: `${20 + index * 2}°C`, // Example temperature increment
     precipitation: `${10 + index}%`, // Example precipitation increment
     wind: `${5 + index * 2} km/h`, // Example wind speed increment
@@ -29,7 +29,7 @@ const SevenDaysForecast = () => {
     <div className="main-content bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-4 flex flex-col items-center pt-24">
       {/* Adjust padding-top based on the navbar height */}
       <div className="relative w-full max-w-6xl">
-        <h1 className="text-blue-600 text-2xl sm:text-3xl font-bold mb-4">
+        <h1 className="text-blue-600 text-2xl sm:text-4xl text-center font-bold mb-4">
           7 Days Forecast
         </h1>
 

@@ -29,7 +29,7 @@ const FloodDrought = () => {
               Learn More
             </a>
           </div>
-          <div className="bg-blue-100 p-22 rounded-lg shadow-md">
+          <div className="bg-blue-100 p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold text-blue-600 mb-22">
               Drought Conditions
             </h2>

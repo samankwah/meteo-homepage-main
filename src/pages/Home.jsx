@@ -234,7 +234,7 @@ const Home = () => {
         backgroundImage: `url(${backgroundImage})`, // Replace with your image path
       }}
     >
-      <main className="container mx-auto">
+      <main className="flex-grow mt-16 container mx-auto">
         <div className="pt-16 md:pt-20">
           <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-white text-center my-4 md:my-6">
             GhAAP Climate Information Services

@@ -30,7 +30,7 @@ const Header = () => {
   }, [dropdownRef]);
 
   return (
-    <header className="bg-white fixed top-0 left-0 w-full p-2 md:p-3 flex flex-row justify-between items-center z-10 shadow-md">
+    <header className="bg-white fixed top-0 left-0 w-full p-2 md:p-3 flex flex-row justify-between items-center z-10 shadow-md ">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logos Section */}
         <div className="flex items-center space-x-4 mb-2 md:mb-0">
