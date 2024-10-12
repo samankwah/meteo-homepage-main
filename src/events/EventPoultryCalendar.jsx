@@ -137,7 +137,7 @@ const EventPoultryCalendar = () => {
 
           <div className="bg-gray-100 p-4 rounded-lg shadow hover:shadow-md transition-shadow duration-200">
             <h4 className="text-xl font-bold text-gray-800 mb-2">Organizer</h4>
-            <p className="text-gray-600">Ghana Poultry Farmers Association</p>
+            <p className="text-gray-600">FSRP </p>
           </div>
         </div>
       </section>

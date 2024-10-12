@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { CloudSun, CloudRainWind, Sun, CloudDrizzle } from "lucide-react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css"; // Import Leaflet styles
@@ -238,7 +237,7 @@ const Home = () => {
       <main className="container mx-auto">
         <div className="pt-16 md:pt-20">
           <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-white text-center my-4 md:my-6">
-            Climate Information Services
+            GhAAP Climate Information Services
           </h1>
 
           <div className="bg-[#11487e] rounded-lg shadow-lg p-4 mb-8">

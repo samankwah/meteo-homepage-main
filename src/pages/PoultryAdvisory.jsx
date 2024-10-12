@@ -1,4 +1,17 @@
-import { FaEgg, FaHome, FaLeaf, FaSyringe, FaChartLine } from "react-icons/fa";
+import {
+  FaBiohazard,
+  FaTractor,
+  FaIndustry,
+  FaThermometerHalf,
+  FaSeedling,
+  FaWarehouse,
+  FaWater,
+  FaChartLine,
+  FaSyringe,
+  FaLeaf,
+  FaPhoneAlt,
+  FaEnvelope,
+} from "react-icons/fa"; // Import specific icons
 
 const PoultryAdvisory = () => {
   return (
@@ -8,66 +21,167 @@ const PoultryAdvisory = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-blue-700 mb-4">
-            Poultry Advisory
+            Poultry Advisory - Ghana
           </h1>
           <p className="text-gray-700 text-lg">
-            Get expert advice on all aspects of poultry production, from feeding
-            and housing to disease control and market trends.
+            Detailed poultry management recommendations across different phases.
           </p>
         </div>
 
-        {/* Advisory Cards */}
+        {/* Advisory Cards - Each Card Mirrors a Section of the Excel */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Feeding Advice */}
+          {/* Preparation of Day Old Chicks */}
           <div className="bg-white shadow-md rounded-lg p-6">
-            <FaLeaf className="text-blue-600 text-3xl mb-4" />
+            <FaThermometerHalf className="text-blue-600 text-3xl mb-4" />
             <h2 className="text-xl font-semibold text-blue-800 mb-2">
-              Wind Direction, Sunshine & Precipitaion Amount
+              Preparation of Day Old Chicks
             </h2>
-            <h2>Site selection/Construction of appropriate housing</h2>
-            <p className="text-gray-700">
-              East-west orientation of house (To avoid direct sunshine into the
-              pen) Avoid swampy areas (Sandy loam area is recommended) Provision
-              of low side walls (Two course blocks) Topography (Gentle slope
-              land)
-            </p>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Temperature: 37-38℃</li>
+              <li>Pre-heat the brooding pen before chick placement.</li>
+              <li>
+                Ensure feeders and drinkers are in place prior to arrival.
+              </li>
+              <li>Prepare a warm and well-ventilated environment.</li>
+            </ul>
           </div>
 
-          {/* Housing */}
+          {/* Brooder Management */}
           <div className="bg-white shadow-md rounded-lg p-6">
-            <FaHome className="text-blue-600 text-3xl mb-4" />
+            <FaWater className="text-blue-600 text-3xl mb-4" />
             <h2 className="text-xl font-semibold text-blue-800 mb-2">
-              Housing Requirements
+              Brooder Management
             </h2>
-            <p className="text-gray-700">
-              Provide well-ventilated and spacious housing for your poultry.
-              Ensure the coop is clean and protected from extreme weather
-              conditions.
-            </p>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Temperature: 31-34℃</li>
+              <li>Use charcoal or gas brooders for heat.</li>
+              <li>
+                Monitor the chicks regularly to ensure they are comfortable.
+              </li>
+              <li>Ensure proper air circulation and ventilation.</li>
+            </ul>
           </div>
 
-          {/* Disease Control */}
+          {/* Feeding and Water for Starters */}
+          <div className="bg-white shadow-md rounded-lg p-6">
+            <FaSeedling className="text-blue-600 text-3xl mb-4" />
+            <h2 className="text-xl font-semibold text-blue-800 mb-2">
+              Feeding and Water for Starters
+            </h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Water Temperature: 16-18℃</li>
+              <li>Provide clean and fresh water at all times.</li>
+              <li>Use balanced starter feed to ensure healthy growth.</li>
+              <li>Place enough feeders and drinkers for easy access.</li>
+            </ul>
+          </div>
+
+          {/* Vaccination */}
           <div className="bg-white shadow-md rounded-lg p-6">
             <FaSyringe className="text-blue-600 text-3xl mb-4" />
             <h2 className="text-xl font-semibold text-blue-800 mb-2">
-              Disease Control
+              Vaccination
             </h2>
-            <p className="text-gray-700">
-              Regular vaccinations and hygiene are key to preventing common
-              poultry diseases like Newcastle, coccidiosis, and bird flu.
-            </p>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Vaccine Storage: 2-8℃</li>
+              <li>
+                Store vaccines at the recommended temperature to maintain
+                efficacy.
+              </li>
+              <li>Vaccinate on time to prevent common poultry diseases.</li>
+              <li>
+                Follow a vaccination schedule for Newcastle, Gumboro, etc.
+              </li>
+            </ul>
           </div>
 
-          {/* Egg Production */}
+          {/* Feeding and Water for Growers/Finishers */}
           <div className="bg-white shadow-md rounded-lg p-6">
-            <FaEgg className="text-blue-600 text-3xl mb-4" />
+            <FaSeedling className="text-blue-600 text-3xl mb-4" />
             <h2 className="text-xl font-semibold text-blue-800 mb-2">
-              Maximizing Egg Production
+              Feeding and Water for Growers/Finishers
             </h2>
-            <p className="text-gray-700">
-              Maintain a consistent light schedule and provide adequate calcium
-              in the diet to optimize egg production.
-            </p>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Water Temperature: 18-20℃</li>
+              <li>Ensure constant access to clean and cool water.</li>
+              <li>Provide balanced grower feed for proper growth.</li>
+              <li>Monitor feed intake and adjust as necessary.</li>
+            </ul>
+          </div>
+
+          {/* Housing and Ventilation */}
+          <div className="bg-white shadow-md rounded-lg p-6">
+            <FaWarehouse className="text-blue-600 text-3xl mb-4" />
+            <h2 className="text-xl font-semibold text-blue-800 mb-2">
+              Housing and Ventilation
+            </h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Ensure proper ventilation to avoid heat stress.</li>
+              <li>
+                Maintain a dry and clean environment inside the poultry house.
+              </li>
+              <li>
+                Protect the housing from predators and extreme weather
+                conditions.
+              </li>
+              <li>
+                Design the house with sufficient space per bird for comfort.
+              </li>
+            </ul>
+          </div>
+
+          {/* Biosecurity Measures */}
+          <div className="bg-white shadow-md rounded-lg p-6">
+            <FaBiohazard className="text-blue-600 text-3xl mb-4" />
+            <h2 className="text-xl font-semibold text-blue-800 mb-2">
+              Biosecurity Measures
+            </h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>
+                Restrict unauthorized personnel from accessing poultry areas.
+              </li>
+              <li>Ensure proper hygiene before and after handling birds.</li>
+              <li>Use footbaths and disinfectants at entry points.</li>
+              <li>Isolate sick birds to prevent the spread of diseases.</li>
+            </ul>
+          </div>
+
+          {/* Harvesting */}
+          <div className="bg-white shadow-md rounded-lg p-6">
+            <FaTractor className="text-blue-600 text-3xl mb-4" />
+            <h2 className="text-xl font-semibold text-blue-800 mb-2">
+              Harvesting
+            </h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Ensure birds are stress-free during handling for harvest.</li>
+              <li>
+                Use trained personnel to handle birds carefully during harvest.
+              </li>
+              <li>
+                Transport birds in a well-ventilated vehicle to the processing
+                unit.
+              </li>
+              <li>Avoid overcrowding birds during transportation.</li>
+            </ul>
+          </div>
+
+          {/* Processing */}
+          <div className="bg-white shadow-md rounded-lg p-6">
+            <FaIndustry className="text-blue-600 text-3xl mb-4" />
+            <h2 className="text-xl font-semibold text-blue-800 mb-2">
+              Processing
+            </h2>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Ensure birds are processed in a hygienic environment.</li>
+              <li>
+                Follow standardized procedures for slaughter, plucking, and
+                cleaning.
+              </li>
+              <li>Maintain cold-chain storage to preserve meat quality.</li>
+              <li>
+                Ensure packaging is done hygienically to prevent contamination.
+              </li>
+            </ul>
           </div>
 
           {/* Market Trends */}
@@ -76,48 +190,40 @@ const PoultryAdvisory = () => {
             <h2 className="text-xl font-semibold text-blue-800 mb-2">
               Market Trends
             </h2>
-            <p className="text-gray-700">
-              Stay updated on the latest poultry market trends, including demand
-              for eggs and meat, and price fluctuations in feed.
-            </p>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Stay updated on poultry product prices (eggs, meat).</li>
+              <li>
+                Monitor feed price fluctuations and adjust strategies
+                accordingly.
+              </li>
+              <li>Analyze demand for poultry products in your region.</li>
+              <li>Leverage peak season opportunities for better sales.</li>
+            </ul>
           </div>
 
-          {/* Environmental Impact */}
+          {/* Sustainable Practices */}
           <div className="bg-white shadow-md rounded-lg p-6">
             <FaLeaf className="text-blue-600 text-3xl mb-4" />
             <h2 className="text-xl font-semibold text-blue-800 mb-2">
               Sustainable Practices
             </h2>
-            <p className="text-gray-700">
-              Implement sustainable practices such as waste recycling and
-              energy-efficient systems to reduce environmental impact.
-            </p>
-          </div>
-        </div>
-
-        {/* Statistics Section */}
-        <div className="mt-12 text-center">
-          <h2 className="text-2xl font-semibold text-blue-700 mb-6">
-            Key Poultry Production Statistics
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white shadow-md rounded-lg p-6">
-              <p className="text-4xl font-bold text-blue-800">500K</p>
-              <p className="text-gray-600">Chickens Produced Annually</p>
-            </div>
-            <div className="bg-white shadow-md rounded-lg p-6">
-              <p className="text-4xl font-bold text-blue-800">85%</p>
-              <p className="text-gray-600">Egg Production Efficiency</p>
-            </div>
-            <div className="bg-white shadow-md rounded-lg p-6">
-              <p className="text-4xl font-bold text-blue-800">60%</p>
-              <p className="text-gray-600">Disease Prevention Success</p>
-            </div>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>
+                Implement waste recycling systems to minimize environmental
+                impact.
+              </li>
+              <li>Use energy-efficient lighting and heating systems.</li>
+              <li>Adopt water conservation practices in the poultry farm.</li>
+              <li>
+                Engage in responsible disposal of poultry litter and
+                by-products.
+              </li>
+            </ul>
           </div>
         </div>
 
         {/* Call-to-Action Section */}
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <h3 className="text-xl font-semibold text-blue-700 mb-4">
             Need More Advice?
           </h3>
@@ -128,6 +234,37 @@ const PoultryAdvisory = () => {
           <button className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-200">
             Contact an Expert
           </button>
+        </div> */}
+        <div className="mt-12 text-center">
+          <h3 className="text-xl font-semibold text-blue-700 mb-4">
+            Need More Advice?
+          </h3>
+          <p className="text-gray-600 mb-6">
+            Contact our experts for personalized advice or explore our resources
+            for further guidance on poultry farming.
+          </p>
+
+          {/* Contact Options */}
+          <div className="flex justify-center gap-6">
+            {/* Call Button */}
+
+            <a
+              href="tel:+2330243999631" // Replace with the expert's actual phone number
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-200 flex items-center gap-2"
+            >
+              <FaPhoneAlt />
+              Call an Expert
+            </a>
+
+            {/* Email Button */}
+            <a
+              href="mailto:stephen.amankwah@meteo.gov.gh" // Replace with the expert's actual email address
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-200 flex items-center gap-2"
+            >
+              <FaEnvelope />
+              Email an Expert
+            </a>
+          </div>
         </div>
       </div>
     </div>

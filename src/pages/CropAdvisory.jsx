@@ -2,7 +2,8 @@ import {
   FaSeedling,
   FaSun,
   FaWater,
-  FaLeaf,
+  FaEnvelope,
+  FaPhoneAlt,
   FaCalendarAlt,
 } from "react-icons/fa";
 
@@ -30,12 +31,24 @@ const CropAdvisory = () => {
           <div className="bg-white shadow-md rounded-lg p-6">
             <FaSeedling className="text-blue-600 text-3xl mb-4" />
             <h2 className="text-xl font-semibold text-blue-800 mb-2">
-              Major Rainy Season (April - July)
+              Major Rainy Season, Southern Ghana (March - July)
             </h2>
             <p className="text-gray-700">
               Recommended crops: Maize, Rice, Cassava. The start of the major
               rainy season is the optimal time to plant maize and rice. Ensure
               proper land preparation and consider organic fertilizers.
+            </p>
+          </div>
+          <div className="bg-white shadow-md rounded-lg p-6">
+            <FaSeedling className="text-blue-600 text-3xl mb-4" />
+            <h2 className="text-xl font-semibold text-blue-800 mb-2">
+              Northern Rainy Season (May - October)
+            </h2>
+            <p className="text-gray-700">
+              Recommended crops: Maize, Rice, Sorghum, Cowpea, Peanut, Soyabean.
+              The start of the major rainy season is the optimal time to plant
+              maize and rice. Ensure proper land preparation and consider
+              organic fertilizers.
             </p>
           </div>
 
@@ -46,9 +59,9 @@ const CropAdvisory = () => {
               Minor Rainy Season (September - November)
             </h2>
             <p className="text-gray-700">
-              Recommended crops: Vegetables (Tomatoes, Peppers), Groundnuts,
-              Yams. Take advantage of the shorter rainy season to plant
-              vegetables and short-cycle crops like groundnuts and yams.
+              Recommended crops: Vegetables (Tomatoe, Pepper), Groundnut, Yam.
+              Take advantage of the shorter rainy season to plant vegetables and
+              short-cycle crops like groundnuts and yams.
             </p>
           </div>
 
@@ -59,8 +72,8 @@ const CropAdvisory = () => {
               Dry Season (December - March)
             </h2>
             <p className="text-gray-700">
-              Recommended tasks: Irrigation for vegetables (onions, carrots),
-              Land preparation for the next rainy season. Use irrigation systems
+              Recommended tasks: Irrigation for vegetables (onion, carrot), Land
+              preparation for the next rainy season. Use irrigation systems
               during the dry season to sustain vegetable growth.
             </p>
           </div>
@@ -127,9 +140,27 @@ const CropAdvisory = () => {
             Reach out to our agricultural experts for personalized advice
             tailored to Ghana climate and your specific region.
           </p>
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-200">
-            Contact an Expert
-          </button>
+        </div>
+
+        <div className="flex justify-center gap-6">
+          {/* Call Button */}
+
+          <a
+            href="tel:+2330243999631" // Replace with the expert's actual phone number
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-200 flex items-center gap-2"
+          >
+            <FaPhoneAlt />
+            Call an Expert
+          </a>
+
+          {/* Email Button */}
+          <a
+            href="mailto:stephen.amankwah@meteo.gov.gh" // Replace with the expert's actual email address
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-200 flex items-center gap-2"
+          >
+            <FaEnvelope />
+            Email an Expert
+          </a>
         </div>
       </div>
     </div>
