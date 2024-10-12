@@ -257,7 +257,7 @@ const Home = () => {
           </div>
 
           {/* Responsive Map Section */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
             {/* Left Sidebar: Weather Warnings */}
             <div className="lg:col-span-0 bg-white rounded-lg shadow-lg p-4">
               <h2 className="text-red-600 text-1xl font-bold mb-4 flex items-center">
