@@ -47,7 +47,7 @@ const Header = () => {
 
         {/* Home Icon in the middle */}
         <Link to="/" className="text-blue-900 hover:text-blue-800 mx-6">
-          <FaHome className="h-6 w-6" />
+          <FaHome className="h-6 w-6 items-end" />
         </Link>
 
         {/* Navigation Section (Dropdown) */}

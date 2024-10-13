@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { districtOfGhana } from "../districts";
+import { useState, useEffect } from "react";
+import { districtOfGhana } from "../districts"; // Ensure you have this file containing the district data
 
-// Full farming activities (Base activities common to all regions/crops)
+// Base farming activities (common activities for all regions)
 const baseActivities = [
   {
     activity: "Land Preparation",
@@ -99,11 +99,22 @@ const generateRegionActivities = () => {
 
   // Example climate offset data (simulating climate differences)
   const climateOffsets = {
-    "Greater Accra": 0, // No offset
-    Ashanti: 1, // Starts 1 month later
-    Northern: 2, // Starts 2 months later
-    Eastern: -1, // Starts 1 month earlier
-    Western: 3, // Starts 3 months later
+    "Greater Accra": 0, // Minimal offset
+    Ashanti: 1, // Slightly earlier
+    Northern: 2, // Later planting and harvesting
+    Eastern: 1, // Slightly earlier
+    Western: 1, // Varied seasons
+    Volta: 1, // Slightly later
+    "Upper East": 2, // Late planting
+    "Upper West": 2, // Late planting
+    Central: 0, // Neutral
+    Bono: 0, // Neutral
+    "Western North": 1, // Slightly earlier
+    Ahafo: 1, // Slightly earlier
+    Savannah: 2, // Late planting
+    Oti: 0, // Neutral
+    "Bono East": 0, // Neutral
+    "North East": 2, // Late planting
   };
 
   // Array of months
@@ -146,17 +157,48 @@ const regionCalendars = generateRegionActivities();
 
 const CropCalendar = () => {
   const [selectedCrop, setSelectedCrop] = useState("all");
-  const [selectedRegion, setSelectedRegion] = useState("Northern");
-  const [selectedDistrict, setSelectedDistrict] = useState("");
-  const farmingActivities = regionCalendars[selectedRegion] || [];
+  const [selectedRegion, setSelectedRegion] = useState("All Regions");
+  const [selectedDistrict, setSelectedDistrict] = useState("All Districts");
+  const [farmingActivities, setFarmingActivities] = useState([]); // Default state for activities
+  const [loading, setLoading] = useState(false); // Loading state for filtering
+  const [initialLoad, setInitialLoad] = useState(true); // Track if initial load
+
+  useEffect(() => {
+    // Update activities based on selections
+    const updateFarmingActivities = () => {
+      setLoading(true); // Set loading state
+
+      let activities = [];
+
+      // Default to showing a sample of the crop calendar on initial load
+      if (initialLoad) {
+        activities = baseActivities; // Show base activities initially
+        setInitialLoad(true); // Set initial load to false after first render
+      } else if (
+        selectedRegion === "All Regions" ||
+        selectedDistrict === "All Districts"
+      ) {
+        activities = Object.values(regionCalendars).flat();
+      } else {
+        activities = regionCalendars[selectedRegion] || [];
+      }
+
+      setFarmingActivities(activities);
+      setLoading(false); // Reset loading state
+    };
+
+    updateFarmingActivities();
+  }, [selectedCrop, selectedRegion, selectedDistrict, initialLoad]);
 
   const handleRegionChange = (event) => {
     setSelectedRegion(event.target.value);
+    setSelectedDistrict("All Districts"); // Reset district when changing region
   };
 
   const handleCropChange = (event) => {
     setSelectedCrop(event.target.value);
-    setSelectedRegion("Greater Accra"); // Reset to the first region on crop change
+    setSelectedRegion("All Regions"); // Reset region on crop change
+    setSelectedDistrict("All Districts"); // Reset district on crop change
   };
 
   const handleDistrictChange = (e) => {
@@ -199,21 +241,23 @@ const CropCalendar = () => {
     document.body.removeChild(link);
   };
 
-  // Function to handle sharing the crop calendar
-  const handleShare = () => {
+  // Function to handle sharing the calendar
+  const handleShare = async () => {
     const shareData = {
-      title: "Ghana Crop Calendar",
-      text: `Check out the crop calendar for ${selectedCrop} in the ${selectedRegion} region!`,
-      url: window.location.href, // Optionally include the current URL
+      title: "Crop Calendar",
+      text: "Check out this crop calendar!",
+      url: "https://your-website-url.com", // Update with your website URL
     };
 
     if (navigator.share) {
-      navigator
-        .share(shareData)
-        .then(() => console.log("Successfully shared"))
-        .catch((error) => console.error("Error sharing", error));
+      try {
+        await navigator.share(shareData);
+        console.log("Share successful!");
+      } catch (error) {
+        console.error("Error sharing:", error);
+      }
     } else {
-      alert("Share feature is not supported on this browser.");
+      alert("Sharing not supported in this browser.");
     }
   };
 
@@ -222,7 +266,7 @@ const CropCalendar = () => {
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-6">
         <div className="flex justify-between align-middle items-center my-6 mb-10">
           <h1 className="text-blue-600 text-3xl font-bold mb-4 text-center">
-            Crop Calendar
+            Crop Calendar for Major Season
           </h1>
           <div className="flex align-middle items-center gap-6">
             <button
@@ -243,21 +287,6 @@ const CropCalendar = () => {
         {/* Dropdown for Crop and Region Selection */}
         <div className="flex flex-col md:flex-row mb-4 justify-between gap-4">
           {/* Dropdown for Crop Selection */}
-          {/* <div className="w-full md:w-1/2 mb-4 md:mb-0">
-            <label className="text-lg font-semibold mr-2">Select Crop:</label>
-            <select
-              value={selectedCrop}
-              onChange={handleCropChange}
-              className="border border-gray-300 rounded p-2 w-2/2"
-            >
-              <option value="all">All crops</option> 
-              <option value="maize">Maize</option>
-              <option value="soyabean">Soyabean</option>
-              <option value="sorghum">Sorghum</option>
-              <option value="rice">Rice</option>
-              <option value="tomatoes">Tomatoes</option>
-            </select>
-          </div> */}
           <div className="w-full md:w-1/3 mb-4 md:mb-0">
             <label className="text-lg font-semibold mr-2 block">
               Select Crop:
@@ -266,14 +295,13 @@ const CropCalendar = () => {
             <select
               value={selectedCrop}
               onChange={handleCropChange}
-              className="border border-gray-300 rounded p-2 w-3/3"
+              className="border border-gray-300 rounded p-2 w-full"
             >
-              <option value="all">All-crops</option> {/* Default option */}
+              <option value="all">All Crops</option>
               <option value="maize">Maize</option>
-              <option value="soyabean">Soyabean</option>
+              <option value="soybean">Soybean</option>
               <option value="sorghum">Sorghum</option>
               <option value="rice">Rice</option>
-              {/* <option value="tomatoes">Tomatoes</option> */}
             </select>
           </div>
 
@@ -285,8 +313,9 @@ const CropCalendar = () => {
             <select
               value={selectedRegion}
               onChange={handleRegionChange}
-              className="border border-gray-300 rounded p-2 w-2/3"
+              className="border border-gray-300 rounded p-2 w-full"
             >
+              <option value="All Regions">All Regions</option>
               {regionsOfGhana.map((region) => (
                 <option key={region} value={region}>
                   {region}
@@ -303,10 +332,15 @@ const CropCalendar = () => {
             <select
               value={selectedDistrict}
               onChange={handleDistrictChange}
-              className="border border-gray-300 rounded p-2 w-2/3"
+              className="border border-gray-300 rounded p-2 w-full"
             >
+              <option value="All Districts">All Districts</option>
               {districtOfGhana
-                .filter((d) => d.region === selectedRegion)
+                .filter(
+                  (d) =>
+                    d.region === selectedRegion ||
+                    selectedRegion === "All Regions"
+                )
                 .map((district, index) => (
                   <option key={index} value={district.name}>
                     {district.name}
@@ -315,6 +349,9 @@ const CropCalendar = () => {
             </select>
           </div>
         </div>
+
+        {/* Loading state */}
+        {loading && <p className="text-center text-blue-500">Loading...</p>}
 
         {/* Calendar Table */}
         <div className="overflow-x-auto">

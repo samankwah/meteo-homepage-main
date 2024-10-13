@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import backgroundImage from "../assets/images/Rainy.jpg";
+import backgroundImage from "../assets/images/Sunny.jpg";
 import { FaCloudSun, FaThermometerHalf } from "react-icons/fa";
 import thermometer from "../assets/images/thermometer.svg";
 import event1 from "../assets/images/event1.png";
@@ -42,6 +42,7 @@ const highSeverityCoordinates = [
   // [7.52, -1.35],
 ];
 
+// eslint-disable-next-line react/prop-types
 const WeatherIcon = ({ condition }) => {
   switch (condition) {
     case "Cloudy, Sunny Intervals":
@@ -235,7 +236,7 @@ const Home = () => {
       }}
     >
       <main className="flex-grow mt-16 container mx-auto">
-        <div className="pt-16 md:pt-20">
+        <div className="pt-16 md:pt-8">
           <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-white text-center my-4 md:my-6">
             GhAAP Climate Information Services
           </h1>

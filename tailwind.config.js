@@ -28,6 +28,7 @@ export default {
       },
       fontFamily: {
         sans: [
+          "Cougette",
           "Montserrat",
           "Amatic SC",
           "ui-sans-serif",
@@ -46,7 +47,7 @@ export default {
           "Noto Color Emoji",
         ],
         // You can also add it to other categories if needed, for example:
-        serif: ["Poppins", "ui-serif", "Georgia"],
+        serif: ["Cougette", "ui-serif", "Georgia"],
         mono: ["Poppins", "ui-monospace", "SFMono-Regular"],
       },
     },
