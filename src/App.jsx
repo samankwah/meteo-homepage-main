@@ -112,10 +112,12 @@ import NotFound from "./components/NotFound";
 import EventClimateReportRelease from "./events/EventClimateReportRelease";
 import EventMajorSeasonCropCalendar from "./events/EventMajorSeasonCropCalendar";
 import EventPoultryCalendar from "./events/EventPoultryCalendar";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">

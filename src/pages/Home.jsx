@@ -23,6 +23,7 @@ import "../components/PopupStyles.css";
 import { FaArrowRight, FaExclamationTriangle } from "react-icons/fa";
 import cap from "../assets/icons/CAP.png";
 import SeverityPolygon from "../components/SeverityPolygon";
+import MyLink from "../components/MyLink";
 
 const lowSeverityCoordinates = [
   // [7.9, -1.1],
@@ -1116,14 +1117,14 @@ const Home = () => {
               </h2>
               <ul className="space-y-3">
                 <li>
-                  <Link
+                  <MyLink
                     to="/5-days-forecast"
                     className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
                   >
                     <h3 className="text-blue-600 font-semibold">
                       5 Days Forecast
                     </h3>
-                  </Link>
+                  </MyLink>
                 </li>
                 <li>
                   <Link

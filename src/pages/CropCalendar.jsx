@@ -119,24 +119,25 @@ const generateRegionActivities = () => {
 
   // Array of months
   const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    { month: "January", monthNo: 1 },
+    { month: "February", monthNo: 2 },
+    { month: "March", monthNo: 3 },
+    { month: "April", monthNo: 4 },
+    { month: "May", monthNo: 5 },
+    { month: "June", monthNo: 6 },
+    { month: "July", monthNo: 7 },
+    { month: "August", monthNo: 8 },
+    { month: "September", monthNo: 9 },
+    { month: "October", monthNo: 10 },
+    { month: "November", monthNo: 11 },
+    { month: "December", monthNo: 12 },
   ];
 
   // Helper function to adjust the month based on climate offset
-  const adjustMonth = (month, offset) => {
-    const index = months.indexOf(month);
-    return months[(index + offset + 12) % 12]; // Ensure it wraps around the year correctly
+  const adjustMonth = (monthName, offset) => {
+    const monthIndex = months.findIndex((m) => m.month === monthName);
+    const adjustedIndex = (monthIndex + offset + 12) % 12; // Ensure wrapping of months
+    return months[adjustedIndex].month;
   };
 
   // Generate activities for each region based on the climate offset
@@ -164,31 +165,29 @@ const CropCalendar = () => {
   const [initialLoad, setInitialLoad] = useState(true); // Track if initial load
 
   useEffect(() => {
-    // Update activities based on selections
     const updateFarmingActivities = () => {
       setLoading(true); // Set loading state
 
       let activities = [];
 
-      // Default to showing a sample of the crop calendar on initial load
+      // Handle first render (initial load)
       if (initialLoad) {
         activities = baseActivities; // Show base activities initially
-        setInitialLoad(true); // Set initial load to false after first render
-      } else if (
-        selectedRegion === "All Regions" ||
-        selectedDistrict === "All Districts"
-      ) {
-        activities = Object.values(regionCalendars).flat();
+        setInitialLoad(false); // Set initial load to false after first load
+      } else if (selectedRegion === "All Regions") {
+        activities = baseActivities; // Show base activities if "All Regions" is selected
       } else {
+        // Load the region-specific calendar
         activities = regionCalendars[selectedRegion] || [];
       }
 
-      setFarmingActivities(activities);
+      console.log("Updated activities for region:", activities); // Debugging output
+      setFarmingActivities(activities); // Update activities state
       setLoading(false); // Reset loading state
     };
 
     updateFarmingActivities();
-  }, [selectedCrop, selectedRegion, selectedDistrict, initialLoad]);
+  }, [selectedRegion, initialLoad]);
 
   const handleRegionChange = (event) => {
     setSelectedRegion(event.target.value);
