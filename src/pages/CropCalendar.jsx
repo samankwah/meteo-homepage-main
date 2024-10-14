@@ -163,6 +163,8 @@ const CropCalendar = () => {
   const [farmingActivities, setFarmingActivities] = useState([]); // Default state for activities
   const [loading, setLoading] = useState(false); // Loading state for filtering
   const [initialLoad, setInitialLoad] = useState(true); // Track if initial load
+  const [hoveredActivity, setHoveredActivity] = useState(null); // To track the hovered activity
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 }); // Track position of the tooltip
 
   useEffect(() => {
     const updateFarmingActivities = () => {
@@ -202,6 +204,16 @@ const CropCalendar = () => {
 
   const handleDistrictChange = (e) => {
     setSelectedDistrict(e.target.value);
+  };
+
+  // Function to handle hover
+  const handleMouseEnter = (activity, e) => {
+    setHoveredActivity(activity); // Set the hovered activity
+    setTooltipPosition({ x: e.pageX, y: e.pageY }); // Set tooltip position based on cursor
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredActivity(null); // Reset the hovered activity when mouse leaves
   };
 
   // Function to handle downloading the crop calendar
@@ -387,6 +399,10 @@ const CropCalendar = () => {
                         className={`border border-gray-300 p-2 ${
                           isActive ? activity.color : ""
                         }`}
+                        onMouseEnter={
+                          (e) => handleMouseEnter(activity, e) // Show tooltip on hover
+                        }
+                        onMouseLeave={handleMouseLeave} // Hide tooltip on mouse leave
                       ></td>
                     );
                   })}
@@ -394,6 +410,24 @@ const CropCalendar = () => {
               ))}
             </tbody>
           </table>
+          {/* Tooltip for crop advisory */}
+          {hoveredActivity && (
+            <div
+              className="absolute bg-white shadow-lg rounded p-3 border border-gray-200"
+              style={{
+                top: tooltipPosition.y + 10,
+                left: tooltipPosition.x + 10,
+              }}
+            >
+              <p className="font-semibold">{hoveredActivity.activity}</p>
+              <p>{`Start: ${hoveredActivity.start}`}</p>
+              <p>{`End: ${hoveredActivity.end}`}</p>
+              <p className="mt-2 text-gray-600">
+                Advisory: Ensure timely {hoveredActivity.activity.toLowerCase()}{" "}
+                to maintain crop health.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
