@@ -8,68 +8,101 @@ const baseActivities = [
     start: "January",
     end: "February",
     color: "bg-green-300",
+    advisory:
+      "Ensure the land is cleared of weeds and debris. Plow the land to aerate the soil.",
   },
   {
     activity: "Seed Selection",
     start: "January",
     end: "February",
     color: "bg-green-300",
+    advisory:
+      "Select disease-resistant seeds suitable for the region’s soil and climate.",
   },
   {
     activity: "Planting",
     start: "March",
     end: "March",
     color: "bg-yellow-300",
+    advisory:
+      "Plant seeds at the recommended depth and spacing for optimal growth.",
   },
   {
     activity: "Fertilizing",
     start: "April",
     end: "April",
     color: "bg-blue-300",
+    advisory:
+      "Apply fertilizers based on soil test recommendations to improve crop yield.",
   },
-  { activity: "Weeding", start: "April", end: "May", color: "bg-orange-300" },
-  { activity: "Pest Control", start: "May", end: "June", color: "bg-red-300" },
+  {
+    activity: "Weeding",
+    start: "April",
+    end: "May",
+    color: "bg-orange-300",
+    advisory:
+      "Remove weeds regularly to prevent competition for nutrients with your crops.",
+  },
+  {
+    activity: "Pest Control",
+    start: "May",
+    end: "June",
+    color: "bg-red-300",
+    advisory:
+      "Monitor crops for pests and apply appropriate pest control methods early.",
+  },
   {
     activity: "Harvesting",
     start: "July",
     end: "July",
     color: "bg-purple-300",
+    advisory: "Harvest crops at the right time to maximize yield and quality.",
   },
   {
     activity: "Irrigation",
     start: "August",
     end: "September",
     color: "bg-teal-300",
+    advisory:
+      "Ensure timely and adequate irrigation to maintain moisture levels.",
   },
   {
     activity: "Weeding",
     start: "September",
     end: "September",
     color: "bg-orange-300",
+    advisory:
+      "Continue regular weeding to protect crops from nutrient competition.",
   },
   {
     activity: "Fertilizing",
     start: "October",
     end: "October",
     color: "bg-blue-300",
+    advisory: "Apply additional fertilizers if needed to boost crop growth.",
   },
   {
     activity: "Pest Monitoring",
     start: "November",
     end: "November",
     color: "bg-red-300",
+    advisory:
+      "Regularly monitor crops for pests and take quick action if needed.",
   },
   {
     activity: "Crop Maintenance",
     start: "November",
     end: "December",
     color: "bg-purple-300",
+    advisory:
+      "Maintain your crops by pruning and removing dead parts as needed.",
   },
   {
     activity: "Preparing for Next Season",
     start: "December",
     end: "December",
     color: "bg-gray-300",
+    advisory: "Prepare the land and tools for the next farming season.",
   },
 ];
 
@@ -422,10 +455,12 @@ const CropCalendar = () => {
               <p className="font-semibold">{hoveredActivity.activity}</p>
               <p>{`Start: ${hoveredActivity.start}`}</p>
               <p>{`End: ${hoveredActivity.end}`}</p>
-              <p className="mt-2 text-gray-600">
+              {/* <p className="mt-2 text-gray-600">
                 Advisory: Ensure timely {hoveredActivity.activity.toLowerCase()}{" "}
                 to maintain crop health.
-              </p>
+              </p> */}
+              <p className="mt-2 text-gray-600">{hoveredActivity.advisory}</p>{" "}
+              {/* Show advisory */}
             </div>
           )}
         </div>
