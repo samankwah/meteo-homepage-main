@@ -1,3 +1,5 @@
+import weekly from "../assets/images/weekly fcst.jpg";
+
 const SevenDaysForecast = () => {
   // Helper function to format date
   const formatDate = (date) => {
@@ -21,8 +23,14 @@ const SevenDaysForecast = () => {
   }));
 
   const handleDownload = () => {
-    // Logic to handle download
-    alert("Download functionality is not implemented yet.");
+    // File download logic
+    const fileUrl = "/WEEKLY OUTLOOK 14102024.pdf"; // The file path in the public folder
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.setAttribute("download", "7-day-forecast.pdf"); // Specify a download filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -68,8 +76,12 @@ const SevenDaysForecast = () => {
           <h2 className="text-xl font-semibold text-blue-600 mb-2">
             Forecast Map
           </h2>
-          <div className="map-container bg-gray-300 rounded-lg h-64 sm:h-80">
-            <p className="text-center text-gray-700">Map goes here</p>
+          <div className="map-container bg-gray-300 rounded-lg h-80 sm:h-96 flex justify-center items-center">
+            <img
+              src={weekly} // Path to your image
+              alt="7 Days Forecast Map"
+              className="w-full h-full object-contain rounded-lg" // Changed to 'object-contain'
+            />
           </div>
         </div>
       </div>

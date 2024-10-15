@@ -105,7 +105,12 @@ const SeasonalForecast = () => {
     - Rainfall MAM: ${currentData.rainfallLTM.mam} | Forecast: ${currentData.rainfallForecast.mam}
     - Dry Spells Early: ${currentData.drySpellsLTM.early} | Forecast: ${currentData.drySpellsForecast.early}
     `;
-
+    const link = document.createElement("a");
+    link.href = "/public/FORECAST FOR THE MINOR RAINY SEASON-2024-1 final.pdf"; // Relative path to the PDF in the public directory
+    link.download = "minor-season-forecast.pdf"; // Filename for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
     const blob = new Blob([forecastText], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
