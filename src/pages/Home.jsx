@@ -119,45 +119,45 @@ const Home = () => {
   const weatherData = [
     {
       city: "Koforidua",
-      condition: "Cloudy, Sunny Intervals",
-      minTemp: 22,
-      maxTemp: 32,
-    },
-    {
-      city: "Cape Coast",
-      condition: "Cloudy, Sunny Intervals",
+      condition: "Rain, TSRA",
       minTemp: 23,
       maxTemp: 30,
     },
     {
-      city: "Ho",
-      condition: "Rains, Sunny Intervals",
-      minTemp: 19,
-      maxTemp: 32,
-    },
-    {
-      city: "Takoradi",
-      condition: "Rainfall",
-      minTemp: 21,
-      maxTemp: 33,
-    },
-    {
-      city: "Accra",
-      condition: "Sun",
+      city: "Cape Coast",
+      condition: "Variably Cloudy, TSRA",
       minTemp: 23,
+      maxTemp: 29,
+    },
+    {
+      city: "Ho",
+      condition: "Rain, TSRA",
+      minTemp: 22,
       maxTemp: 31,
     },
     {
+      city: "Takoradi",
+      condition: "Rain, TSRA",
+      minTemp: 23,
+      maxTemp: 29,
+    },
+    {
+      city: "Accra",
+      condition: "Rain, Variably Cloudy",
+      minTemp: 24,
+      maxTemp: 30,
+    },
+    {
       city: "Bole",
-      condition: "Cloudy, Sunny Intervals",
-      minTemp: 25,
-      maxTemp: 37,
+      condition: "Variably Cloudy, Sunny Intervals",
+      minTemp: 23,
+      maxTemp: 32,
     },
     {
       city: "Tamale",
-      condition: "Partly Cloudy",
+      condition: "Mostly Cloudy, Sunny Breaks",
       minTemp: 24,
-      maxTemp: 36,
+      maxTemp: 32,
     },
   ];
 
@@ -321,43 +321,43 @@ const Home = () => {
                   <Popup>
                     <div className="popup-content flex flex-col">
                       {/* Location and weather info */}
-                      <h2 className="location-title">Accra</h2>
+                      <h2 className="location-title text-blue-900">Accra</h2>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-blue-500" />
 
                       {/* Date Section */}
                       <p className="text-blue-600 font-bold">{currentDate}</p>
 
                       {/* Horizontal Rule */}
-                      <hr className="my-2 border-gray-300" />
+                      <hr className="border-gray-300" />
 
                       <div className="weather-details">
                         {/* Morning Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Rain (30%)
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-yellow-500 text-xl mr-2" />
+                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Afternoon:</strong> Sunny Intervals
+                            <strong>Afternoon:</strong> Variably Cloudy
                           </p>
                         </div>
 
-                        <hr className="my-2 border-gray-300" />
+                        <hr className="border-gray-300" />
 
                         {/* Temperature Info */}
-                        <div className="weather-info flex items-center my-2">
-                          <FaThermometerHalf className="temp-icon text-red-500 text-xl mr-2" />
+                        <div className="weather-info flex items-center">
+                          <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 30°C
+                            <strong>Temp:</strong> 24 - 30°C
                           </p>
                         </div>
                       </div>
@@ -384,7 +384,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Rain (30%)
                           </p>
                         </div>
 
@@ -394,7 +394,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Afternoon:</strong> Sunny Intervals
+                            <strong>Afternoon:</strong> TSRA (30%)
                           </p>
                         </div>
 
@@ -404,7 +404,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 23 - 29°C
                           </p>
                         </div>
                       </div>
@@ -432,7 +432,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Rain (30%)
                           </p>
                         </div>
 
@@ -442,7 +442,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Afternoon:</strong> Sunny Intervals
+                            <strong>Afternoon:</strong> TSRA (30%)
                           </p>
                         </div>
 
@@ -452,7 +452,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 22 - 30°C
                           </p>
                         </div>
                       </div>
@@ -480,7 +480,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Mostly Cloudy
                           </p>
                         </div>
 
@@ -490,7 +490,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Afternoon:</strong> Sunny Intervals
+                            <strong>Afternoon:</strong> Sunny Breaks
                           </p>
                         </div>
 
@@ -500,7 +500,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 24 - 32°C
                           </p>
                         </div>
                       </div>
@@ -528,7 +528,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Rain (30%)
                           </p>
                         </div>
 
@@ -538,7 +538,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Afternoon:</strong> Sunny Intervals
+                            <strong>Afternoon:</strong> TSRA (40%)
                           </p>
                         </div>
 
@@ -548,7 +548,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 22 - 31°C
                           </p>
                         </div>
                       </div>
@@ -575,7 +575,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Variably Cloudy
                           </p>
                         </div>
 
@@ -595,7 +595,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 23 - 31°C
                           </p>
                         </div>
                       </div>
@@ -622,7 +622,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> TSRA (30%)
                           </p>
                         </div>
 
@@ -642,7 +642,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 22 - 32°C
                           </p>
                         </div>
                       </div>
@@ -672,7 +672,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Mist (60%)
                           </p>
                         </div>
 
@@ -682,7 +682,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Afternoon:</strong> Sunny Intervals
+                            <strong>Afternoon:</strong> TSRA (30%)
                           </p>
                         </div>
 
@@ -692,7 +692,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 24 - 31°C
                           </p>
                         </div>
                       </div>
@@ -720,7 +720,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> TSRA (30%)
                           </p>
                         </div>
 
@@ -730,7 +730,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Afternoon:</strong> Sunny Intervals
+                            <strong>Afternoon:</strong> TSRA (30%)
                           </p>
                         </div>
 
@@ -740,7 +740,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 20 - 30°C
                           </p>
                         </div>
                       </div>
@@ -768,7 +768,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Variably Cloudy
                           </p>
                         </div>
 
@@ -788,7 +788,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 23 - 31°C
                           </p>
                         </div>
                       </div>
@@ -815,7 +815,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Mist (60%)
                           </p>
                         </div>
 
@@ -825,7 +825,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Afternoon:</strong> Sunny Intervals
+                            <strong>Afternoon:</strong> TSRA (30%)
                           </p>
                         </div>
 
@@ -835,7 +835,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 22 - 31°C
                           </p>
                         </div>
                       </div>
@@ -862,7 +862,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Mist (60%)
                           </p>
                         </div>
 
@@ -882,7 +882,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 22 - 30°C
                           </p>
                         </div>
                       </div>
@@ -911,7 +911,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Variably Cloudy
                           </p>
                         </div>
 
@@ -921,7 +921,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Afternoon:</strong> Sunny Intervals
+                            <strong>Afternoon:</strong> TSRA (30%)
                           </p>
                         </div>
 
@@ -931,7 +931,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 23 - 31°C
                           </p>
                         </div>
                       </div>
@@ -960,7 +960,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Variably Cloudy
                           </p>
                         </div>
 
@@ -970,7 +970,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Afternoon:</strong> Sunny Intervals
+                            <strong>Afternoon:</strong> TSRA (30%)
                           </p>
                         </div>
 
@@ -980,7 +980,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 23 - 29°C
                           </p>
                         </div>
                       </div>
@@ -1009,7 +1009,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> TSRA (30%)
                           </p>
                         </div>
 
@@ -1029,7 +1029,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 22 - 32°C
                           </p>
                         </div>
                       </div>
@@ -1058,7 +1058,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Sunny Intervals
+                            <strong>Morning:</strong> Rain (30%)
                           </p>
                         </div>
 
@@ -1068,7 +1068,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Afternoon:</strong> Sunny Intervals
+                            <strong>Afternoon:</strong> TSRA (40%)
                           </p>
                         </div>
 
@@ -1078,7 +1078,7 @@ const Home = () => {
                         <div className="weather-info flex items-center">
                           <FaThermometerHalf className="temp-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Temp:</strong> 23 - 33°C
+                            <strong>Temp:</strong> 23 - 30°C
                           </p>
                         </div>
                       </div>
