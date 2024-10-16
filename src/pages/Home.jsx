@@ -271,7 +271,7 @@ const Home = () => {
       <main className="flex-grow mt-16 container mx-auto">
         <div className="pt-16 md:pt-8">
           <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-white text-center my-4 md:my-6">
-            GhAAP Climate Information Services
+            The Customized Agro-Climate Information Services
           </h1>
 
           <div className="bg-[#11487e] rounded-lg shadow-lg p-4 mb-8">
