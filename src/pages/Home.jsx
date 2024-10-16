@@ -369,7 +369,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Rain (30%)
+                            <strong>Morning:</strong> Partly Cloudy
                           </p>
                         </div>
 
@@ -379,7 +379,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Afternoon:</strong> Variably Cloudy
+                            <strong>Afternoon:</strong> Sunny Periods
                           </p>
                         </div>
 
@@ -951,7 +951,7 @@ const Home = () => {
 
                         {/* Afternoon Weather */}
                         <div className="weather-info flex items-center my-2">
-                          <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
+                          <FaCloudSunRain className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
                             <strong>Afternoon:</strong> TSRA (30%)
                           </p>
