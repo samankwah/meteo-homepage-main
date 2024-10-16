@@ -416,7 +416,7 @@ const Home = () => {
                         <div className="weather-info flex items-center my-2">
                           <FaCloudSun className="weather-icon text-gray-900 text-xl mr-2" />
                           <p>
-                            <strong>Morning:</strong> Rain (30%)
+                            <strong>Morning:</strong> Mist (60%)
                           </p>
                         </div>
 
