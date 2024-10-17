@@ -34,10 +34,10 @@ import SeverityPolygon from "../components/SeverityPolygon";
 import MyLink from "../components/MyLink";
 
 const lowSeverityCoordinates = [
-  [7.3, 0.5], //northeast
-  [6.15, -0.2],
-  [4.88, -1.65], //south
-  [6.7, -3],
+  // [7.3, 0.5], //northeast
+  // [6.15, -0.2],
+  // [4.88, -1.65], //south
+  // [6.7, -3],
 ];
 
 const mediumSeverityCoordinates = [
