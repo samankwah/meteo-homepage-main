@@ -9,7 +9,7 @@ const baseActivities = [
     end: "February",
     color: "bg-green-300",
     advisory:
-      "Ensure the land is cleared of weeds and debris. Plow the land to aerate the soil.",
+      "Plow the land to aerate the soil. \nUse minimum tillage, and ensure \nthe land is clear from debris. \nSpot burning may be used to clear \norganic matter. \nPrepare the land before the rains.",
   },
   {
     activity: "Seed Selection",
@@ -17,7 +17,7 @@ const baseActivities = [
     end: "February",
     color: "bg-green-300",
     advisory:
-      "Select disease-resistant seeds suitable for the region’s soil and climate.",
+      "Purchase certified seed \nfrom registered input dealers. \nUse recommended maize varieties \nsuch as Abontem for short-duration \ngrowth (80-90 days) or Obaatampa \nfor long-duration growth (105-120 days).",
   },
   {
     activity: "Planting",
@@ -25,7 +25,7 @@ const baseActivities = [
     end: "March",
     color: "bg-yellow-300",
     advisory:
-      "Plant seeds at the recommended depth and spacing for optimal growth.",
+      "Plant seeds at the \nrecommended depth and \nspacing for optimal growth.",
   },
   {
     activity: "Fertilizing",
@@ -33,7 +33,7 @@ const baseActivities = [
     end: "April",
     color: "bg-blue-300",
     advisory:
-      "Apply fertilizers based on soil test recommendations to improve crop yield.",
+      "Apply NPK 20:10:10 at \nthe rate of 2 bags per acre, \n14 days after planting. \nEnsure the field is moist \nbefore application. \nUse side placement at 3-5 cm \naway from the plant. \nBroadcast evenly for healthy growth.",
   },
   {
     activity: "Weeding",
@@ -41,7 +41,7 @@ const baseActivities = [
     end: "May",
     color: "bg-orange-300",
     advisory:
-      "Remove weeds regularly to prevent competition for nutrients with your crops.",
+      "Control weeds early, using \nmanual weeding or recommended \nselective herbicides. \nApply herbicides such as \nNico or Nomini Rice Pro. \nWeeding should be done \nwithin 3 weeks after planting \nto avoid crop competition.",
   },
   {
     activity: "Pest Control",
@@ -49,14 +49,15 @@ const baseActivities = [
     end: "June",
     color: "bg-red-300",
     advisory:
-      "Monitor crops for pests and apply appropriate pest control methods early.",
+      "Apply pesticides to control \nFall Armyworm and other pests early. \nCommon pests like Fall Armyworm \ncan be controlled using pesticides \nsuch as Warrior, Super Viper, \nor Bypel Attack. \nApply early in the morning or \nlate in the evening for best results.",
   },
   {
     activity: "Harvesting",
     start: "July",
     end: "July",
     color: "bg-purple-300",
-    advisory: "Harvest crops at the right time to maximize yield and quality.",
+    advisory:
+      "Harvest when the maize is mature, \nand store in well-ventilated areas. \nHarvesting should be done early \nwhen the maize silk turns dry and brown. \nStore in hermetic bags to avoid \npest attacks during storage.",
   },
   {
     activity: "Irrigation",
@@ -64,7 +65,7 @@ const baseActivities = [
     end: "September",
     color: "bg-teal-300",
     advisory:
-      "Ensure timely and adequate irrigation to maintain moisture levels.",
+      "Utilize drip irrigation for \nbetter moisture retention. \nGiven the urban nature of Greater Accra, \nconsider efficient irrigation systems \nto manage water use effectively.",
   },
   {
     activity: "Weeding",
@@ -72,14 +73,15 @@ const baseActivities = [
     end: "September",
     color: "bg-orange-300",
     advisory:
-      "Continue regular weeding to protect crops from nutrient competition.",
+      "Continue regular weeding to \nprotect crops from nutrient competition. \nApply herbicides such as \nNico or Nomini Rice Pro. \nWeeding should be done within \n3 weeks after planting \nto avoid crop competition.",
   },
   {
     activity: "Fertilizing",
     start: "October",
     end: "October",
     color: "bg-blue-300",
-    advisory: "Apply additional fertilizers if needed to boost crop growth.",
+    advisory:
+      "Apply Urea at a rate of 1 bag per \nacre 6 weeks after planting. \nEnsure that the field is moist \nbefore application. \nUrea should be applied 3 weeks \nafter the first fertilizer application \nfor optimum nutrient absorption.",
   },
   {
     activity: "Pest Monitoring",
@@ -87,7 +89,7 @@ const baseActivities = [
     end: "November",
     color: "bg-red-300",
     advisory:
-      "Regularly monitor crops for pests and take quick action if needed.",
+      "Monitor for common pests and \nuse integrated pest management. \nIn the Ashanti region, pests \nlike the fall armyworm can be prevalent, \nso regular monitoring is crucial.",
   },
   {
     activity: "Crop Maintenance",
@@ -95,14 +97,15 @@ const baseActivities = [
     end: "December",
     color: "bg-purple-300",
     advisory:
-      "Maintain your crops by pruning and removing dead parts as needed.",
+      "Maintain your crops by pruning \nand removing dead parts as needed. \nConsider rotating rice with legumes. \nThis practice can improve soil \nfertility and reduce pests.",
   },
   {
     activity: "Preparing for Next Season",
     start: "December",
     end: "December",
     color: "bg-gray-300",
-    advisory: "Prepare the land and tools for the next farming season.",
+    advisory:
+      "Prepare soil properly \nfor water retention. \nEnsure good soil structure \nfor effective rice growth.",
   },
 ];
 
@@ -446,7 +449,7 @@ const CropCalendar = () => {
           {/* Tooltip for crop advisory */}
           {hoveredActivity && (
             <div
-              className="absolute bg-gray-800 text-white text-sm p-2 rounded"
+              className="absolute bg-gray-800 text-white text-sm p-2 rounded whitespace-pre-wrap"
               style={{
                 top: tooltipPosition.y + 10,
                 left: tooltipPosition.x + 10,
