@@ -253,25 +253,6 @@ const PoultryCalendar = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8 pt-24 relative">
       <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-6">
-        {/* <div className="flex justify-between align-middle items-center my-6 mb-10">
-          <h1 className="text-blue-600 text-3xl font-bold mb-4 text-center">
-            Poultry Production Calendar
-          </h1>
-          <div className="flex align-middle items-center gap-6">
-            <button
-              onClick={handleDownload}
-              className="p-2 px-4 bg-green-500 text-white rounded-full"
-            >
-              Download
-            </button>
-            <button
-              onClick={handleShare}
-              className="p-2 px-4 bg-blue-500 text-white rounded-full"
-            >
-              Share
-            </button>
-          </div>
-        </div> */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 my-6 mb-10">
           <h1 className="text-blue-600 text-3xl font-bold mb-4 text-center">
             Poultry Production Calendar

@@ -293,8 +293,8 @@ const Home = () => {
       }}
     >
       <main className="flex-grow mt-16 container mx-auto">
-        <div className="pt-16 md:pt-8">
-          <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-white text-center my-4 md:my-6">
+        <div className="pt-8 md:pt-4">
+          <h1 className="text-4xl md:text-4xl lg:text-6xl font-bold text-white text-center my-6 md:my-4">
             The Customized Agro-Climatic Information Services
           </h1>
 
