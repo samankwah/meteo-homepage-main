@@ -308,20 +308,20 @@ const CropCalendar = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8 pt-24">
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-6">
-        <div className="flex justify-between align-middle items-center my-6 mb-10">
+        <div className="flex flex-col md:flex-row justify-between items-center my-6 mb-10">
           <h1 className="text-blue-600 text-3xl font-bold mb-4 text-center">
             Crop Calendar for Major Season
           </h1>
-          <div className="flex align-middle items-center gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
             <button
               onClick={handleDownload}
-              className="p-2 px-4 bg-green-500 text-white rounded-full"
+              className="p-2 px-4 w-full md:w-auto bg-green-500 text-white rounded-full text-center"
             >
               Download
             </button>
             <button
               onClick={handleShare}
-              className="p-2 px-4 bg-blue-500 text-white rounded-full"
+              className="p-2 px-4 w-full md:w-auto bg-blue-500 text-white rounded-full text-center"
             >
               Share
             </button>
@@ -446,7 +446,7 @@ const CropCalendar = () => {
           {/* Tooltip for crop advisory */}
           {hoveredActivity && (
             <div
-              className="absolute bg-white shadow-lg rounded p-3 border border-gray-200"
+              className="absolute bg-gray-800 text-white text-sm p-2 rounded"
               style={{
                 top: tooltipPosition.y + 10,
                 left: tooltipPosition.x + 10,
@@ -455,11 +455,7 @@ const CropCalendar = () => {
               <p className="font-semibold">{hoveredActivity.activity}</p>
               <p>{`Start: ${hoveredActivity.start}`}</p>
               <p>{`End: ${hoveredActivity.end}`}</p>
-              {/* <p className="mt-2 text-gray-600">
-                Advisory: Ensure timely {hoveredActivity.activity.toLowerCase()}{" "}
-                to maintain crop health.
-              </p> */}
-              <p className="mt-2 text-gray-600">{hoveredActivity.advisory}</p>{" "}
+              <p className="mt-2 text-white">{hoveredActivity.advisory}</p>{" "}
               {/* Show advisory */}
             </div>
           )}

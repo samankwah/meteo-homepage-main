@@ -35,19 +35,21 @@ const SevenDaysForecast = () => {
 
   return (
     <div className="main-content bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-4 flex flex-col items-center pt-24">
-      {/* Adjust padding-top based on the navbar height */}
       <div className="relative w-full max-w-6xl">
-        <h1 className="text-blue-600 text-2xl sm:text-4xl text-center font-bold mb-4">
-          7 Days Forecast
-        </h1>
+        {/* Header Section */}
+        <div className="flex flex-col sm:flex-row justify-evenly items-center mb-4">
+          <h1 className="text-blue-600 text-2xl sm:text-4xl text-center font-bold">
+            7 Days Forecast
+          </h1>
 
-        {/* Download Button */}
-        <button
-          onClick={handleDownload}
-          className="absolute top-0 right-0 bg-blue-600 text-white px-4 py-2 rounded shadow-md hover:bg-blue-700"
-        >
-          Download
-        </button>
+          {/* Download Button */}
+          <button
+            onClick={handleDownload}
+            className="mt-4 sm:mt-0 bg-blue-600 text-white px-4 py-2 rounded shadow-md hover:bg-blue-700"
+          >
+            Download
+          </button>
+        </div>
 
         {/* Forecast Summary Cards */}
         <div className="forecast-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-8">
@@ -80,7 +82,7 @@ const SevenDaysForecast = () => {
             <img
               src={weekly} // Path to your image
               alt="7 Days Forecast Map"
-              className="w-full h-full object-contain rounded-lg" // Changed to 'object-contain'
+              className="w-full h-full object-contain rounded-lg"
             />
           </div>
         </div>

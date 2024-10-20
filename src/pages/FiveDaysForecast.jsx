@@ -48,8 +48,8 @@ const FiveDaysForecast = () => {
     },
     {
       day: "Day 5",
-      condition: "Snowy",
-      temp: "-2°C",
+      condition: "Rainy",
+      temp: "-30°C",
       precipitation: "80%",
       wind: "8 km/h",
     },

@@ -132,8 +132,6 @@ const SeasonalForecast = () => {
       </div>
 
       <div className="flex justify-between items-center mt-8">
-        {" "}
-        {/* Flexbox container to align both elements */}
         {/* Zone Selection */}
         <div className="w-1/6 pb-12">
           <select

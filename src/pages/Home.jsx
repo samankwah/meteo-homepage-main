@@ -1296,10 +1296,9 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="flex flex-col space-y-4 m-8 p-4">
-            {/* <div className="bg-blue-500 text-white p-4 rounded-lg"></div> */}
-
+          <div className="flex flex-col space-y-4 m-8 p-4 max-w-full mx-auto">
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+              {/* News Section */}
               <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden">
                 {/* Card Header */}
                 <div className="p-4 border-b bg-blue-50">
@@ -1360,6 +1359,7 @@ const Home = () => {
                 </div>
               </div>
 
+              {/* Events Section */}
               <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden">
                 {/* Header */}
                 <div className="p-4 border-b border-gray-200 bg-blue-50">
