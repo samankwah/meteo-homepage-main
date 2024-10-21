@@ -302,7 +302,7 @@ const Home = () => {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center mx-auto px-4 py-6 md:px-8 lg:px-12"
+      className="min-h-screen bg-cover bg-center mx-auto px-4 py-1 md:px-8 lg:px-12"
       style={{
         backgroundImage: `url(${backgroundImage})`, // Replace with your image path
       }}
