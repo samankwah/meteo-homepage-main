@@ -474,10 +474,23 @@ const AdvisoryPage = () => {
 
         {/* Download CTA */}
         <div className="flex justify-center mt-12">
-          <button className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-500">
+          <button
+            className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-500"
+            onClick={() => {
+              // This will trigger the download
+              const fileUrl = "/path-to-your-file/advisory.pdf";
+              const link = document.createElement("a");
+              link.href = fileUrl;
+              link.setAttribute("download", "advisory.pdf");
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+          >
             Download Full Advisory as PDF
           </button>
         </div>
+
         <div className="mb-4">
           <div className="mt-12 text-center">
             <h3 className="text-xl font-semibold text-blue-700 mb-4">

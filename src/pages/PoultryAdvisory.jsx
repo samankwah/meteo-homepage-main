@@ -222,48 +222,56 @@ const PoultryAdvisory = () => {
           </div>
         </div>
 
-        {/* Call-to-Action Section */}
-        {/* <div className="mt-12 text-center">
-          <h3 className="text-xl font-semibold text-blue-700 mb-4">
-            Need More Advice?
-          </h3>
-          <p className="text-gray-600 mb-6">
-            Contact our experts for personalized advice or explore our resources
-            for further guidance on poultry farming.
-          </p>
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-200">
-            Contact an Expert
+        {/* Download CTA */}
+        <div className="flex justify-center mt-12">
+          <button
+            className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-500"
+            onClick={() => {
+              // This will trigger the download
+              const fileUrl = "/path-to-your-file/advisory.pdf";
+              const link = document.createElement("a");
+              link.href = fileUrl;
+              link.setAttribute("download", "advisory.pdf");
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+          >
+            Download Full Advisory as PDF
           </button>
-        </div> */}
-        <div className="mt-12 text-center">
-          <h3 className="text-xl font-semibold text-blue-700 mb-4">
-            Need More Advice?
-          </h3>
-          <p className="text-gray-600 mb-6">
-            Contact our experts for personalized advice or explore our resources
-            for further guidance on poultry farming.
-          </p>
+        </div>
 
-          {/* Contact Options */}
-          <div className="flex justify-center gap-6">
-            {/* Call Button */}
+        <div className="mb-4">
+          <div className="mt-12 text-center">
+            <h3 className="text-xl font-semibold text-blue-700 mb-4">
+              Need More Advice?
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Contact our experts for personalized advice or explore our
+              resources for further guidance on poultry farming.
+            </p>
 
-            <a
-              href="tel:+2330243999631" // Replace with the expert's actual phone number
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-200 flex items-center gap-2"
-            >
-              <FaPhoneAlt />
-              Call an Expert
-            </a>
+            {/* Contact Options */}
+            <div className="flex justify-center gap-6">
+              {/* Call Button */}
 
-            {/* Email Button */}
-            <a
-              href="mailto:stephen.amankwah@meteo.gov.gh" // Replace with the expert's actual email address
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-200 flex items-center gap-2"
-            >
-              <FaEnvelope />
-              Email an Expert
-            </a>
+              <a
+                href="tel:+2330243999631" // Replace with the expert's actual phone number
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-200 flex items-center gap-2"
+              >
+                <FaPhoneAlt />
+                Call an Expert
+              </a>
+
+              {/* Email Button */}
+              <a
+                href="mailto:stephen.amankwah@meteo.gov.gh" // Replace with the expert's actual email address
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-200 flex items-center gap-2"
+              >
+                <FaEnvelope />
+                Email an Expert
+              </a>
+            </div>
           </div>
         </div>
       </div>

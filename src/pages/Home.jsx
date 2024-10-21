@@ -32,6 +32,7 @@ import { FaArrowRight, FaExclamationTriangle } from "react-icons/fa";
 import cap from "../assets/icons/CAP.png";
 import SeverityPolygon from "../components/SeverityPolygon";
 import MyLink from "../components/MyLink";
+import PropTypes from "prop-types";
 
 const lowSeverityCoordinates = [
   // [7.3, 0.5], //northeast
@@ -148,19 +149,26 @@ const DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const WeatherCard = ({ city, condition, minTemp, maxTemp }) => (
-  <div className="flex flex-col text-left  justify-center gap-2 text-white px-10 border-r border-r-white">
-    <div className="flex gap-6 align-middle items-end ">
-      <h3 className="text-left font-montserrat font-semibold text-lg  w-16 h-16">
+  <div className="flex flex-col text-left justify-center gap-2 text-white px-4 sm:px-10 border-r border-r-white">
+    <div className="flex gap-4 sm:gap-6 items-center justify-between">
+      <h3 className="font-montserrat font-semibold text-base sm:text-lg w-14 h-14 sm:w-16 sm:h-16">
         {city}
       </h3>
-
-      <WeatherIcon className="text-right" condition={condition} />
+      <WeatherIcon
+        className="text-right text-lg sm:text-xl"
+        condition={condition}
+      />
     </div>
-    <p className="text-sm font-montserrat">{condition}</p>
-    <div className="flex align-middle items-center gap-2">
-      <img className="mysvg" src={thermometer} alt="" height="30" width="30" />
-
-      <p className="text-sm">
+    <p className="text-sm sm:text-base font-montserrat">{condition}</p>
+    <div className="flex items-center gap-2">
+      <img
+        className="mysvg"
+        src={thermometer}
+        alt="thermometer icon"
+        height="24"
+        width="24"
+      />
+      <p className="text-xs sm:text-sm">
         Temperature
         <br />
         Min: {minTemp}°C
@@ -170,6 +178,13 @@ const WeatherCard = ({ city, condition, minTemp, maxTemp }) => (
     </div>
   </div>
 );
+
+WeatherCard.propTypes = {
+  city: PropTypes.string.isRequired,
+  condition: PropTypes.string.isRequired,
+  minTemp: PropTypes.number.isRequired,
+  maxTemp: PropTypes.number.isRequired,
+};
 
 const Home = () => {
   const weatherData = [
@@ -295,7 +310,7 @@ const Home = () => {
       <main className="flex-grow mt-16 container mx-auto">
         <div className="pt-8 md:pt-4">
           <h1 className="text-3xl md:text-3xl lg:text-6xl font-bold text-white text-center my-6 md:my-4">
-            The Customized Agro-Climatic Information Services
+            Customized Agro-Climatic Information Services
           </h1>
 
           <div className="bg-[#11487e] rounded-lg shadow-lg p-4 mb-8">
@@ -349,7 +364,7 @@ const Home = () => {
               >
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> Future'
+                  attribution='&copy; <a href="http://osm.org/copyright">FutureDev</a>'
                 />
                 {/* Low severity zone */}
                 <SeverityPolygon

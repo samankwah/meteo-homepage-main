@@ -1,18 +1,21 @@
 import { useState, useEffect, useRef } from "react";
-import { FaHome } from "react-icons/fa"; // Import home icon
-import { Link } from "react-router-dom"; // Assuming you're using react-router for navigation
+import { FaHome, FaBars } from "react-icons/fa"; // Import home and menu icons
+import { Link } from "react-router-dom";
 import logo2 from "../assets/images/mofalog.png";
 import logo3 from "../assets/images/fsrp.png";
 import logo4 from "../assets/images/gmetlogo.jpg";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  // Use a ref to detect clicks outside the dropdown
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   // Close dropdown if user clicks outside the dropdown menu
@@ -22,7 +25,6 @@ const Header = () => {
         setIsOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -30,7 +32,7 @@ const Header = () => {
   }, [dropdownRef]);
 
   return (
-    <header className="bg-white fixed top-0 left-0 w-full p-2 md:p-3 flex flex-row justify-between items-center z-10 shadow-md ">
+    <header className="bg-white fixed top-0 left-0 w-full p-2 md:p-3 flex justify-between items-center z-10 shadow-md">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logos Section */}
         <div className="flex items-center space-x-4 mb-2 md:mb-0">
@@ -45,22 +47,29 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className="flex align-middle items-center">
+        {/* Mobile Menu Toggle */}
+        <div className="flex items-center md:hidden">
+          <button onClick={toggleMobileMenu}>
+            <FaBars className="h-6 w-6 text-blue-900" />
+          </button>
+        </div>
+
+        {/* Navigation Section */}
+        <div className="hidden md:flex align-middle items-center">
           {/* Home Icon in the middle */}
           <Link to="/" className="text-blue-900 hover:text-blue-800 mx-6">
-            <FaHome className="h-6 w-6 items-end" />
+            <FaHome className="h-6 w-6" />
           </Link>
 
-          {/* Navigation Section (Dropdown) */}
+          {/* Dropdown Menu */}
           <nav
             className="relative inline-block text-left pl-6 border-l-2 border-l-gray-500"
             ref={dropdownRef}
           >
-            {/* Dropdown Button */}
             <button
               type="button"
               onClick={toggleDropdown}
-              className="inline-flex justify-between items-center rounded-md border border-gray-400 bg-blue-900 text-white px-4 py-2 text-sm font-medium hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="inline-flex justify-between items-center rounded-md border border-gray-400 bg-blue-900 text-white px-4 py-2 text-sm font-medium hover:bg-blue-800 focus:outline-none"
             >
               GMet-GhAAP
               <svg
@@ -78,21 +87,19 @@ const Header = () => {
               </svg>
             </button>
 
-            {/* Dropdown Menu */}
             {isOpen && (
               <div
                 className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="menu-button"
-                tabIndex="-1"
               >
                 <div className="py-1" role="none">
                   <a
                     href="https://mofa.gov.gh/site/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-300"
                   >
                     Ministry of Food and Agriculture
                   </a>
@@ -100,7 +107,7 @@ const Header = () => {
                     href="https://www.fsrp.org.gh/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-300"
                   >
                     Food System and Resilience Project (FSRP)
                   </a>
@@ -108,7 +115,7 @@ const Header = () => {
                     href="https://www.meteo.gov.gh/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-300"
                   >
                     Ghana Meteorological Agency
                   </a>
@@ -116,7 +123,7 @@ const Header = () => {
                     href="https://ghaap.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-300"
                   >
                     GhAAP
                   </a>
@@ -126,6 +133,53 @@ const Header = () => {
           </nav>
         </div>
       </div>
+
+      {/* Mobile Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-16 left-0 w-full bg-white shadow-lg z-10">
+          <nav className="flex flex-col text-left space-y-4 py-4">
+            <Link
+              to="/"
+              className="block px-6 text-blue-900 font-semibold hover:text-blue-800"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <a
+              href="https://mofa.gov.gh/site/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block px-6 text-gray-700 hover:bg-red-400"
+            >
+              Ministry of Food and Agriculture
+            </a>
+            <a
+              href="https://www.fsrp.org.gh/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block px-6 text-gray-700 hover:bg-red-400"
+            >
+              Food System and Resilience Project (FSRP)
+            </a>
+            <a
+              href="https://www.meteo.gov.gh/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block px-6 text-gray-700 hover:bg-red-400"
+            >
+              Ghana Meteorological Agency
+            </a>
+            <a
+              href="https://ghaap.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block px-6 text-gray-700 hover:bg-red-400"
+            >
+              GhAAP
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
