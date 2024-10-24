@@ -8,7 +8,7 @@ const ScrollToTop = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  return null; // No rendering needed, just the effect
+  return null;
 };
 
 export default ScrollToTop;

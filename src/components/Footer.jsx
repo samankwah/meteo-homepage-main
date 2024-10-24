@@ -1,4 +1,8 @@
 import logo from "../assets/images/ghaaplogo.png";
+import facebookIcon from "../assets/icons/facebook.png";
+import twitterIcon from "../assets/icons/x.png";
+import linkedinIcon from "../assets/icons/linkedin.png";
+import whatsappIcon from "../assets/icons/whatsapp.png";
 
 const Footer = () => {
   return (
@@ -56,17 +60,43 @@ const Footer = () => {
           <h5 className="font-semibold mb-2 text-lg text-gray-100">
             Connect With Us
           </h5>
+
+          {/* Social Media Icons */}
           <div className="flex space-x-4 mb-2">
-            <a href="#" className="hover:text-gray-400" aria-label="Facebook">
-              <i className="fab fa-facebook h-6 w-6"></i>
+            <a
+              href="https://www.facebook.com" // Add your actual Facebook link
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <img src={facebookIcon} alt="Facebook" className="h-6 w-6" />
             </a>
-            <a href="#" className="hover:text-gray-400" aria-label="Twitter">
-              <i className="fab fa-twitter h-6 w-6"></i>
+            <a
+              href="https://www.twitter.com" // Add your actual Twitter link
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <img src={twitterIcon} alt="Twitter" className="h-6 w-6" />
             </a>
-            <a href="#" className="hover:text-gray-400" aria-label="LinkedIn">
-              <i className="fab fa-linkedin h-6 w-6"></i>
+            <a
+              href="https://www.linkedin.com" // Add your actual LinkedIn link
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <img src={linkedinIcon} alt="LinkedIn" className="h-6 w-6" />
+            </a>
+            <a
+              href="https://chat.whatsapp.com/H0G98ipn2zD7wbNKa16hyh"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="whatsapp"
+            >
+              <img src={whatsappIcon} alt="WhatsApp" className="h-6 w-6" />
             </a>
           </div>
+
           <ul className="text-sm space-y-1 text-gray-300">
             <li>
               <a href="/privacy" className="hover:text-gray-400">

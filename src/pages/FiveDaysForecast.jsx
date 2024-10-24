@@ -77,7 +77,7 @@ const FiveDaysForecast = () => {
   return (
     <div className="main-content bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex flex-col items-center p-6 sm:p-10 relative">
       {/* Title Section */}
-      <h1 className="text-blue-800 text-3xl sm:text-4xl font-bold mb-4 text-center pt-12">
+      <h1 className="text-blue-800 text-3xl sm:text-4xl font-bold mb-8 text-center pt-12">
         5-Day Weather Forecast
       </h1>
       {/* Description Section */}

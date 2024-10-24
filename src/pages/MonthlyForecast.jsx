@@ -23,12 +23,12 @@ const MonthlyForecast = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8 pt-24">
-      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-10">
+    <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8">
+      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-10 pt-20">
         <h1 className="text-blue-800 text-4xl font-bold mb-4 text-center">
           Monthly Weather Forecast
         </h1>
-        <p className="text-md text-gray-700 text-center mb-6">
+        <p className="text-md text-gray-700 text-center mb-8">
           Issued Date: {issuedDate} | Valid Period: {validPeriod}
         </p>
 
@@ -38,10 +38,10 @@ const MonthlyForecast = () => {
               key={index}
               className="bg-blue-50 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105"
             >
-              <h2 className="text-xl font-semibold text-blue-600 mb-2">
+              <h2 className="text-xl font-semibold text-blue-600 mb-6">
                 {forecast.month}
               </h2>
-              <p className="text-gray-600 mb-2">{forecast.description}</p>
+              <p className="text-gray-600 mb-6">{forecast.description}</p>
               <p className="text-lg font-bold text-gray-800">
                 Temperature: {forecast.temperature}
               </p>
@@ -51,18 +51,18 @@ const MonthlyForecast = () => {
 
         {/* Download Section */}
         <div className="bg-blue-50 p-6 rounded-lg shadow-md text-center">
-          <h2 className="text-2xl font-semibold text-blue-600 mb-4">
+          <h2 className="text-2xl font-semibold text-blue-600 mb-6">
             Download Full Forecast
           </h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600 mb-6">
             Access the detailed monthly forecast report.
           </p>
           <a
             href="/path/to/monthly-forecast.pdf"
             download
-            className="bg-blue-600 text-white text-sm px-2 py-1 rounded flex items-center justify-center hover:bg-blue-700 transition duration-200"
+            className="bg-blue-600 text-white text-sm px-3 py-2 rounded inline-flex items-center justify-center hover:bg-blue-700 transition duration-200"
           >
-            <FaDownload className="mr-1" />
+            <FaDownload className="mr-2" />
             Download Report
           </a>
         </div>

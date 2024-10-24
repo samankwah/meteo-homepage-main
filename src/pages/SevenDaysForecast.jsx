@@ -37,7 +37,7 @@ const SevenDaysForecast = () => {
     <div className="main-content bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-4 flex flex-col items-center pt-24">
       <div className="relative w-full max-w-6xl">
         {/* Header Section */}
-        <div className="flex flex-col sm:flex-row justify-evenly items-center mb-4">
+        <div className="flex flex-col sm:flex-row justify-evenly items-center mb-12">
           <h1 className="text-blue-600 text-2xl sm:text-4xl text-center font-bold">
             7 Days Forecast
           </h1>

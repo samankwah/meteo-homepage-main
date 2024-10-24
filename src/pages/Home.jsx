@@ -42,9 +42,10 @@ const lowSeverityCoordinates = [
 ];
 
 const mediumSeverityCoordinates = [
-  // [7.7, -1.3],
-  // [7.65, -1.4],
-  // [7.68, -1.2],
+  // [9.7, -1.3],
+  // [5.65, 1.1],
+  // [5.68, -1.2],
+  // [7.68, -1.0],
 ];
 
 const highSeverityCoordinates = [
@@ -149,8 +150,8 @@ const DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 const WeatherCard = ({ city, condition, minTemp, maxTemp }) => (
-  <div className="flex flex-col text-left justify-center gap-2 text-white px-4 sm:px-10 border-r border-r-white">
-    <div className="flex gap-4 sm:gap-6 items-center justify-between">
+  <div className="flex flex-col text-left justify-center text-white px-4 sm:px-10 border-r border-r-white">
+    <div className="flex gap-3 sm:gap-6 items-center justify-between">
       <h3 className="font-montserrat font-semibold text-base sm:text-lg w-14 h-14 sm:w-16 sm:h-16">
         {city}
       </h3>
@@ -304,16 +305,15 @@ const Home = () => {
     <div
       className="min-h-screen bg-cover bg-center mx-auto px-4 py-1 md:px-8 lg:px-12"
       style={{
-        backgroundImage: `url(${backgroundImage})`, // Replace with your image path
+        backgroundImage: `url(${backgroundImage})`,
       }}
     >
       <main className="flex-grow mt-16 container mx-auto">
-        <div className="pt-2 md:pt-2">
-          <h1 className="text-3xl md:text-3xl lg:text-6xl font-bold text-white text-center my-12 md:my-6">
+        <div className="pt-8 md:pt-12 lg:pt-16">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white text-center my-8 md:my-10 lg:my-12">
             Customized Agro-Climatic Information Services
           </h1>
-
-          <div className="bg-[#11487e] rounded-lg shadow-lg p-4 mb-8">
+          <div className="bg-[#094480] rounded-lg shadow-lg p-4 mb-8">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-white text-lg md:text-xl">
                 Weather for {getFormattedDate()}
@@ -328,7 +328,6 @@ const Home = () => {
               </Slider>
             </div>
           </div>
-
           {/* Responsive Map Section */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
             {/* Left Sidebar: Weather Warnings */}
@@ -1310,7 +1309,6 @@ const Home = () => {
               </ul>
             </div>
           </div>
-
           <div className="flex flex-col space-y-4 m-8 p-4 max-w-full mx-auto">
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
               {/* News Section */}
