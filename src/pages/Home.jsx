@@ -308,9 +308,9 @@ const Home = () => {
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
-      <main className="flex-grow mt-16 container mx-auto">
+      <main className="flex-grow mt-8 container mx-auto">
         <div className="pt-8 md:pt-12 lg:pt-16">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white text-center my-8 md:my-10 lg:my-12">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white text-center my-8 md:my-10 lg:my-16">
             Customized Agro-Climatic Information Services
           </h1>
           <div className="bg-[#094480] rounded-lg shadow-lg p-4 mb-8">
