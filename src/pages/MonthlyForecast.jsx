@@ -25,7 +25,7 @@ const MonthlyForecast = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8">
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-10 pt-20">
-        <h1 className="text-blue-800 text-4xl font-bold mb-4 text-center">
+        <h1 className="text-blue-900 text-4xl font-bold mb-4 text-center">
           Monthly Weather Forecast
         </h1>
         <p className="text-md text-gray-700 text-center mb-8">
@@ -38,7 +38,7 @@ const MonthlyForecast = () => {
               key={index}
               className="bg-blue-50 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105"
             >
-              <h2 className="text-xl font-semibold text-blue-600 mb-6">
+              <h2 className="text-xl font-semibold text-blue-900 mb-6">
                 {forecast.month}
               </h2>
               <p className="text-gray-600 mb-6">{forecast.description}</p>
@@ -51,7 +51,7 @@ const MonthlyForecast = () => {
 
         {/* Download Section */}
         <div className="bg-blue-50 p-6 rounded-lg shadow-md text-center">
-          <h2 className="text-2xl font-semibold text-blue-600 mb-6">
+          <h2 className="text-2xl font-semibold text-blue-900 mb-6">
             Download Full Forecast
           </h2>
           <p className="text-gray-600 mb-6">
@@ -60,7 +60,7 @@ const MonthlyForecast = () => {
           <a
             href="/path/to/monthly-forecast.pdf"
             download
-            className="bg-blue-600 text-white text-sm px-3 py-2 rounded inline-flex items-center justify-center hover:bg-blue-700 transition duration-200"
+            className="bg-blue-900 text-white text-sm px-3 py-2 rounded inline-flex items-center justify-center hover:bg-blue-700 transition duration-200"
           >
             <FaDownload className="mr-2" />
             Download Report

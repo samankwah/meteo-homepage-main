@@ -54,7 +54,7 @@ import Beans from "./assets/images/beans.png";
 import Plantain from "./assets/images/plantain.png";
 import Cassava from "./assets/images/cassava.png";
 import Sorghum from "./assets/images/sorghum.png";
-
+import Modal from "./components/Modal";
 const products = [
   {
     id: 1,
@@ -292,6 +292,7 @@ function App() {
             <Route path="/card" element={<ProductCard />} />
             <Route path="/" element={<ProductList products={products} />} />
             <Route path="/market-page" element={<MarketPage />} />
+            <Route path="/modal" element={<Modal />} />
             <Route
               path="/product/:id"
               element={<ProductDetail products={products} />}

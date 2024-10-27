@@ -19,9 +19,7 @@ import Beans from "../assets/images/beans.png";
 import Plantain from "../assets/images/plantain.png";
 import Cassava from "../assets/images/cassava.png";
 import Sorghum from "../assets/images/sorghum.png";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import Modal from "./Modal";
+import { Link, useNavigate } from "react-router-dom";
 
 const commodities = [
   {
@@ -203,46 +201,46 @@ const categories = [
   "Plantain",
   "Sorghum",
 ];
-const MarketPage = ({ products }) => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+// const MarketPage = ({ products }) => {
+//   const [selectedProduct, setSelectedProduct] = useState(null);
+//   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleCartClick = (product) => {
-    setSelectedProduct(product);
-    setIsModalOpen(true); // Open the modal with product details
-  };
+//   const handleCartClick = (product) => {
+//     setSelectedProduct(product);
+//     setIsModalOpen(true); // Open the modal with product details
+//   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedProduct(null); // Clear the selected product when closing the modal
-  };
+//   const closeModal = () => {
+//     setIsModalOpen(false);
+//     setSelectedProduct(null); // Clear the selected product when closing the modal
+//   };
 
-  return (
-    <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-4">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => (
-          <div key={product.id} className="relative">
-            <ProductCard product={product} />
-            <button
-              onClick={() => handleCartClick(product)}
-              className="absolute top-2 right-2 bg-blue-600 text-white p-2 rounded-full"
-            >
-              🛒 {/* Cart icon */}
-            </button>
-          </div>
-        ))}
-      </div>
-      {/* Modal for Product Details */}
-      {selectedProduct && (
-        <Modal
-          isOpen={isModalOpen}
-          onClose={closeModal}
-          product={selectedProduct}
-        />
-      )}
-    </div>
-  );
-};
+//   return (
+//     <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-4">
+//       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//         {products.map((product) => (
+//           <div key={product.id} className="relative">
+//             <ProductCard product={product} />
+//             <button
+//               onClick={() => handleCartClick(product)}
+//               className="absolute top-2 right-2 bg-blue-600 text-white p-2 rounded-full"
+//             >
+//               🛒 {/* Cart icon */}
+//             </button>
+//           </div>
+//         ))}
+//       </div>
+//       {/* Modal for Product Details */}
+//       {selectedProduct && (
+//         <Modal
+//           isOpen={isModalOpen}
+//           onClose={closeModal}
+//           product={selectedProduct}
+//         />
+//       )}
+//     </div>
+//   );
+// };
 const ProductCard = ({ product, onQuantityChange }) => {
   const [quantity, setQuantity] = useState(0);
   const navigate = useNavigate();

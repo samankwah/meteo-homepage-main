@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types"; // Import PropTypes for validation
 import { FaTimes } from "react-icons/fa";
 
 const Modal = ({ title, children, onClose }) => {
@@ -16,6 +16,13 @@ const Modal = ({ title, children, onClose }) => {
       </div>
     </div>
   );
+};
+
+// PropTypes validation for Modal component
+Modal.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default Modal;

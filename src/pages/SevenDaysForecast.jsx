@@ -38,14 +38,14 @@ const SevenDaysForecast = () => {
       <div className="relative w-full max-w-6xl">
         {/* Header Section */}
         <div className="flex flex-col sm:flex-row justify-evenly items-center mb-12">
-          <h1 className="text-blue-600 text-2xl sm:text-4xl text-center font-bold">
+          <h1 className="text-blue-900 text-2xl sm:text-4xl text-center font-bold">
             7 Days Forecast
           </h1>
 
           {/* Download Button */}
           <button
             onClick={handleDownload}
-            className="mt-4 sm:mt-0 bg-blue-600 text-white px-4 py-2 rounded shadow-md hover:bg-blue-700"
+            className="mt-4 sm:mt-0 bg-blue-900 text-white px-4 py-2 rounded shadow-md hover:bg-blue-700"
           >
             Download
           </button>
@@ -58,7 +58,7 @@ const SevenDaysForecast = () => {
               key={index}
               className="forecast-card bg-white shadow-md rounded-lg p-4 text-center"
             >
-              <h2 className="text-xl font-semibold text-blue-600">
+              <h2 className="text-xl font-semibold text-blue-900">
                 {forecast.day}
               </h2>
               <p className="text-gray-600">{forecast.summary}</p>
@@ -75,7 +75,7 @@ const SevenDaysForecast = () => {
 
         {/* Map Card */}
         <div className="map-card bg-white shadow-md rounded-lg p-4 w-full">
-          <h2 className="text-xl font-semibold text-blue-600 mb-2">
+          <h2 className="text-xl font-semibold text-blue-900 mb-2">
             Forecast Map
           </h2>
           <div className="map-container bg-gray-300 rounded-lg h-80 sm:h-96 flex justify-center items-center">

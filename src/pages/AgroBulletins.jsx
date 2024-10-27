@@ -43,11 +43,11 @@ const AgroBulletins = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-16">
       <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-4 md:p-12 h-full">
-        <h1 className="text-blue-800 text-3xl md:text-4xl font-bold mb-4 text-center">
+        <h1 className="text-blue-900 text-3xl md:text-4xl font-bold mb-4 text-center">
           Agro Bulletins
         </h1>
 
-        <h2 className="text-blue-600 text-xl md:text-2xl font-semibold mb-2 text-center">
+        <h2 className="text-blue-900 text-xl md:text-2xl font-semibold mb-2 text-center">
           Current Dekad Bulletin Summary
         </h2>
         <p className="text-md text-gray-700 text-center mb-6">
@@ -82,7 +82,7 @@ const AgroBulletins = () => {
                 <a
                   href={doc.url}
                   download
-                  className="text-blue-600 hover:text-blue-800"
+                  className="text-blue-900 hover:text-blue-800"
                 >
                   <FaFileDownload className="text-lg" />
                 </a>
@@ -101,7 +101,7 @@ const AgroBulletins = () => {
             className={`mx-2 px-2 py-2 rounded-lg text-white ${
               currentPage === 1
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700"
+                : "bg-blue-900 hover:bg-blue-700"
             }`}
           >
             Previous
@@ -115,7 +115,7 @@ const AgroBulletins = () => {
             className={`mx-2 px-4 py-2 rounded-lg text-white ${
               currentPage === totalPages
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700"
+                : "bg-blue-900 hover:bg-blue-700"
             }`}
           >
             Next

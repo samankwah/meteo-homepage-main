@@ -1,5 +1,13 @@
 import { useState, useEffect, useRef } from "react";
-import { FaHome, FaBars, FaChevronDown, FaShoppingCart } from "react-icons/fa";
+import {
+  FaHome,
+  FaBars,
+  FaChevronDown,
+  FaShoppingCart,
+  FaSeedling,
+  FaCloudSun,
+  FaBell,
+} from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import logo2 from "../assets/images/mofalog.png";
@@ -30,7 +38,7 @@ const Dropdown = ({ links, title }) => {
       onMouseLeave={() => setIsDropdownOpen(false)}
       ref={dropdownRef}
     >
-      <button className="block px-4 text-blue-900 font-semibold border-b-2 border-transparent hover:border-blue-600">
+      <button className="block px-4 text-blue-900 font-semibold border-b-2 border-transparent hover:border-blue-600 text-sm">
         {title} <FaChevronDown className="inline ml-1" />
       </button>
 
@@ -41,7 +49,7 @@ const Dropdown = ({ links, title }) => {
               <li key={link.to}>
                 <Link
                   to={link.to}
-                  className="block p-2 text-blue-600 hover:bg-gray-200 transition duration-200"
+                  className="block p-2 text-blue-600 hover:bg-gray-200 transition duration-200 text-sm"
                   onClick={() => setIsDropdownOpen(false)}
                 >
                   {link.label}
@@ -139,32 +147,61 @@ const Header = () => {
           </button>
         </div>
 
-        <div className="hidden md:flex align-middle items-center justify-center">
+        {/* Centered Navbar Links */}
+        <div className="hidden md:flex align-middle items-center justify-center flex-1">
           <Link
             to="/"
-            className={`block px-4 text-blue-900 font-semibold ${
+            className={`block px-4 text-blue-900 font-semibold text-sm ${
               location.pathname === "/"
                 ? "border-blue-600"
                 : "border-transparent"
-            } hover:border-blue-600`}
+            } hover:border-blue-600 flex flex-col items-center`}
           >
-            Home
+            <FaHome className="mb-1 text-2xl" />
+            <span>Home</span>
           </Link>
 
-          <Dropdown links={forecastLinks} title="Weather" />
-          <Dropdown links={agricultureLinks} title="Agriculture" />
+          <div className="flex flex-col items-center mx-4">
+            <FaCloudSun className="mb-1 text-3xl text-blue-900" />
+            <Dropdown
+              links={forecastLinks}
+              title={<span className="text-blue-900">Weather</span>}
+            />
+          </div>
+
+          <div className="flex flex-col items-center mx-4">
+            <FaSeedling className="mb-1 text-2xl text-blue-900" />
+            <Dropdown
+              links={agricultureLinks}
+              title={<span className="text-blue-900">Agriculture</span>}
+            />
+          </div>
 
           <Link
             to="/market-page"
-            className={`block px-4 text-blue-900 font-semibold border-b-2 ${
+            className={`block px-4 text-blue-900 font-semibold border-b-2 text-sm ${
               location.pathname === "/market-page"
                 ? "border-blue-600"
                 : "border-transparent"
-            } hover:border-blue-600`}
+            } hover:border-blue-600 flex flex-col items-center`}
           >
-            Market
+            <FaShoppingCart className="mb-1 text-2xl" />
+            <span>Market</span>
           </Link>
+        </div>
 
+        <div className="hidden md:flex flex-col items-center mx-4 relative">
+          <Link to="/notifications" className="flex flex-col items-center">
+            <FaBell className="mb-1 text-3xl text-blue-900" />
+          </Link>
+          {/* Badge for unread notifications */}
+          <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+            3 {/* Replace with dynamic count */}
+          </span>
+        </div>
+        <div className="hidden md:flex flex-col border-l border-gray-300 h-8 mx-4" />
+
+        <div className="hidden md:flex flex-col align-middle items-center justify-end flex-2 mx-22">
           <Dropdown
             links={gmetLinks.map((link) => ({
               to: link.href,
@@ -174,7 +211,6 @@ const Header = () => {
           />
         </div>
       </div>
-
       {isMobileMenuOpen && (
         <div
           className="absolute top-16 left-0 w-11/12 bg-white bg-opacity-90 shadow-lg rounded-lg p-4 mx-2 z-10"
@@ -183,30 +219,31 @@ const Header = () => {
           <nav className="flex flex-col text-left space-y-4 py-4">
             <Link
               to="/"
-              className="block px-4 py-2 text-blue-900 font-semibold hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200"
+              className="block px-4 py-2 text-blue-900 font-semibold hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200 text-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <FaHome className="inline mr-2" /> Home
             </Link>
             <Link
               to="/market-page"
-              className="block px-4 py-2 text-blue-900 font-semibold hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200"
+              className="block px-4 py-2 text-blue-900 font-semibold hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200 text-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <FaShoppingCart className="inline mr-2" /> Market
             </Link>
 
-            {/* Mobile Dropdown for Forecast */}
+            {/* Mobile Dropdown for Weather */}
             <div>
               <button
-                className="block w-full px-4 py-2 text-blue-900 font-semibold hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200 text-left"
+                className="block w-full px-4 py-2 text-blue-900 font-semibold hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200 text-left text-sm"
                 onClick={() =>
                   setOpenDropdown(
                     openDropdown === "forecast" ? null : "forecast"
                   )
                 }
               >
-                Weather <FaChevronDown className="inline ml-1" />
+                <FaCloudSun className="inline mr-2" /> Weather{" "}
+                <FaChevronDown className="inline ml-1" />
               </button>
               {openDropdown === "forecast" && (
                 <div className="pl-6 py-2">
@@ -214,7 +251,7 @@ const Header = () => {
                     <Link
                       key={link.to}
                       to={link.to}
-                      className="block px-4 py-2 text-gray-700 hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200"
+                      className="block px-4 py-2 text-gray-700 hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200 text-sm"
                       onClick={() => {
                         setIsMobileMenuOpen(false);
                         setOpenDropdown(null);
@@ -230,14 +267,15 @@ const Header = () => {
             {/* Mobile Dropdown for Agriculture */}
             <div>
               <button
-                className="block w-full px-4 py-2 text-blue-900 font-semibold hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200 text-left"
+                className="block w-full px-4 py-2 text-blue-900 font-semibold hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200 text-left text-sm"
                 onClick={() =>
                   setOpenDropdown(
                     openDropdown === "agriculture" ? null : "agriculture"
                   )
                 }
               >
-                Agriculture <FaChevronDown className="inline ml-1" />
+                <FaSeedling className="inline mr-2" /> Agriculture{" "}
+                <FaChevronDown className="inline ml-1" />
               </button>
               {openDropdown === "agriculture" && (
                 <div className="pl-6 py-2">
@@ -245,7 +283,7 @@ const Header = () => {
                     <Link
                       key={link.to}
                       to={link.to}
-                      className="block px-4 py-2 text-gray-700 hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200"
+                      className="block px-4 py-2 text-gray-700 hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200 text-sm"
                       onClick={() => {
                         setIsMobileMenuOpen(false);
                         setOpenDropdown(null);
@@ -261,7 +299,7 @@ const Header = () => {
             {/* Mobile Dropdown for GMet-GhAAP */}
             <div>
               <button
-                className="block w-full px-4 py-2 text-blue-900 font-semibold hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200 text-left"
+                className="block w-full px-4 py-2 text-blue-900 font-semibold hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200 text-left text-sm"
                 onClick={() =>
                   setOpenDropdown(openDropdown === "gmet" ? null : "gmet")
                 }
@@ -276,7 +314,7 @@ const Header = () => {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block px-4 py-2 text-gray-700 hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200"
+                      className="block px-4 py-2 text-gray-700 hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200 text-sm"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.label}

@@ -24,14 +24,14 @@ const SubseasonalForecast = () => {
       {/* Header and Download Button Wrapper */}
       <div className="w-full max-w-6xl flex justify-center items-center mb-6">
         {/* Page Title */}
-        <h1 className="text-blue-600 text-2xl sm:text-3xl font-bold text-center flex-grow">
+        <h1 className="text-blue-900 text-2xl sm:text-3xl font-bold text-center flex-grow">
           Subseasonal Forecast
         </h1>
 
         {/* Download Button */}
         <button
           onClick={handleDownload}
-          className="bg-blue-600 text-white text-lg px-6 py-3 rounded shadow hover:bg-blue-500 transition duration-300 focus:outline-none"
+          className="bg-blue-900 text-white text-lg px-6 py-3 rounded shadow hover:bg-blue-500 transition duration-300 focus:outline-none"
         >
           Download
         </button>
@@ -46,30 +46,30 @@ const SubseasonalForecast = () => {
 
       {/* Forecast Summary Card */}
       <div className="forecast-card bg-white shadow-md rounded-lg p-4 w-full max-w-4xl mb-8">
-        <h2 className="text-xl font-semibold text-blue-600 mb-2">Summary</h2>
+        <h2 className="text-xl font-semibold text-blue-900 mb-2">Summary</h2>
         <p className="text-gray-700 mb-4">{forecastData.summary}</p>
 
         <div className="forecast-details grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="forecast-item bg-gray-100 rounded-lg p-4">
-            <h3 className="text-lg font-semibold text-blue-600">
+            <h3 className="text-lg font-semibold text-blue-900">
               Temperature Outlook
             </h3>
             <p className="text-gray-600">{forecastData.temperatureOutlook}</p>
           </div>
           <div className="forecast-item bg-gray-100 rounded-lg p-4">
-            <h3 className="text-lg font-semibold text-blue-600">
+            <h3 className="text-lg font-semibold text-blue-900">
               Rainfall Outlook
             </h3>
             <p className="text-gray-600">{forecastData.rainfallOutlook}</p>
           </div>
           <div className="forecast-item bg-gray-100 rounded-lg p-4">
-            <h3 className="text-lg font-semibold text-blue-600">
+            <h3 className="text-lg font-semibold text-blue-900">
               Wind Outlook
             </h3>
             <p className="text-gray-600">{forecastData.windOutlook}</p>
           </div>
           <div className="forecast-item bg-gray-100 rounded-lg p-4">
-            <h3 className="text-lg font-semibold text-blue-600">Advisories</h3>
+            <h3 className="text-lg font-semibold text-blue-900">Advisories</h3>
             <p className="text-gray-600">{forecastData.advisories}</p>
           </div>
         </div>
@@ -77,7 +77,7 @@ const SubseasonalForecast = () => {
 
       {/* Map Card */}
       <div className="map-card bg-white shadow-md rounded-lg p-4 w-full max-w-4xl">
-        <h2 className="text-xl font-semibold text-blue-600 mb-2">
+        <h2 className="text-xl font-semibold text-blue-900 mb-2">
           Forecast Map
         </h2>
         <div className="map-container bg-gray-300 rounded-lg h-64 sm:h-80 flex items-center justify-center">

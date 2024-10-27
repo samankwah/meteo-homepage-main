@@ -4,7 +4,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8">
       <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-8 pt-20">
-        <h1 className="text-4xl font-bold text-blue-600 mb-6 text-center">
+        <h1 className="text-4xl font-bold text-blue-900 mb-6 text-center">
           Privacy Policy
         </h1>
         <p className="text-gray-700 text-lg mb-8 text-center">
@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
         {/* Section: Information We Collect */}
         <div className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-2 flex items-center">
-            <FaRegFileAlt className="text-blue-500 mr-2" />
+            <FaRegFileAlt className="text-blue-900 mr-2" />
             Information We Collect
           </h2>
           <p className="text-gray-700 mb-2">
@@ -31,7 +31,7 @@ const PrivacyPolicy = () => {
         {/* Section: How We Use Your Information */}
         <div className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-2 flex items-center">
-            <FaShieldAlt className="text-blue-500 mr-2" />
+            <FaShieldAlt className="text-blue-900 mr-2" />
             How We Use Your Information
           </h2>
           <p className="text-gray-700 mb-2">
@@ -52,7 +52,7 @@ const PrivacyPolicy = () => {
         {/* Section: Data Security */}
         <div className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-2 flex items-center">
-            <FaLock className="text-blue-500 mr-2" />
+            <FaLock className="text-blue-900 mr-2" />
             Data Security
           </h2>
           <p className="text-gray-700 mb-2">
@@ -66,7 +66,7 @@ const PrivacyPolicy = () => {
         {/* Section: Third-Party Services */}
         <div className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-2 flex items-center">
-            <FaUsers className="text-blue-500 mr-2" />
+            <FaUsers className="text-blue-900 mr-2" />
             Third-Party Services
           </h2>
           <p className="text-gray-700 mb-2">
@@ -82,7 +82,7 @@ const PrivacyPolicy = () => {
         {/* Section: Changes to This Privacy Policy */}
         <div className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-2 flex items-center">
-            <FaRegFileAlt className="text-blue-500 mr-2" />
+            <FaRegFileAlt className="text-blue-900 mr-2" />
             Changes to This Privacy Policy
           </h2>
           <p className="text-gray-700 mb-2">
@@ -96,7 +96,7 @@ const PrivacyPolicy = () => {
         {/* Section: Contact Us */}
         <div className="mb-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-2 flex items-center">
-            <FaLock className="text-blue-500 mr-2" />
+            <FaLock className="text-blue-900 mr-2" />
             Contact Us
           </h2>
           <p className="text-gray-700 mb-2">
