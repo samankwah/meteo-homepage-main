@@ -148,7 +148,7 @@ const Header = () => {
         </div>
 
         {/* Centered Navbar Links */}
-        <div className="hidden md:flex align-middle items-center justify-center flex-1">
+        <div className="hidden md:flex align-middle items-center justify-center flex-1 space-x-8">
           <Link
             to="/"
             className={`block px-4 text-blue-900 font-semibold text-sm ${
@@ -161,7 +161,7 @@ const Header = () => {
             <span>Home</span>
           </Link>
 
-          <div className="flex flex-col items-center mx-4">
+          <div className="flex flex-col items-center">
             <FaCloudSun className="mb-1 text-3xl text-blue-900" />
             <Dropdown
               links={forecastLinks}
@@ -169,8 +169,8 @@ const Header = () => {
             />
           </div>
 
-          <div className="flex flex-col items-center mx-4">
-            <FaSeedling className="mb-1 text-2xl text-blue-900" />
+          <div className="flex flex-col items-center">
+            <FaSeedling className="mb-1 text-3xl text-blue-900" />
             <Dropdown
               links={agricultureLinks}
               title={<span className="text-blue-900">Agriculture</span>}

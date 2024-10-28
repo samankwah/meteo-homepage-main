@@ -35,12 +35,14 @@ const ProductDetail = ({ products }) => {
     <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8">
       {" "}
       {/* Gradient Background */}
-      <div className="container mx-auto p-4 max-w-4xl pt-20">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-8">
+        {/* Back Button */}
         <button
-          onClick={() => navigate(-1)}
-          className="bg-gray-800 text-white px-4 py-3 rounded-full mb-6 text-lg font-semibold"
+          onClick={() => navigate("/market-page")}
+          className="text-teal-500 hover:text-teal-600 flex items-center gap-2 transition-colors mb-6"
         >
-          Go Back
+          <span>←</span>
+          <span className="text-sm font-medium">GO BACK</span>
         </button>
         <div className="bg-white rounded-lg shadow-lg p-8 pb-20">
           {" "}

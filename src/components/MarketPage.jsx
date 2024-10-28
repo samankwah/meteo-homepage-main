@@ -377,6 +377,7 @@ const Marketplace = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategories, setSelectedCategories] = useState(["ALL"]);
   const [cart, setCart] = useState({});
+  const navigate = useNavigate();
 
   const handleCategoryToggle = (category) => {
     setSelectedCategories((prev) => {
@@ -441,49 +442,59 @@ const Marketplace = () => {
   };
   return (
     <div className="min-h-screen bg-blue-50 pt-20">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row gap-6">
-          {/* Sidebar */}
-          <div className="w-full md:w-1/4">
-            <div className="bg-white rounded-lg shadow-md p-4 mb-6">
-              <div className="relative mb-6">
-                <input
-                  type="text"
-                  placeholder="Search"
-                  className="w-full bg-yellow-400 text-gray-800 placeholder-gray-600 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                <Search className="absolute right-3 top-2.5 text-gray-600 w-5 h-5" />
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        {/* Back Button */}
+        <button
+          onClick={() => navigate("/")}
+          className="text-teal-500 hover:text-teal-600 flex items-center gap-2 transition-colors mb-6"
+        >
+          <span>←</span>
+          <span className="text-sm font-medium">GO BACK</span>
+        </button>
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex flex-col md:flex-row gap-6">
+            {/* Sidebar */}
+            <div className="w-full md:w-1/4">
+              <div className="bg-white rounded-lg shadow-md p-4 mb-6">
+                <div className="relative mb-6">
+                  <input
+                    type="text"
+                    placeholder="Search"
+                    className="w-full bg-yellow-400 text-gray-800 placeholder-gray-600 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                  <Search className="absolute right-3 top-2.5 text-gray-600 w-5 h-5" />
+                </div>
+
+                <h2 className="text-xl font-semibold mb-4">Commodities</h2>
+                <div className="space-y-2">
+                  {categories.map((category) => (
+                    <CategoryCheckbox
+                      key={category}
+                      category={category}
+                      isSelected={selectedCategories.includes(category)}
+                      onToggle={() => handleCategoryToggle(category)}
+                    />
+                  ))}
+                </div>
               </div>
 
-              <h2 className="text-xl font-semibold mb-4">Commodities</h2>
-              <div className="space-y-2">
-                {categories.map((category) => (
-                  <CategoryCheckbox
-                    key={category}
-                    category={category}
-                    isSelected={selectedCategories.includes(category)}
-                    onToggle={() => handleCategoryToggle(category)}
+              {/* Cart Summary */}
+              <CartSummary cart={cart} commodities={commodities} />
+            </div>
+
+            {/* Product Grid */}
+            <div className="w-full md:w-3/4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredProducts.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    onQuantityChange={handleQuantityChange}
                   />
                 ))}
               </div>
-            </div>
-
-            {/* Cart Summary */}
-            <CartSummary cart={cart} commodities={commodities} />
-          </div>
-
-          {/* Product Grid */}
-          <div className="w-full md:w-3/4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProducts.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  onQuantityChange={handleQuantityChange}
-                />
-              ))}
             </div>
           </div>
         </div>
