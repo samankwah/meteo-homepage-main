@@ -55,6 +55,7 @@ import Plantain from "./assets/images/plantain.png";
 import Cassava from "./assets/images/cassava.png";
 import Sorghum from "./assets/images/sorghum.png";
 import Modal from "./components/Modal";
+
 const products = [
   {
     id: 1,
@@ -249,6 +250,7 @@ function App() {
             <Route path="/climate" element={<Climate />} />
             <Route path="/about" element={<About />} />
             <Route path="/weather" element={<Weather />} />
+
             <Route path="/crop-calendar" element={<CropCalendar />} />
             <Route path="/news" element={<NewsUpdates />} />
             <Route path="/5-days-forecast" element={<FiveDaysForecast />} />

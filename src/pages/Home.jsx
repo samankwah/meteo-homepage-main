@@ -34,6 +34,153 @@ import SeverityPolygon from "../components/SeverityPolygon";
 import MyLink from "../components/MyLink";
 import PropTypes from "prop-types";
 
+import Uber from "../assets/images/uber.png";
+import Google from "../assets/images/google.png";
+import Grab from "../assets/images/grab.png";
+import Medium from "../assets/images/medium.png";
+import Youtub from "../assets/images/youtub.png";
+import Spotify from "../assets/images/spotify.png";
+import Microsoft from "../assets/images/microsoft.png";
+import Stripe from "../assets/images/stripe.png";
+import Zoom from "../assets/images/zoom.png";
+
+export const ClientLogoShowcase = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Sample client data - replace with your actual client data
+  const clients = [
+    // Each array represents a slide with multiple logos
+    [
+      {
+        id: 1,
+        name: "Weather Services",
+        logo: Uber,
+      },
+      {
+        id: 2,
+        name: "Climate Research Institute",
+        logo: Google,
+      },
+      {
+        id: 3,
+        name: "Meteorological Department",
+        logo: Grab,
+      },
+      {
+        id: 4,
+        name: "Agricultural Services",
+        logo: Medium,
+      },
+    ],
+    [
+      {
+        id: 5,
+        name: "Environmental Agency",
+        logo: Youtub,
+      },
+      {
+        id: 6,
+        name: "Weather Tech",
+        logo: Spotify,
+      },
+      {
+        id: 7,
+        name: "Climate Solutions",
+        logo: Microsoft,
+      },
+      {
+        id: 8,
+        name: "Weather Forecast Center",
+        logo: Stripe,
+      },
+      {
+        id: 8,
+        name: "Weather Forecast Center",
+        logo: Zoom,
+      },
+    ],
+  ];
+
+  // Auto-slide functionality
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev === clients.length - 1 ? 0 : prev + 1));
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [clients.length]);
+
+  // Manual navigation
+  const handleSlideChange = (index) => {
+    setCurrentSlide(index);
+  };
+  return (
+    <div className="w-full relative overflow-hidden">
+      <div className="clientele-showcase w-full h-[60vh] bg-black relative">
+        <div
+          id="client-overlay"
+          className="absolute inset-0 bg-black bg-opacity-60"
+        >
+          <div className="container max-w-6xl mx-auto px-4">
+            <div className="flex flex-col items-center w-full">
+              {/* Section Title */}
+              <div className="text-center mb-12">
+                <div className="flex items-center justify-center mb-6">
+                  <hr className="w-16 border-t-2 border-red-700" />
+                  <h2 className="text-3xl font-bold text-white mx-4">
+                    Our Trusted Clients
+                  </h2>
+                  <hr className="w-16 border-t-2 border-red-700" />
+                </div>
+                <p className="text-gray-300 text-lg">
+                  Partnering with leading organizations worldwide
+                </p>
+              </div>
+
+              {/* Logo Grid */}
+              <div className="w-full transition-all duration-500 ease-in-out transform">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                  {clients[currentSlide].map((client) => (
+                    <div
+                      key={client.id}
+                      className="flex flex-col items-center justify-center p-4 bg-white bg-opacity-10 rounded-lg hover:bg-opacity-20 transition-all duration-300"
+                    >
+                      <img
+                        src={client.logo}
+                        alt={`${client.name} logo`}
+                        className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity duration-300"
+                      />
+                      <p className="mt-3 text-sm text-gray-300 text-center">
+                        {client.name}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Navigation Dots */}
+              <div className="flex justify-center space-x-3 mt-12">
+                {clients.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleSlideChange(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      currentSlide === index
+                        ? "bg-red-700 w-6"
+                        : "bg-gray-400 hover:bg-red-500"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const lowSeverityCoordinates = [
   // [7.3, 0.5], //northeast
   // [6.15, -0.2],

@@ -1,5 +1,5 @@
 import weekly from "../assets/images/weekly fcst.jpg";
-
+import { useNavigate } from "react-router-dom";
 const SevenDaysForecast = () => {
   // Helper function to format date
   const formatDate = (date) => {
@@ -9,7 +9,7 @@ const SevenDaysForecast = () => {
       day: "numeric",
     });
   };
-
+  const navigate = useNavigate();
   // Generate dates for the next 7 days
   const today = new Date();
   const forecastData = Array.from({ length: 7 }).map((_, index) => ({
@@ -35,55 +35,65 @@ const SevenDaysForecast = () => {
 
   return (
     <div className="main-content bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-4 flex flex-col items-center pt-24">
-      <div className="relative w-full max-w-6xl">
-        {/* Header Section */}
-        <div className="flex flex-col sm:flex-row justify-evenly items-center mb-12">
-          <h1 className="text-blue-900 text-2xl sm:text-4xl text-center font-bold">
-            7 Days Forecast
-          </h1>
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-2">
+        {/* Back Button */}
+        <button
+          onClick={() => navigate("/")}
+          className="text-teal-500 hover:text-teal-600 flex items-center gap-2 transition-colors mb-6"
+        >
+          <span>←</span>
+          <span className="text-sm font-medium">GO BACK</span>
+        </button>
+        <div className="relative w-full max-w-6xl">
+          {/* Header Section */}
+          <div className="flex flex-col sm:flex-row justify-evenly items-center mb-12">
+            <h1 className="text-blue-900 text-2xl sm:text-4xl text-center font-bold">
+              7 Days Forecast
+            </h1>
 
-          {/* Download Button */}
-          <button
-            onClick={handleDownload}
-            className="mt-4 sm:mt-0 bg-blue-900 text-white px-4 py-2 rounded shadow-md hover:bg-blue-700"
-          >
-            Download
-          </button>
-        </div>
-
-        {/* Forecast Summary Cards */}
-        <div className="forecast-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-8">
-          {forecastData.map((forecast, index) => (
-            <div
-              key={index}
-              className="forecast-card bg-white shadow-md rounded-lg p-4 text-center"
+            {/* Download Button */}
+            <button
+              onClick={handleDownload}
+              className="mt-4 sm:mt-0 bg-blue-900 text-white px-4 py-2 rounded shadow-md hover:bg-blue-700"
             >
-              <h2 className="text-xl font-semibold text-blue-900">
-                {forecast.day}
-              </h2>
-              <p className="text-gray-600">{forecast.summary}</p>
-              <p className="text-2xl font-bold text-gray-900">
-                {forecast.temperature}
-              </p>
-              <p className="text-sm text-gray-500">
-                Precipitation: {forecast.precipitation}
-              </p>
-              <p className="text-sm text-gray-500">Wind: {forecast.wind}</p>
-            </div>
-          ))}
-        </div>
+              Download
+            </button>
+          </div>
 
-        {/* Map Card */}
-        <div className="map-card bg-white shadow-md rounded-lg p-4 w-full">
-          <h2 className="text-xl font-semibold text-blue-900 mb-2">
-            Forecast Map
-          </h2>
-          <div className="map-container bg-gray-300 rounded-lg h-80 sm:h-96 flex justify-center items-center">
-            <img
-              src={weekly} // Path to your image
-              alt="7 Days Forecast Map"
-              className="w-full h-full object-contain rounded-lg"
-            />
+          {/* Forecast Summary Cards */}
+          <div className="forecast-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mb-8">
+            {forecastData.map((forecast, index) => (
+              <div
+                key={index}
+                className="forecast-card bg-white shadow-md rounded-lg p-4 text-center"
+              >
+                <h2 className="text-xl font-semibold text-blue-900">
+                  {forecast.day}
+                </h2>
+                <p className="text-gray-600">{forecast.summary}</p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {forecast.temperature}
+                </p>
+                <p className="text-sm text-gray-500">
+                  Precipitation: {forecast.precipitation}
+                </p>
+                <p className="text-sm text-gray-500">Wind: {forecast.wind}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Map Card */}
+          <div className="map-card bg-white shadow-md rounded-lg p-4 w-full">
+            <h2 className="text-xl font-semibold text-blue-900 mb-2">
+              Forecast Map
+            </h2>
+            <div className="map-container bg-gray-300 rounded-lg h-80 sm:h-96 flex justify-center items-center">
+              <img
+                src={weekly} // Path to your image
+                alt="7 Days Forecast Map"
+                className="w-full h-full object-contain rounded-lg"
+              />
+            </div>
           </div>
         </div>
       </div>
