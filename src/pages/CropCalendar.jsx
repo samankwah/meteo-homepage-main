@@ -4,108 +4,78 @@ import { districtOfGhana } from "../districts"; // Ensure you have this file con
 // Base farming activities (common activities for all regions)
 const baseActivities = [
   {
-    activity: "Land Preparation",
+    activity: "Site Selection",
     start: "January",
+    end: "January",
+    color: "bg-[#00B0F0]",
+    advisory:
+      "Clear your arable site purchase certified seed \nfrom registered input dealers. \nUse recommended maize varieties \nsuch as Abontem for short-duration \ngrowth (80-90 days) or Obaatampa \nfor long-duration growth (105-120 days).",
+  },
+  {
+    activity: "Land Preparation",
+    start: "February",
     end: "February",
-    color: "bg-green-300",
+    color: "bg-[#BF9000]",
     advisory:
       "Plow the land to aerate the soil. \nUse minimum tillage, and ensure \nthe land is clear from debris. \nSpot burning may be used to clear \norganic matter. \nPrepare the land before the rains.",
   },
+
   {
-    activity: "Seed Selection",
-    start: "January",
-    end: "February",
-    color: "bg-green-300",
-    advisory:
-      "Purchase certified seed \nfrom registered input dealers. \nUse recommended maize varieties \nsuch as Abontem for short-duration \ngrowth (80-90 days) or Obaatampa \nfor long-duration growth (105-120 days).",
-  },
-  {
-    activity: "Planting",
+    activity: "Planting / Sowing",
     start: "March",
     end: "March",
-    color: "bg-yellow-300",
+    color: "bg-[#000000]",
     advisory:
       "Plant seeds at the \nrecommended depth and \nspacing for optimal growth.",
   },
   {
-    activity: "Fertilizing",
+    activity: " 1st Fertilizer Application",
     start: "April",
     end: "April",
-    color: "bg-blue-300",
+    color: "bg-[#FFFF00]",
     advisory:
       "Apply NPK 20:10:10 at \nthe rate of 2 bags per acre, \n14 days after planting. \nEnsure the field is moist \nbefore application. \nUse side placement at 3-5 cm \naway from the plant. \nBroadcast evenly for healthy growth.",
   },
   {
-    activity: "Weeding",
+    activity: " 1st Weeding & control of fall army worm",
     start: "April",
-    end: "May",
-    color: "bg-orange-300",
+    end: "April",
+    color: "bg-[#FF0000]",
     advisory:
       "Control weeds early, using \nmanual weeding or recommended \nselective herbicides. \nApply herbicides such as \nNico or Nomini Rice Pro. \nWeeding should be done \nwithin 3 weeks after planting \nto avoid crop competition.",
   },
+
   {
-    activity: "Pest Control",
+    activity: "2nd Fertilizer Application (Urea&SOA)",
     start: "May",
-    end: "June",
-    color: "bg-red-300",
+    end: "May",
+    color: "bg-[#FFFF00]",
     advisory:
-      "Apply pesticides to control \nFall Armyworm and other pests early. \nCommon pests like Fall Armyworm \ncan be controlled using pesticides \nsuch as Warrior, Super Viper, \nor Bypel Attack. \nApply early in the morning or \nlate in the evening for best results.",
+      "Apply NPK 20:10:10 at \nthe rate of 2 bags per acre, \n14 days after planting. \nEnsure the field is moist \nbefore application. \nUse side placement at 3-5 cm \naway from the plant. \nBroadcast evenly for healthy growth.",
+  },
+  {
+    activity: " 2nd Weeding & Pest Control",
+    start: "May",
+    end: "May",
+    color: "bg-[#FF0000]",
+    advisory:
+      "Control weeds early, using \nmanual weeding or recommended \nselective herbicides. \nApply herbicides such as \nNico or Nomini Rice Pro. \nWeeding should be done \nwithin 3 weeks after planting \nto avoid crop competition. Apply pesticides to control \nFall Armyworm and other pests early. \nCommon pests like Fall Armyworm \ncan be controlled using pesticides \nsuch as Warrior, Super Viper, \nor Bypel Attack. \nApply early in the morning or \nlate in the evening for best results.",
   },
   {
     activity: "Harvesting",
     start: "July",
     end: "July",
-    color: "bg-purple-300",
+    color: "bg-[#008000]",
     advisory:
       "Harvest when the maize is mature, \nand store in well-ventilated areas. \nHarvesting should be done early \nwhen the maize silk turns dry and brown. \nStore in hermetic bags to avoid \npest attacks during storage.",
   },
   {
-    activity: "Irrigation",
+    activity: "Post harvest handling ",
     start: "August",
-    end: "September",
-    color: "bg-teal-300",
+    end: "August",
+    color: "bg-[#993366]",
     advisory:
       "Utilize drip irrigation for \nbetter moisture retention. \nGiven the urban nature of Greater Accra, \nconsider efficient irrigation systems \nto manage water use effectively.",
-  },
-  {
-    activity: "Weeding",
-    start: "September",
-    end: "September",
-    color: "bg-orange-300",
-    advisory:
-      "Continue regular weeding to \nprotect crops from nutrient competition. \nApply herbicides such as \nNico or Nomini Rice Pro. \nWeeding should be done within \n3 weeks after planting \nto avoid crop competition.",
-  },
-  {
-    activity: "Fertilizing",
-    start: "October",
-    end: "October",
-    color: "bg-blue-300",
-    advisory:
-      "Apply Urea at a rate of 1 bag per \nacre 6 weeks after planting. \nEnsure that the field is moist \nbefore application. \nUrea should be applied 3 weeks \nafter the first fertilizer application \nfor optimum nutrient absorption.",
-  },
-  {
-    activity: "Pest Monitoring",
-    start: "November",
-    end: "November",
-    color: "bg-red-300",
-    advisory:
-      "Monitor for common pests and \nuse integrated pest management. \nIn the Ashanti region, pests \nlike the fall armyworm can be prevalent, \nso regular monitoring is crucial.",
-  },
-  {
-    activity: "Crop Maintenance",
-    start: "November",
-    end: "December",
-    color: "bg-purple-300",
-    advisory:
-      "Maintain your crops by pruning \nand removing dead parts as needed. \nConsider rotating rice with legumes. \nThis practice can improve soil \nfertility and reduce pests.",
-  },
-  {
-    activity: "Preparing for Next Season",
-    start: "December",
-    end: "December",
-    color: "bg-gray-300",
-    advisory:
-      "Prepare soil properly \nfor water retention. \nEnsure good soil structure \nfor effective rice growth.",
   },
 ];
 
@@ -137,20 +107,20 @@ const generateRegionActivities = () => {
   const climateOffsets = {
     "Greater Accra": 0, // Minimal offset
     Ashanti: 1, // Slightly earlier
-    Northern: 2, // Later planting and harvesting
-    Eastern: 1, // Slightly earlier
+    Northern: 4, // Later planting and harvesting
+    Eastern: 3, // Slightly earlier
     Western: 1, // Varied seasons
     Volta: 1, // Slightly later
-    "Upper East": 2, // Late planting
-    "Upper West": 2, // Late planting
+    "Upper East": 4, // Late planting
+    "Upper West": 3, // Late planting
     Central: 0, // Neutral
     Bono: 0, // Neutral
     "Western North": 1, // Slightly earlier
     Ahafo: 1, // Slightly earlier
-    Savannah: 2, // Late planting
-    Oti: 0, // Neutral
-    "Bono East": 0, // Neutral
-    "North East": 2, // Late planting
+    Savannah: 3, // Late planting
+    Oti: 2, // Neutral
+    "Bono East": 2, // Neutral
+    "North East": 4, // Late planting
   };
 
   // Array of months
@@ -451,8 +421,8 @@ const CropCalendar = () => {
             <div
               className="absolute bg-gray-800 text-white text-sm p-2 rounded whitespace-pre-wrap"
               style={{
-                top: tooltipPosition.y + 10,
-                left: tooltipPosition.x + 10,
+                top: tooltipPosition.y + 8,
+                left: tooltipPosition.x + 8,
               }}
             >
               <p className="font-semibold">{hoveredActivity.activity}</p>

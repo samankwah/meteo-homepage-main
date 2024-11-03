@@ -10,9 +10,9 @@ import {
 } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
-import logo2 from "../assets/images/mofalog.png";
-import logo3 from "../assets/images/fsrp.png";
-import logo4 from "../assets/images/gmetlogo.jpg";
+import logo2 from "../assets/images/agropulse-high-resolution-logo-transparent.png";
+// import logo3 from "../assets/images/fsrp.png";
+// import logo4 from "../assets/images/gmetlogo.jpg";
 
 // Dropdown Component
 const Dropdown = ({ links, title }) => {
@@ -133,12 +133,12 @@ const Header = () => {
           <Link to="/">
             <img src={logo2} alt="Mofa logo" className="h-8 md:h-10" />
           </Link>
-          <Link to="/">
+          {/* <Link to="/">
             <img src={logo3} alt="Fsrp logo" className="h-8 md:h-10" />
           </Link>
           <Link to="/">
             <img src={logo4} alt="GMet logo" className="h-8 md:h-10" />
-          </Link>
+          </Link> */}
         </div>
 
         <div className="flex items-center md:hidden">

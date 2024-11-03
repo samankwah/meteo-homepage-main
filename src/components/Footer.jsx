@@ -1,4 +1,4 @@
-import logo from "../assets/images/ghaaplogo.png";
+import logo from "../assets/images/agropulse-high-resolution-logo-transparent.png";
 import facebookIcon from "../assets/icons/facebook.png";
 import twitterIcon from "../assets/icons/x.png";
 import linkedinIcon from "../assets/icons/linkedin.png";
@@ -11,16 +11,12 @@ const Footer = () => {
         {/* Logo and Description */}
         <div className="flex flex-col items-center md:items-start">
           {/* Link the logo to the website */}
-          <a
-            href="https://ghaap.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={logo} alt="Ghaap logo" className="h-16 mb-2" />
+          <a href="/" target="_blank" rel="noopener noreferrer">
+            <img src={logo} alt="agropulse logo" className="h-12 mb-4" />
           </a>
 
           <p className="text-sm text-gray-300 text-center md:text-left">
-            GhAAP is committed to providing top-notch solutions that drive
+            AgroPulse is committed to providing top-notch solutions that drive
             business success. Stay connected and discover more about our
             services.
           </p>
@@ -113,7 +109,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-4 border-t border-gray-600 pt-2 text-xs text-gray-400 flex justify-center">
-        <p>&copy; 2024 GhAAP. All rights reserved.</p>
+        <p>&copy; 2024 AgroPulse. All rights reserved.</p>
       </div>
     </footer>
   );

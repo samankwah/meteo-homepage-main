@@ -5,91 +5,206 @@ import { districtOfGhana } from "../districts";
 const basePoultryActivities = {
   layers: [
     {
-      activity: "Brooding",
+      activity: "Site selection/Construction of appropriate housing",
+      start: 1,
+      end: 1,
+      color: "bg-[#00B0F0]",
+      advisory:
+        "Choose a well-drained, accessible location \naway from potential contaminants. \nEnsure adequate shelter and ventilation.\nAvoid areas prone to flooding and \nthose near other livestock to minimize disease risks.",
+    },
+    {
+      activity: "Preparation of day-old chicks",
+      start: 1,
+      end: 1,
+      color: "bg-[#375623]",
+      advisory:
+        "Prepare the brooding area to be warm and draft-free.\nProvide clean bedding, accessible feeders and drinkers, \nand monitor the chicks closely during the first 24 hours for any signs of distress or illness.",
+    },
+    {
+      activity: "Brooder management",
+      start: 1,
+      end: 3,
+      color: "bg-[#000000]",
+      advisory:
+        "Ensure the brooding temperature is maintained at optimal levels \nbetween 90-95°F (32-35°C) for the first week, reducing gradually.\nCheck temperature, ventilation, and humidity regularly, and adjust based on chick behavior (e.g., huddling indicates cold).",
+    },
+    {
+      activity: "Feeding and Water for Starters",
+      start: 1,
+      end: 7,
+      color: "bg-[#FFFF00]",
+      advisory:
+        "Provide a balanced starter feed with the necessary protein, vitamins, and minerals to support growth.\nEnsure fresh, clean water is always available.\nMonitor feed intake daily to assess chick health and development.",
+    },
+    {
+      activity: "Vaccination (Gumboro, Newcastle)",
       start: 1,
       end: 4,
-      color: "bg-yellow-300",
+      color: "bg-[#FF0000]",
       advisory:
-        "Ensure the brooding temperature is maintained at optimal levels.",
+        "Administer vaccinations at the correct times and doses to protect against Gumboro and Newcastle diseases.\nFollow vaccine storage and handling guidelines to ensure efficacy, and minimize stress during the vaccination process.",
     },
     {
-      activity: "Feeding",
-      start: 1,
-      end: 20,
-      color: "bg-blue-300",
-      advisory: "Provide balanced feed to promote growth and health.",
+      activity: "Feeding and Water for Growers",
+      start: 8,
+      end: 15,
+      color: "bg-[#FFFF00]",
+      advisory:
+        "Transition to a grower feed with lower protein content than starter feed but balanced for continued growth.\nEnsure the water supply is clean, uninterrupted, and regularly check the condition and cleanliness of drinkers.",
     },
     {
-      activity: "Vaccination",
-      start: 12,
+      activity: "Deworming",
+      start: 7,
+      end: 7,
+      color: "bg-[#0070C0]",
+      advisory:
+        "Administer a suitable deworming treatment to control intestinal parasites, which can impact growth and health.\nObserve withdrawal times as per product instructions, and monitor birds for signs of parasitic infections.",
+    },
+    {
+      activity: "Fowl pox vaccination",
+      start: 8,
       end: 12,
-      color: "bg-red-300",
-      advisory: "Vaccinate to prevent common poultry diseases.",
+      color: "bg-[#FF0000]",
+      advisory:
+        "Vaccinate against fowl pox using the \nrecommended method (usually wing web).\nEnsure proper handling and disposal of the vaccine, \nand monitor birds for any adverse reactions post-vaccination.",
+    },
+    {
+      activity: "Feed (Layer mash)",
+      start: 16,
+      end: 20,
+      color: "bg-[#FFFF00]",
+      advisory:
+        "Switch to a layer feed with sufficient calcium, \nphosphorus, and other nutrients \nessential for egg production.\nMaintain fresh water access, and inspect \nbirds for signs of malnutrition or dietary imbalance.",
     },
     {
       activity: "Egg Collection",
       start: 16,
       end: 20,
-      color: "bg-green-300",
-      advisory: "Collect eggs twice daily to avoid breakage and contamination.",
+      color: "bg-gray-300",
+      advisory:
+        "Collect eggs at least twice daily to prevent \nbreakage and contamination.\nHandle eggs carefully to \navoid cracks, and store them in a clean, cool \nplace until they are ready for sale or consumption.",
     },
     {
-      activity: "Feeding & Watering",
-      start: 5,
-      end: 20,
-      color: "bg-blue-200",
-      advisory: "Ensure water supply is clean and uninterrupted.",
-    },
-    {
-      activity: "Health Monitoring",
+      activity: "Coccidiosis prevention",
       start: 1,
       end: 20,
-      color: "bg-purple-300",
-      advisory: "Regularly check for signs of disease and stress.",
+      color: "bg-[#C6E0B4]",
+      advisory:
+        "Implement regular cleaning of drinkers \nand feeders, maintain dry bedding, and use \nmedicated feed if necessary.\nWatch for symptoms such as diarrhea, lethargy, \nand weight loss, and respond \npromptly to any outbreaks.",
+    },
+    {
+      activity: "Biosecurity measures",
+      start: 1,
+      end: 20,
+      color: "bg-[#44546A]",
+      advisory:
+        "Restrict visitor access to the poultry \narea, sanitize equipment regularly, and \nenforce clothing changes and handwashing for all personnel.\nMonitor birds daily for signs of \ndisease or unusual behavior, and \nisolate sick birds immediately.",
     },
   ],
   broilers: [
     {
-      activity: "Brooding",
+      activity: "Site selection/Construction of appropriate housing",
       start: 1,
-      end: 4,
-      color: "bg-yellow-300",
-      advisory: "Keep the brooding area warm and dry.",
+      end: 1,
+      color: "bg-[#00B0F0]",
+      advisory:
+        "Select a well-drained location away from contaminants.\nConstruct housing to provide shelter and ventilation.",
     },
     {
-      activity: "Feeding",
+      activity: "Preparation before arrival of day-old chicks",
       start: 1,
-      end: 4,
-      color: "bg-blue-300",
-      advisory: "Provide high-quality starter feed.",
+      end: 1,
+      color: "bg-[#375623]",
+      advisory:
+        "Prepare the brooding area and ensure it is warm and clean\nbefore chicks arrive.",
     },
     {
-      activity: "Vaccination",
+      activity: "Brooder management (controlled environment with heat)",
       start: 1,
+      end: 4,
+      color: "bg-[#000000]",
+      advisory:
+        "Maintain a warm, controlled environment with proper ventilation\nand lighting.\nCheck temperature regularly to avoid chick huddling or overheating.",
+    },
+    {
+      activity: "Feed (Pre-starter/Starter Diet) and clean water provision",
+      start: 1,
+      end: 4,
+      color: "bg-[#FFFF00]",
+      advisory:
+        "Provide high-quality starter feed and ensure access to clean water.\nMonitor feed intake to assess early growth and health.",
+    },
+    {
+      activity: "1st Gumboro vaccine administration",
+      start: 1,
+      end: 1,
+      color: "bg-[#FF0000]",
+      advisory:
+        "Administer the 1st Gumboro vaccine if day-old chicks have low maternal antibodies.\nPipe-borne water must be dechlorinated before use.",
+    },
+    {
+      activity: "1st Newcastle HB1 (Hitchner) vaccine administration",
+      start: 2,
+      end: 2,
+      color: "bg-[#FF0000]",
+      advisory:
+        "Administer Newcastle HB1 vaccine through water.\nEnsure water is dechlorinated before use.",
+    },
+    {
+      activity: "2nd Gumboro vaccine administration",
+      start: 3,
       end: 3,
-      color: "bg-red-300",
-      advisory: "Vaccination is essential for broiler health.",
+      color: "bg-[#FF0000]",
+      advisory:
+        "Administer the 2nd Gumboro vaccine through water.\nEnsure water is dechlorinated before use.",
     },
     {
-      activity: "Feeding & Watering",
+      activity: "Feed (Grower/Finisher Diet) and clean water provision",
       start: 5,
       end: 8,
-      color: "bg-blue-200",
-      advisory: "Ensure access to clean water and sufficient feed.",
+      color: "bg-[#FFFF00]",
+      advisory:
+        "Transition to grower feed to support continued growth.\nEnsure constant access to clean water and monitor intake.",
     },
     {
-      activity: "Health Monitoring",
+      activity: "2nd Newcastle (Lasota) vaccine administration",
+      start: 6,
+      end: 6,
+      color: "bg-[#FF0000]",
+      advisory:
+        "Administer the 2nd Newcastle (Lasota) vaccine through clean, dechlorinated water.",
+    },
+    {
+      activity: "Coccidiosis prevention",
+      start: 1,
+      end: 5,
+      color: "bg-[#C6E0B4]",
+      advisory:
+        "Administer coccidiostat in water continuously for 3 days a week, from week 1 to week 5.\nProvide clean water for 2 days after medication before any vaccination.",
+    },
+    {
+      activity: "Biosecurity measures/ husbandry practices observed throughout",
       start: 1,
       end: 8,
-      color: "bg-purple-300",
-      advisory: "Monitor weight gain and check for illness.",
+      color: "bg-[#44546A]",
+      advisory:
+        "Observe strict biosecurity measures.\nLimit access to housing, sanitize equipment regularly,\nand monitor birds daily.",
     },
     {
-      activity: "Slaughtering",
+      activity: "Harvesting/live bird market",
       start: 8,
       end: 8,
-      color: "bg-red-200",
-      advisory: "Ensure humane and hygienic slaughtering practices.",
+      color: "bg-gray-300",
+      advisory:
+        "Prepare for humane and hygienic harvesting and transport to live bird market.",
+    },
+    {
+      activity: "Processing",
+      start: 8,
+      end: 8,
+      color: "bg-gray-400",
+      advisory:
+        "Process birds in a hygienic facility to ensure food safety and quality.",
     },
   ],
 };
@@ -122,20 +237,20 @@ const generateRegionPoultryActivities = () => {
   const climateOffsets = {
     "Greater Accra": 0, // No offset
     Ashanti: 1, // Starts 1 week later
-    Northern: 2, // Starts 2 weeks later
-    Eastern: -1, // Starts 1 week earlier
+    Northern: 4, // Starts 2 weeks later
+    Eastern: 1, // Starts 1 week earlier
     Western: 3, // Starts 3 weeks later
     Volta: 1, // Slightly later
-    "Upper East": 2, // Late planting
-    "Upper West": 2, // Late planting
-    Central: 1, // Neutral
+    "Upper East": 4, // Late planting
+    "Upper West": 3, // Late planting
+    Central: 2, // Neutral
     Bono: 3, // Neutral
     "Western North": 1, // Slightly earlier
     Ahafo: 1, // Slightly earlier
-    Savannah: 2, // Late planting
-    Oti: 1, // Neutral
-    "Bono East": -2, // Neutral
-    "North East": 2, // Late planting
+    Savannah: 3, // Late planting
+    Oti: 2, // Neutral
+    "Bono East": 1, // Neutral
+    "North East": 4, // Late planting
   };
 
   // Helper function to adjust the week based on climate offset
@@ -333,10 +448,13 @@ const PoultryCalendar = () => {
             <thead>
               <tr className="bg-gray-200">
                 <th className="border border-gray-300 p-2 text-left">
-                  Activity
+                  Stage of Activity
                 </th>
                 {Array.from({ length: 20 }, (_, i) => (
-                  <th key={i} className="border border-gray-300 p-2 text-left">
+                  <th
+                    key={i}
+                    className="border border-gray-300 px-6 text-nowrap"
+                  >
                     Week {i + 1}
                   </th>
                 ))}
