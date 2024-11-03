@@ -111,7 +111,7 @@ const basePoultryActivities = {
         "Select a well-drained location away from contaminants.\nConstruct housing to provide shelter and ventilation.",
     },
     {
-      activity: "Preparation before arrival of day-old chicks",
+      activity: "Arrival of day-old chicks",
       start: 1,
       end: 1,
       color: "bg-[#375623]",
@@ -119,7 +119,7 @@ const basePoultryActivities = {
         "Prepare the brooding area and ensure it is warm and clean\nbefore chicks arrive.",
     },
     {
-      activity: "Brooder management (controlled environment with heat)",
+      activity: "Brooder management",
       start: 1,
       end: 4,
       color: "bg-[#000000]",
@@ -127,7 +127,7 @@ const basePoultryActivities = {
         "Maintain a warm, controlled environment with proper ventilation\nand lighting.\nCheck temperature regularly to avoid chick huddling or overheating.",
     },
     {
-      activity: "Feed (Pre-starter/Starter Diet) and clean water provision",
+      activity: "Feed (Starter Diet) ",
       start: 1,
       end: 4,
       color: "bg-[#FFFF00]",
@@ -135,7 +135,7 @@ const basePoultryActivities = {
         "Provide high-quality starter feed and ensure access to clean water.\nMonitor feed intake to assess early growth and health.",
     },
     {
-      activity: "1st Gumboro vaccine administration",
+      activity: "1st Gumboro vaccine ",
       start: 1,
       end: 1,
       color: "bg-[#FF0000]",
@@ -143,7 +143,7 @@ const basePoultryActivities = {
         "Administer the 1st Gumboro vaccine if day-old chicks have low maternal antibodies.\nPipe-borne water must be dechlorinated before use.",
     },
     {
-      activity: "1st Newcastle HB1 (Hitchner) vaccine administration",
+      activity: "1st Newcastle HB1 (Hitchner)",
       start: 2,
       end: 2,
       color: "bg-[#FF0000]",
@@ -151,7 +151,7 @@ const basePoultryActivities = {
         "Administer Newcastle HB1 vaccine through water.\nEnsure water is dechlorinated before use.",
     },
     {
-      activity: "2nd Gumboro vaccine administration",
+      activity: "2nd Gumboro vaccine",
       start: 3,
       end: 3,
       color: "bg-[#FF0000]",
@@ -159,7 +159,7 @@ const basePoultryActivities = {
         "Administer the 2nd Gumboro vaccine through water.\nEnsure water is dechlorinated before use.",
     },
     {
-      activity: "Feed (Grower/Finisher Diet) and clean water provision",
+      activity: "Feed (Grower Diet) ",
       start: 5,
       end: 8,
       color: "bg-[#FFFF00]",
@@ -167,7 +167,7 @@ const basePoultryActivities = {
         "Transition to grower feed to support continued growth.\nEnsure constant access to clean water and monitor intake.",
     },
     {
-      activity: "2nd Newcastle (Lasota) vaccine administration",
+      activity: "2nd Newcastle (Lasota) ",
       start: 6,
       end: 6,
       color: "bg-[#FF0000]",
@@ -183,7 +183,7 @@ const basePoultryActivities = {
         "Administer coccidiostat in water continuously for 3 days a week, from week 1 to week 5.\nProvide clean water for 2 days after medication before any vaccination.",
     },
     {
-      activity: "Biosecurity measures/ husbandry practices observed throughout",
+      activity: "Biosecurity measures",
       start: 1,
       end: 8,
       color: "bg-[#44546A]",
