@@ -263,7 +263,7 @@
 // ];
 
 export const districtOfGhana = [
-  { name: "All-districts", region: "Ashanti", climateOffset: 1.0 },
+  // { name: "/", region: "Ashanti", climateOffset: 1.0 },
   { name: "Bunkpurugu-Nakpanduri", region: "Northern", climateOffset: 1.5 },
   { name: "Central Gonja", region: "Northern", climateOffset: 1.2 },
   { name: "Chereponi", region: "Northern", climateOffset: 1.4 },
@@ -422,9 +422,9 @@ export const districtOfGhana = [
   {
     name: "La Nkwantanang Madina",
     region: "Greater Accra",
-    climateOffset: 1.3,
+    climateOffset: 2,
   },
-  { name: "Lagos", region: "Greater Accra", climateOffset: 1.4 },
+  { name: "Legon", region: "Greater Accra", climateOffset: 1.4 },
   { name: "Tema", region: "Greater Accra", climateOffset: 1.5 },
   { name: "Anloga", region: "Volta", climateOffset: 1.5 },
   { name: "Afadjato South", region: "Volta", climateOffset: 1.3 },
@@ -438,10 +438,10 @@ export const districtOfGhana = [
   { name: "Biakoye", region: "Volta", climateOffset: 1.3 },
   { name: "Nkwanta South", region: "Volta", climateOffset: 1.5 },
   { name: "Nkwanta North", region: "Volta", climateOffset: 1.4 },
-  { name: "Ngleshie Amanfrom", region: "Greater Accra", climateOffset: 1.5 },
-  { name: "Akuapem North", region: "Eastern", climateOffset: 1.4 },
-  { name: "Akuapem South", region: "Eastern", climateOffset: 1.3 },
-  { name: "Kwahu East", region: "Eastern", climateOffset: 1.5 },
-  { name: "Kwahu North", region: "Eastern", climateOffset: 1.4 },
-  { name: "Kwahu South", region: "Eastern", climateOffset: 1.6 },
+  { name: "Ngleshie Amanfrom", region: "Greater Accra", climateOffset: 3 },
+  { name: "Akuapem North", region: "Eastern", climateOffset: 4 },
+  { name: "Akuapem South", region: "Eastern", climateOffset: 1 },
+  { name: "Kwahu East", region: "Eastern", climateOffset: 2 },
+  { name: "Kwahu North", region: "Eastern", climateOffset: 3 },
+  { name: "Kwahu South", region: "Eastern", climateOffset: 1 },
 ];

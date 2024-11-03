@@ -107,7 +107,7 @@ const Header = () => {
       label: "Food System and Resilience Project (FSRP)",
     },
     { href: "https://www.meteo.gov.gh/", label: "Ghana Meteorological Agency" },
-    { href: "https://ghaap.com/", label: "GhAAP" },
+    // { href: "https://ghaap.com/", label: "GhAAP" },
   ];
 
   useEffect(() => {
@@ -131,7 +131,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-2 mb-2 md:mb-0">
           <Link to="/">
-            <img src={logo2} alt="Mofa logo" className="h-8 md:h-10" />
+            <img src={logo2} alt="agropulse logo" className="h-8 md:h-10" />
           </Link>
           {/* <Link to="/">
             <img src={logo3} alt="Fsrp logo" className="h-8 md:h-10" />
@@ -207,7 +207,7 @@ const Header = () => {
               to: link.href,
               label: link.label,
             }))}
-            title="GMet-GhAAP"
+            title="CLIENTELE"
           />
         </div>
       </div>
@@ -304,7 +304,7 @@ const Header = () => {
                   setOpenDropdown(openDropdown === "gmet" ? null : "gmet")
                 }
               >
-                GMet-GhAAP <FaChevronDown className="inline ml-1" />
+                Clientele <FaChevronDown className="inline ml-1" />
               </button>
               {openDropdown === "gmet" && (
                 <div className="pl-6 py-2">
