@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import { useState } from "react";
+
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Forecast from "./pages/Forecast";
@@ -55,6 +57,10 @@ import Plantain from "./assets/images/plantain.png";
 import Cassava from "./assets/images/cassava.png";
 import Sorghum from "./assets/images/sorghum.png";
 import Modal from "./components/Modal";
+import AgrometAdvisory from "./pages/AgroMetAdvisory ";
+import AdminHeader from "./adminDashboard/Header";
+import AdminSidebar from "./adminDashboard/Sidebar";
+import AdminDashboard from "./adminDashboard/AdminDashboard";
 
 const products = [
   {
@@ -238,6 +244,12 @@ const products = [
   },
 ];
 function App() {
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+
+  const OpenSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle);
+  };
+
   return (
     <Router>
       <ScrollToTop />
@@ -299,7 +311,23 @@ function App() {
               path="/product/:id"
               element={<ProductDetail products={products} />}
             />
+            {/* <Route
+              path="/admin-header"
+              element={<AdminHeader OpenSidebar={OpenSidebar} />}
+            /> */}
+
+            {/* <Route
+              path="/admin-sidebar"
+              element={
+                <AdminSidebar
+                  openSidebarToggle={openSidebarToggle}
+                  OpenSidebar={OpenSidebar}
+                />
+              }
+            /> */}
             <Route path="*" element={<NotFound />} />
+            <Route path="/agro-advisory" element={<AgrometAdvisory />} />
+            <Route path="admin" element={<AdminDashboard />} />
           </Routes>
         </main>
         <Footer />

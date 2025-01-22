@@ -106,7 +106,7 @@ const generateRegionActivities = () => {
   // Example climate offset data (simulating climate differences)
   const climateOffsets = {
     "Greater Accra": 0, // Minimal offset
-    Ashanti: 1, // Slightly earlier
+    Ashanti: 3, // Slightly earlier
     Northern: 4, // Later planting and harvesting
     Eastern: 3, // Slightly earlier
     Western: 1, // Varied seasons
@@ -280,7 +280,7 @@ const CropCalendar = () => {
 
   return (
     <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8 pt-24">
-      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-6">
+      <div className="max-w-max mx-auto bg-white rounded-lg shadow-lg p-6">
         <div className="flex flex-col md:flex-row justify-between items-center my-6 mb-10">
           <h1 className="text-blue-600 text-3xl font-bold mb-4 text-center">
             Crop Calendar for Major Season
@@ -419,7 +419,7 @@ const CropCalendar = () => {
           {/* Tooltip for crop advisory */}
           {hoveredActivity && (
             <div
-              className="absolute bg-gray-800 text-white text-sm p-2 rounded whitespace-pre-wrap"
+              className="absolute bg-gray-800 w-[220px] text-white text-sm p-2 rounded whitespace-pre-wrap"
               style={{
                 top: tooltipPosition.y + 8,
                 left: tooltipPosition.x + 8,

@@ -191,7 +191,7 @@ const Header = () => {
         </div>
 
         <div className="hidden md:flex flex-col items-center mx-4 relative">
-          <Link to="/notifications" className="flex flex-col items-center">
+          <Link to="/agro-advisory" className="flex flex-col items-center">
             <FaBell className="mb-1 text-3xl text-blue-900" />
           </Link>
           {/* Badge for unread notifications */}

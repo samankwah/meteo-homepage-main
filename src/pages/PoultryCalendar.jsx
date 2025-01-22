@@ -96,14 +96,14 @@ const basePoultryActivities = {
       activity: "Biosecurity measures",
       start: 1,
       end: 20,
-      color: "bg-[#44546A]",
+      color: "bg-[#1F497D]",
       advisory:
         "Restrict visitor access to the poultry \narea, sanitize equipment regularly, and \nenforce clothing changes and handwashing for all personnel.\nMonitor birds daily for signs of \ndisease or unusual behavior, and \nisolate sick birds immediately.",
     },
   ],
   broilers: [
     {
-      activity: "Site selection/Construction of appropriate housing",
+      activity: "Construction of appropriate housing",
       start: 1,
       end: 1,
       color: "bg-[#00B0F0]",
@@ -186,7 +186,7 @@ const basePoultryActivities = {
       activity: "Biosecurity measures",
       start: 1,
       end: 8,
-      color: "bg-[#44546A]",
+      color: "bg-[#1F497D]",
       advisory:
         "Observe strict biosecurity measures.\nLimit access to housing, sanitize equipment regularly,\nand monitor birds daily.",
     },
@@ -194,7 +194,7 @@ const basePoultryActivities = {
       activity: "Harvesting/live bird market",
       start: 8,
       end: 8,
-      color: "bg-gray-300",
+      color: "bg-[#00B050]",
       advisory:
         "Prepare for humane and hygienic harvesting and transport to live bird market.",
     },
@@ -202,7 +202,7 @@ const basePoultryActivities = {
       activity: "Processing",
       start: 8,
       end: 8,
-      color: "bg-gray-400",
+      color: "bg-[#993366]",
       advisory:
         "Process birds in a hygienic facility to ensure food safety and quality.",
     },
@@ -366,22 +366,22 @@ const PoultryCalendar = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8 pt-24 relative">
+    <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-8 pt-24">
       <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg p-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 my-6 mb-10">
+        <div className="flex flex-col md:flex-row justify-between items-center my-6 mb-10">
           <h1 className="text-blue-600 text-3xl font-bold mb-4 text-center">
-            Poultry Production Calendar
+            Poultry Calendar for Major Season
           </h1>
-          <div className="flex flex-col md:flex-row w-full md:w-auto gap-4">
+          <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
             <button
               onClick={handleDownload}
-              className="p-3 px-4 w-full md:w-auto bg-green-500 text-white rounded-full text-center"
+              className="p-2 px-4 w-full md:w-auto bg-green-500 text-white rounded-full text-center"
             >
               Download
             </button>
             <button
               onClick={handleShare}
-              className="p-3 px-4 w-full md:w-auto bg-blue-500 text-white rounded-full text-center"
+              className="p-2 px-4 w-full md:w-auto bg-blue-500 text-white rounded-full text-center"
             >
               Share
             </button>
@@ -443,8 +443,8 @@ const PoultryCalendar = () => {
         </div>
 
         {/* Calendar Table (Weeks) */}
-        <div className="overflow-auto">
-          <table className="min-w-full border-collapse border border-gray-300 table-auto">
+        <div className="overflow-x-auto">
+          <table className="min-w-max border-collapse border border-gray-300">
             <thead>
               <tr className="bg-gray-200">
                 <th className="border border-gray-300 p-2 text-left">
@@ -492,7 +492,7 @@ const PoultryCalendar = () => {
         {/* Tooltip for advisory */}
         {hoveredAdvisory && (
           <div
-            className="absolute bg-gray-800 text-white text-sm p-2 rounded"
+            className="absolute bg-gray-800 w-[220px] text-white text-sm p-2 rounded"
             style={{
               left: tooltipPosition.x + 10,
               top: tooltipPosition.y + 10,

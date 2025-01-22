@@ -9,13 +9,13 @@ const Footer = () => {
     <footer className="bg-blue-900 text-white w-full py-4 md:py-6 md:px-12">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
         {/* Logo and Description */}
-        <div className="flex flex-col items-center md:items-start">
+        <div className="flex flex-col items-start md:items-start">
           {/* Link the logo to the website */}
           <a href="/" target="_blank" rel="noopener noreferrer">
             <img src={logo} alt="agropulse logo" className="h-12 mb-4" />
           </a>
 
-          <p className="text-sm text-gray-300 text-center md:text-left">
+          <p className="text-sm text-gray-300 text-start md:text-left">
             AgroPulse is committed to providing top-notch solutions that drive
             business success. Stay connected and discover more about our
             services.
@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex flex-col items-center md:items-center">
+        <div className="flex flex-col items-start md:items-center">
           <h5 className="font-semibold mb-2 text-lg text-gray-100">
             Quick Links
           </h5>
@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media and Legal */}
-        <div className="flex flex-col items-center md:items-start">
+        <div className="flex flex-col items-start md:items-start">
           <h5 className="font-semibold mb-2 text-lg text-gray-100">
             Connect With Us
           </h5>
@@ -109,7 +109,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-4 border-t border-gray-600 pt-2 text-xs text-gray-400 flex justify-center">
-        <p>&copy; 2024 AgroPulse. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} AgroPulse. All rights reserved.</p>
       </div>
     </footer>
   );

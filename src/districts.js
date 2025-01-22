@@ -263,7 +263,6 @@
 // ];
 
 export const districtOfGhana = [
-  // { name: "/", region: "Ashanti", climateOffset: 1.0 },
   { name: "Bunkpurugu-Nakpanduri", region: "Northern", climateOffset: 1.5 },
   { name: "Central Gonja", region: "Northern", climateOffset: 1.2 },
   { name: "Chereponi", region: "Northern", climateOffset: 1.4 },
