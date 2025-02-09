@@ -20,6 +20,7 @@ import Plantain from "../assets/images/plantain.png";
 import Cassava from "../assets/images/cassava.png";
 import Sorghum from "../assets/images/sorghum.png";
 import { Link, useNavigate } from "react-router-dom";
+import backgroundImage from "../assets/images/prisma.png";
 
 const commodities = [
   {
@@ -201,46 +202,7 @@ const categories = [
   "Plantain",
   "Sorghum",
 ];
-// const MarketPage = ({ products }) => {
-//   const [selectedProduct, setSelectedProduct] = useState(null);
-//   const [isModalOpen, setIsModalOpen] = useState(false);
 
-//   const handleCartClick = (product) => {
-//     setSelectedProduct(product);
-//     setIsModalOpen(true); // Open the modal with product details
-//   };
-
-//   const closeModal = () => {
-//     setIsModalOpen(false);
-//     setSelectedProduct(null); // Clear the selected product when closing the modal
-//   };
-
-//   return (
-//     <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-4">
-//       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-//         {products.map((product) => (
-//           <div key={product.id} className="relative">
-//             <ProductCard product={product} />
-//             <button
-//               onClick={() => handleCartClick(product)}
-//               className="absolute top-2 right-2 bg-blue-600 text-white p-2 rounded-full"
-//             >
-//               🛒 {/* Cart icon */}
-//             </button>
-//           </div>
-//         ))}
-//       </div>
-//       {/* Modal for Product Details */}
-//       {selectedProduct && (
-//         <Modal
-//           isOpen={isModalOpen}
-//           onClose={closeModal}
-//           product={selectedProduct}
-//         />
-//       )}
-//     </div>
-//   );
-// };
 const ProductCard = ({ product, onQuantityChange }) => {
   const [quantity, setQuantity] = useState(0);
   const navigate = useNavigate();
@@ -441,7 +403,18 @@ const Marketplace = () => {
     ).isRequired,
   };
   return (
-    <div className="min-h-screen bg-blue-50 pt-20">
+    <div
+      className="min-h-screen bg-gray-950 mx-auto px-4 py-1 md:px-8 lg:px-12"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "1400px 1200px",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        WebkitBackgroundSize: "1200px 800px", // For Safari compatibility
+        MozBackgroundSize: "1200px 800px", // For Firefox compatibility
+      }}
+    >
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         {/* Back Button */}
         <button

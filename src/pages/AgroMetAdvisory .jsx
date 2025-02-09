@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { districtOfGhana } from "../districts";
+import prismaImage from "../assets/images/prisma.png";
 
 const AgroMetAdvisory = () => {
   // Sample data for filters
@@ -112,7 +112,7 @@ const AgroMetAdvisory = () => {
       "Continue normal operations.",
     ],
     summary:
-      "This week’s weather outlook for maize farmers in the Nkwanta South district of the Oti region indicates favorable conditions for crop establishment and early growth. Rainfall is expected to be moderate, sufficient for planting activities, while temperatures will support optimal germination and development. However, the high humidity levels may promote fungal diseases; preventive measures such as fungicide application are advised. Farmers should also monitor soil moisture closely to ensure it remains conducive to plant growth. Overall, conditions are suitable for maize farming, with minimal risks from adverse weather.",
+      "This week's weather outlook for maize farmers in the Nkwanta South district of the Oti region indicates favorable conditions for crop establishment and early growth. Rainfall is expected to be moderate, sufficient for planting activities, while temperatures will support optimal germination and development. However, the high humidity levels may promote fungal diseases; preventive measures such as fungicide application are advised. Farmers should also monitor soil moisture closely to ensure it remains conducive to plant growth. Overall, conditions are suitable for maize farming, with minimal risks from adverse weather.",
   });
 
   const handleFilterChange = (e, field) => {
@@ -155,10 +155,23 @@ const AgroMetAdvisory = () => {
     document.body.removeChild(link);
   };
 
+  const handleViewAdvisories = () => {
+    console.log("Viewing advisories for:", selected);
+    // Add your view advisories logic here
+  };
+
   return (
-    <div className="container max-w-7xl mx-auto p-4 bg-white shadow-lg rounded-lg mt-20">
-      {/* Header Section */}
-      <div className="text-center mb-6 bg-gray-50 py-4 rounded-t-lg">
+    <div
+      className="container mx-auto p-4 shadow-lg rounded-lg mt-20"
+      // style={{
+      //   backgroundImage: `url(${prismaImage})`, // Use the imported image
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   backgroundRepeat: "no-repeat",
+      // }}
+    >
+      {/* Header Section with View Advisories Button */}
+      <div className="relative text-center mb-6 bg-gray-100 py-4 rounded-t-lg">
         <h1 className="text-xl font-bold uppercase mb-2 text-gray-800">
           West Africa Food System Resilience Programme
         </h1>
@@ -168,26 +181,37 @@ const AgroMetAdvisory = () => {
       </div>
 
       {/* Filters Section */}
-      <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {Object.entries(filterData).map(([key, values]) => (
-            <div key={key} className="flex flex-col">
-              <label className="text-sm font-medium mb-1 capitalize">
-                {key.replace("_", " ")}
-              </label>
-              <select
-                value={selected[key.toLowerCase()]}
-                onChange={(e) => handleFilterChange(e, key.toLowerCase())}
-                className="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-              >
-                {values.map((value) => (
-                  <option key={value} value={value}>
-                    {value}
-                  </option>
-                ))}
-              </select>
-            </div>
-          ))}
+      <div className="container mx-auto p-4 shadow-lg rounded-lg mt-10">
+        {/* Filters Section with View Advisories Button */}
+        <div className="mb-6 p-4 bg-gray-100 rounded-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {Object.entries(filterData).map(([key, values]) => (
+              <div key={key} className="flex flex-col">
+                <label className="text-sm font-medium mb-1 capitalize">
+                  {key.replace("_", " ")}
+                </label>
+                <select
+                  value={selected[key.toLowerCase()]}
+                  onChange={(e) => handleFilterChange(e, key.toLowerCase())}
+                  className="p-2 border border-gray-300 rounded"
+                >
+                  {values.map((value) => (
+                    <option key={value} value={value}>
+                      {value}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center mt-4">
+            <button
+              onClick={handleViewAdvisories}
+              className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-200 text-sm font-semibold shadow-sm"
+            >
+              View Advisories
+            </button>
+          </div>
         </div>
       </div>
 
@@ -196,15 +220,15 @@ const AgroMetAdvisory = () => {
         <table className="w-full border-collapse bg-white">
           <tbody>
             <tr>
-              <td className="border border-gray-300 p-2 bg-gray-50">
+              <td className="border border-gray-300 p-2 bg-gray-100">
                 <strong>CROP</strong>
               </td>
               <td className="border border-gray-300 p-2">{selected.crop}</td>
-              <td className="border border-gray-300 p-2 bg-gray-50">
+              <td className="border border-gray-300 p-2 bg-gray-100">
                 <strong>REGION</strong>
               </td>
               <td className="border border-gray-300 p-2">{selected.region}</td>
-              <td className="border border-gray-300 p-2 bg-gray-50">
+              <td className="border border-gray-300 p-2 bg-gray-100">
                 <strong>MONTH/YEAR</strong>
               </td>
               <td className="border border-gray-300 p-2">
@@ -212,17 +236,17 @@ const AgroMetAdvisory = () => {
               </td>
             </tr>
             <tr>
-              <td className="border border-gray-300 p-2 bg-gray-50">
+              <td className="border border-gray-300 p-2 bg-gray-100">
                 <strong>VARIETY</strong>
               </td>
               <td className="border border-gray-300 p-2">{selected.variety}</td>
-              <td className="border border-gray-300 p-2 bg-gray-50">
+              <td className="border border-gray-300 p-2 bg-gray-100">
                 <strong>DISTRICT</strong>
               </td>
               <td className="border border-gray-300 p-2">
                 {selected.district}
               </td>
-              <td className="border border-gray-300 p-2 bg-gray-50">
+              <td className="border border-gray-300 p-2 bg-gray-100">
                 <strong>WEEK</strong>
               </td>
               <td className="border border-gray-300 p-2">{selected.week}</td>
@@ -233,9 +257,9 @@ const AgroMetAdvisory = () => {
 
       {/* Weather Parameters Table */}
       <div className="mb-6">
-        <table className="w-full border-collapse text-sm bg-white">
+        <table className="max-w-max mx:auto border-collapse text-sm bg-white">
           <thead>
-            <tr className="bg-gray-50">
+            <tr className="bg-gray-100">
               <th className="border border-gray-300 p-2"></th>
               {parameters.map((param, index) => (
                 <th key={index} className="border border-gray-300 p-2">
@@ -247,7 +271,7 @@ const AgroMetAdvisory = () => {
           <tbody>
             {["forecast", "implication", "advisory"].map((type) => (
               <tr key={type}>
-                <td className="border border-gray-300 p-2 bg-gray-50">
+                <td className="border border-gray-300 p-2 bg-gray-100">
                   <strong>{type.toUpperCase()}</strong>
                 </td>
                 {parameters.map((_, index) => (

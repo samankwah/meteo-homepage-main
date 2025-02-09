@@ -344,7 +344,13 @@ const Home = () => {
           {/* Responsive Map Section */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
             {/* Left Sidebar: Weather Warnings */}
-            <div className="lg:col-span-0 bg-white rounded-lg shadow-lg p-4">
+            <div
+              className="lg:col-span-0 bg-white/20 
+    backdrop-blur-[5px] 
+    border border-white/20 
+    shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
+    rounded-xl mt-1 p-4"
+            >
               <h2 className="text-red-600 text-1xl font-bold mb-4 flex items-center">
                 <img src={cap} alt="Ghaap logo" className="h-6 w-6 mr-2" />
                 <i className="fas fa-bell mr-2"></i> Latest Weather Warnings
@@ -363,7 +369,13 @@ const Home = () => {
             </div>
 
             {/* Right: Interactive Map */}
-            <div className="lg:col-span-2 bg-white rounded-lg shadow-lg p-4 sticky h-full">
+            <div
+              className="lg:col-span-2 bbg-white/20 
+    backdrop-blur-[5px] 
+    border border-white/20 
+    shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
+    rounded-xl  p-4 sticky h-full"
+            >
               <h2 className="text-gray-700 font-bold mb-2">
                 <i className="fas fa-calendar-alt mr-2"></i>
                 {`${formattedDate} - ${formattedTime}`}
@@ -1194,7 +1206,13 @@ const Home = () => {
             {/* </div> */}
 
             {/* Sidebar Forecast */}
-            <div className="bg-white rounded-lg shadow-lg p-3">
+            <div
+              className="bg-white/20 
+    backdrop-blur-[5px] 
+    border border-white/20 
+    shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
+    rounded-xl p-3"
+            >
               <h2 className="text-blue-600 font-bold text-xl">
                 Other Forecasts
               </h2>
@@ -1325,7 +1343,13 @@ const Home = () => {
           <div className="flex flex-col space-y-4 m-8 p-4 max-w-full mx-auto">
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
               {/* News Section */}
-              <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden">
+              <div
+                className="flex-1 bg-white/20 
+    backdrop-blur-[5px] 
+    border border-white/20 
+    shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
+    rounded-xl  overflow-hidden"
+              >
                 {/* Card Header */}
                 <div className="p-4 border-b bg-blue-50">
                   <h3 className="text-lg font-semibold text-blue-600">
@@ -1386,7 +1410,13 @@ const Home = () => {
               </div>
 
               {/* Events Section */}
-              <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden">
+              <div
+                className="flex-1 bg-white/20 
+    backdrop-blur-[5px] 
+    border border-white/20 
+    shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
+    rounded-xl  overflow-hidden"
+              >
                 {/* Header */}
                 <div className="p-4 border-b border-gray-200 bg-blue-50">
                   <h3 className="text-lg font-semibold text-blue-600">
