@@ -1,11 +1,12 @@
 import { useState } from "react";
 import prismaImage from "../assets/images/prisma.png";
+import { districtOfGhana } from "../districts";
 
 const AgroMetAdvisory = () => {
   // Sample data for filters
   const filterData = {
-    crops: ["Maize", "Rice", "Sorghum", "Soyabean", "Tomato"],
-    regions: [
+    crop: ["Maize", "Rice", "Sorghum", "Soyabean", "Tomato"],
+    region: [
       "OTI",
       "VOLTA",
       "NORTHERN",
@@ -23,9 +24,9 @@ const AgroMetAdvisory = () => {
       "BONO EAST",
       "CENTRAL",
     ],
-    districts: ["Nkwanta South", "Kadjebi", "Krachi East", "Nkwanta North"],
-    varieties: ["Hybrid Maize - A123", "Local Maize", "Improved Maize"],
-    months: [
+    // district: ["Nkwanta South", "Kadjebi", "Krachi East", "Nkwanta North"],
+    variety: ["Hybrid Maize - A123", "Local Maize", "Improved Maize"],
+    month: [
       "January",
       "February",
       "March",
@@ -39,8 +40,8 @@ const AgroMetAdvisory = () => {
       "November",
       "December",
     ],
-    years: ["2024", "2025"],
-    weeks: [
+    year: ["2024", "2025"],
+    week: [
       "1st – 7th",
       "8th – 14th",
       "15th – 21st",
@@ -64,14 +65,15 @@ const AgroMetAdvisory = () => {
 
   // State for filters
   const [selected, setSelected] = useState({
-    crop: "Maize",
-    region: "OTI",
-    district: "Nkwanta South",
-    variety: "Hybrid Maize - A123",
-    month: "December",
-    year: "2024",
-    week: "1st – 7th",
+    crop: "",
+    region: "",
+    district: "",
+    variety: "",
+    month: "",
+    year: "",
+    week: "",
   });
+  const [showAdvisory, setShowAdvisory] = useState(false);
 
   // State for advisory data
   const [data, setData] = useState({
@@ -156,8 +158,9 @@ const AgroMetAdvisory = () => {
   };
 
   const handleViewAdvisories = () => {
-    console.log("Viewing advisories for:", selected);
+    // console.log("Viewing advisories for:", selected);
     // Add your view advisories logic here
+    setShowAdvisory(true);
   };
 
   return (
@@ -195,6 +198,9 @@ const AgroMetAdvisory = () => {
                   onChange={(e) => handleFilterChange(e, key.toLowerCase())}
                   className="p-2 border border-gray-300 rounded"
                 >
+                  <option value="">
+                    Select {key.charAt(0).toUpperCase() + key.slice(1)}
+                  </option>
                   {values.map((value) => (
                     <option key={value} value={value}>
                       {value}
@@ -203,6 +209,49 @@ const AgroMetAdvisory = () => {
                 </select>
               </div>
             ))}
+            {/* <div className="flex flex-col">
+              <label className="text-sm font-medium mb-1 capitalize">
+                District
+              </label>
+              <select
+               
+                className="p-2 border border-gray-300 rounded"
+              >
+                {districtOfGhana
+                  .filter(
+                    (d) =>
+                      d.region.toLowerCase() ===
+                      selected.region.toLocaleLowerCase()
+                  )
+                  .map((value) => (
+                    <option key={value.name} value={value.name}>
+                      {value.name}
+                    </option>
+                  ))}
+              </select>
+            </div> */}
+            <div className="flex flex-col">
+              <label className="text-sm font-medium mb-1 capitalize">
+                District
+              </label>
+              <select
+                value={selected.district}
+                onChange={(e) => handleFilterChange(e, "district")}
+                className="p-2 border border-gray-300 rounded"
+              >
+                <option value="">Select District</option>
+                {districtOfGhana
+                  .filter(
+                    (d) =>
+                      d.region.toLowerCase() === selected.region.toLowerCase() // Case-insensitive match
+                  )
+                  .map((district) => (
+                    <option key={district.name} value={district.name}>
+                      {district.name}
+                    </option>
+                  ))}
+              </select>
+            </div>
           </div>
           <div className="flex justify-center mt-4">
             <button
@@ -215,111 +264,122 @@ const AgroMetAdvisory = () => {
         </div>
       </div>
 
-      {/* Info Display Table */}
-      <div className="mb-6">
-        <table className="w-full border-collapse bg-white">
-          <tbody>
-            <tr>
-              <td className="border border-gray-300 p-2 bg-gray-100">
-                <strong>CROP</strong>
-              </td>
-              <td className="border border-gray-300 p-2">{selected.crop}</td>
-              <td className="border border-gray-300 p-2 bg-gray-100">
-                <strong>REGION</strong>
-              </td>
-              <td className="border border-gray-300 p-2">{selected.region}</td>
-              <td className="border border-gray-300 p-2 bg-gray-100">
-                <strong>MONTH/YEAR</strong>
-              </td>
-              <td className="border border-gray-300 p-2">
-                {selected.month} {selected.year}
-              </td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 p-2 bg-gray-100">
-                <strong>VARIETY</strong>
-              </td>
-              <td className="border border-gray-300 p-2">{selected.variety}</td>
-              <td className="border border-gray-300 p-2 bg-gray-100">
-                <strong>DISTRICT</strong>
-              </td>
-              <td className="border border-gray-300 p-2">
-                {selected.district}
-              </td>
-              <td className="border border-gray-300 p-2 bg-gray-100">
-                <strong>WEEK</strong>
-              </td>
-              <td className="border border-gray-300 p-2">{selected.week}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      {/* Weather Parameters Table */}
-      <div className="mb-6">
-        <table className="max-w-max mx:auto border-collapse text-sm bg-white">
-          <thead>
-            <tr className="bg-gray-100">
-              <th className="border border-gray-300 p-2"></th>
-              {parameters.map((param, index) => (
-                <th key={index} className="border border-gray-300 p-2">
-                  {param}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {["forecast", "implication", "advisory"].map((type) => (
-              <tr key={type}>
-                <td className="border border-gray-300 p-2 bg-gray-100">
-                  <strong>{type.toUpperCase()}</strong>
-                </td>
-                {parameters.map((_, index) => (
-                  <td
-                    key={index}
-                    className="border border-gray-300 p-1 text-center"
-                  >
-                    <input
-                      type="text"
-                      placeholder="Enter data..."
-                      value={data[type][index]}
-                      onChange={(e) =>
-                        handleInputChange(type, index, e.target.value)
-                      }
-                      className="w-full border-none focus:outline-none focus:ring-1 focus:ring-blue-500"
-                    />
+      {showAdvisory ? (
+        <>
+          {" "}
+          {/* Info Display Table */}
+          <div className="mb-6">
+            <table className="w-full border-collapse bg-white">
+              <tbody>
+                <tr>
+                  <td className="border border-gray-300 p-2 bg-gray-100">
+                    <strong>CROP</strong>
                   </td>
+                  <td className="border border-gray-300 p-2">
+                    {selected.crop}
+                  </td>
+                  <td className="border border-gray-300 p-2 bg-gray-100">
+                    <strong>REGION</strong>
+                  </td>
+                  <td className="border border-gray-300 p-2">
+                    {selected.region}
+                  </td>
+                  <td className="border border-gray-300 p-2 bg-gray-100">
+                    <strong>MONTH/YEAR</strong>
+                  </td>
+                  <td className="border border-gray-300 p-2">
+                    {selected.month} {selected.year}
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-gray-300 p-2 bg-gray-100">
+                    <strong>VARIETY</strong>
+                  </td>
+                  <td className="border border-gray-300 p-2">
+                    {selected.variety}
+                  </td>
+                  <td className="border border-gray-300 p-2 bg-gray-100">
+                    <strong>DISTRICT</strong>
+                  </td>
+                  <td className="border border-gray-300 p-2">
+                    {selected.district}
+                  </td>
+                  <td className="border border-gray-300 p-2 bg-gray-100">
+                    <strong>WEEK</strong>
+                  </td>
+                  <td className="border border-gray-300 p-2">
+                    {selected.week}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          {/* Weather Parameters Table */}
+          <div className="mb-6">
+            <table className="max-w-max mx:auto border-collapse text-sm bg-white">
+              <thead>
+                <tr className="bg-gray-100">
+                  <th className="border border-gray-300 p-2"></th>
+                  {parameters.map((param, index) => (
+                    <th key={index} className="border border-gray-300 p-2">
+                      {param}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {["forecast", "implication", "advisory"].map((type) => (
+                  <tr key={type}>
+                    <td className="border border-gray-300 p-2 bg-gray-100">
+                      <strong>{type.toUpperCase()}</strong>
+                    </td>
+                    {parameters.map((_, index) => (
+                      <td
+                        key={index}
+                        className="border border-gray-300 p-1 text-center"
+                      >
+                        <input
+                          type="text"
+                          placeholder="Enter data..."
+                          value={data[type][index]}
+                          onChange={(e) =>
+                            handleInputChange(type, index, e.target.value)
+                          }
+                          className="w-full border-none focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        />
+                      </td>
+                    ))}
+                  </tr>
                 ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Summary Section */}
-      <div className="mt-6">
-        <p className="text-center font-semibold">
-          SUMMARY WEATHER OUTLOOK & ADVISORY FOR {selected.crop.toUpperCase()}{" "}
-          FARMERS IN THE {selected.district.toUpperCase()} DISTRICT OF THE{" "}
-          {selected.region} REGION FOR THE WEEK OF {selected.week}{" "}
-          {selected.month.toUpperCase()}. {selected.year}
-        </p>
-        <textarea
-          className="w-full mt-4 p-4 border border-gray-300 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
-          rows="5"
-          placeholder="Enter summary here..."
-          value={data.summary}
-          onChange={handleSummaryChange}
-        />
-      </div>
-
-      {/* Download Button */}
-      <button
-        onClick={downloadCSV}
-        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
-      >
-        Download as CSV
-      </button>
+              </tbody>
+            </table>
+          </div>
+          {/* Summary Section */}
+          <div className="mt-6">
+            <p className="text-center font-semibold">
+              SUMMARY WEATHER OUTLOOK & ADVISORY FOR{" "}
+              {selected.crop.toUpperCase()} FARMERS IN THE{" "}
+              {selected.district.toUpperCase()} DISTRICT OF THE{" "}
+              {selected.region} REGION FOR THE WEEK OF {selected.week}{" "}
+              {selected.month.toUpperCase()}. {selected.year}
+            </p>
+            <textarea
+              className="w-full mt-4 p-4 border border-gray-300 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+              rows="5"
+              placeholder="Enter summary here..."
+              value={data.summary}
+              onChange={handleSummaryChange}
+            />
+          </div>
+          {/* Download Button */}
+          <button
+            onClick={downloadCSV}
+            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+          >
+            Download as CSV
+          </button>
+        </>
+      ) : null}
     </div>
   );
 };
