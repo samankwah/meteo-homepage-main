@@ -164,30 +164,22 @@ const AgroMetAdvisory = () => {
   };
 
   return (
-    <div
-      className="container mx-auto p-4 shadow-lg rounded-lg mt-20"
-      // style={{
-      //   backgroundImage: `url(${prismaImage})`, // Use the imported image
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      //   backgroundRepeat: "no-repeat",
-      // }}
-    >
+    <div className="container mx-auto p-2 md:p-4 shadow-lg rounded-lg mt-16 md:mt-20">
       {/* Header Section with View Advisories Button */}
-      <div className="relative text-center mb-6 bg-gray-100 py-4 rounded-t-lg">
-        <h1 className="text-xl font-bold uppercase mb-2 text-gray-800">
+      <div className="relative text-center mb-4 md:mb-6 bg-gray-100 py-2 md:py-4 rounded-t-lg">
+        <h1 className="text-lg md:text-xl font-bold uppercase mb-1 md:mb-2 text-gray-800">
           West Africa Food System Resilience Programme
         </h1>
-        <h2 className="text-lg font-semibold uppercase text-gray-700">
+        <h2 className="text-sm md:text-lg font-semibold uppercase text-gray-700">
           Agro-Meteorological Forecasts and Advisories
         </h2>
       </div>
 
       {/* Filters Section */}
-      <div className="container mx-auto p-4 shadow-lg rounded-lg mt-10">
+      <div className="container mx-auto p-2 md:p-4 shadow-lg rounded-lg mt-6 md:mt-10">
         {/* Filters Section with View Advisories Button */}
-        <div className="mb-6 p-4 bg-gray-100 rounded-lg">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="mb-4 md:mb-6 p-2 md:p-4 bg-gray-100 rounded-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
             {Object.entries(filterData).map(([key, values]) => (
               <div key={key} className="flex flex-col">
                 <label className="text-sm font-medium mb-1 capitalize">
@@ -253,10 +245,10 @@ const AgroMetAdvisory = () => {
               </select>
             </div>
           </div>
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center mt-3 md:mt-4">
             <button
               onClick={handleViewAdvisories}
-              className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-200 text-sm font-semibold shadow-sm"
+              className="bg-green-500 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg hover:bg-green-600 transition-colors duration-200 text-xs md:text-sm font-semibold shadow-sm"
             >
               View Advisories
             </button>
@@ -268,8 +260,8 @@ const AgroMetAdvisory = () => {
         <>
           {" "}
           {/* Info Display Table */}
-          <div className="mb-6">
-            <table className="w-full border-collapse bg-white">
+          <div className="4 md:mb-6 overflow-x-auto">
+            <table className="w-full border-collapse bg-white text-sm">
               <tbody>
                 <tr>
                   <td className="border border-gray-300 p-2 bg-gray-100">
@@ -315,8 +307,8 @@ const AgroMetAdvisory = () => {
             </table>
           </div>
           {/* Weather Parameters Table */}
-          <div className="mb-6">
-            <table className="max-w-max mx:auto border-collapse text-sm bg-white">
+          <div className="md:mb-6 overflow-x-auto">
+            <table className="min-w-max mx-auto border-collapse text-xs md:text-sm bg-white">
               <thead>
                 <tr className="bg-gray-100">
                   <th className="border border-gray-300 p-2"></th>
@@ -330,13 +322,13 @@ const AgroMetAdvisory = () => {
               <tbody>
                 {["forecast", "implication", "advisory"].map((type) => (
                   <tr key={type}>
-                    <td className="border border-gray-300 p-2 bg-gray-100">
+                    <td className="border border-gray-300 p-1 md:p-2 bg-gray-100">
                       <strong>{type.toUpperCase()}</strong>
                     </td>
                     {parameters.map((_, index) => (
                       <td
                         key={index}
-                        className="border border-gray-300 p-1 text-center"
+                        className="border border-gray-300 p-1 text-center min-w-[120px]"
                       >
                         <input
                           type="text"
@@ -345,7 +337,7 @@ const AgroMetAdvisory = () => {
                           onChange={(e) =>
                             handleInputChange(type, index, e.target.value)
                           }
-                          className="w-full border-none focus:outline-none focus:ring-1 focus:ring-blue-500"
+                          className="w-full text-xs md:text-sm border-none focus:outline-none focus:ring-1 focus:ring-blue-500"
                         />
                       </td>
                     ))}
@@ -355,17 +347,27 @@ const AgroMetAdvisory = () => {
             </table>
           </div>
           {/* Summary Section */}
-          <div className="mt-6">
-            <p className="text-center font-semibold">
+          <div className="mt-4 md:mt-6">
+            <p className="text-center text-sm md:text-base font-semibold px-2">
               SUMMARY WEATHER OUTLOOK & ADVISORY FOR{" "}
-              {selected.crop.toUpperCase()} FARMERS IN THE{" "}
-              {selected.district.toUpperCase()} DISTRICT OF THE{" "}
-              {selected.region} REGION FOR THE WEEK OF {selected.week}{" "}
-              {selected.month.toUpperCase()}. {selected.year}
+              <span className="block md:inline">
+                {selected.crop.toUpperCase()}
+              </span>{" "}
+              FARMERS IN THE{" "}
+              <span className="block md:inline">
+                {selected.district.toUpperCase()}
+              </span>{" "}
+              DISTRICT OF THE{" "}
+              <span className="block md:inline">{selected.region}</span> REGION
+              FOR THE WEEK OF{" "}
+              <span className="block md:inline">{selected.week}</span>{" "}
+              <span className="block md:inline">
+                {selected.month.toUpperCase()}. {selected.year}
+              </span>
             </p>
             <textarea
-              className="w-full mt-4 p-4 border border-gray-300 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
-              rows="5"
+              className="w-full mt-2 md:mt-4 p-2 md:p-4 border border-gray-300 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
+              rows="4"
               placeholder="Enter summary here..."
               value={data.summary}
               onChange={handleSummaryChange}
@@ -374,7 +376,7 @@ const AgroMetAdvisory = () => {
           {/* Download Button */}
           <button
             onClick={downloadCSV}
-            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+            className="mt-3 md:mt-4 bg-blue-500 text-white px-3 py-1.5 md:px-4 md:py-2 rounded hover:bg-blue-600 transition text-sm md:text-base"
           >
             Download as CSV
           </button>
