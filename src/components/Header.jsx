@@ -130,7 +130,7 @@ const Header = () => {
     backdrop-blur-[100px] 
     border border-white/20 
     shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
-    rounded-full mt-1"
+    rounded-3xl mt-1"
       style={{ maxWidth: "1400px" }}
     >
       <div className="container mx-auto flex items-center justify-between">
