@@ -366,7 +366,7 @@ const AgroMetAdvisory = () => {
               </span>
             </p>
             <textarea
-              className="w-full mt-2 md:mt-4 p-2 md:p-4 border border-gray-300 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
+              className="w-full mt-2 md:mt-4 p-8 md:p-4 border border-gray-300 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
               rows="4"
               placeholder="Enter summary here..."
               value={data.summary}
