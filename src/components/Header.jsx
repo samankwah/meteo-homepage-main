@@ -6,7 +6,7 @@ import {
   FaShoppingCart,
   FaSeedling,
   FaCloudSun,
-  FaBell,
+  FaArchive,
 } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -228,12 +228,13 @@ const Header = () => {
         {/* Notification Bell - Hidden on mobile and tablet */}
         <div className="hidden lg:flex flex-col items-center mx-4 relative">
           <Link to="/agro-advisory" className="flex flex-col items-center">
-            <FaBell className="mb-1 text-3xl " />
+            <FaArchive className="mb-1 text-3xl text-white" />
           </Link>
           <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
             3
           </span>
         </div>
+
         <div className="hidden lg:flex flex-col border-l border-gray-300 h-8 mx-4" />
 
         {/* Clientele Dropdown - Hidden on mobile and tablet */}
