@@ -1,8 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import { useState } from "react";
-
-import Footer from "./components/Footer";
+import { createBrowserRouter } from "react-router-dom";
+// import { useState } from "react";
+import DashboardPage from "./pages/DashboardPage";
 import Home from "./pages/Home";
 import Forecast from "./pages/Forecast";
 import Climate from "./pages/Climate";
@@ -28,7 +26,6 @@ import NotFound from "./components/NotFound";
 import EventClimateReportRelease from "./events/EventClimateReportRelease";
 import EventMajorSeasonCropCalendar from "./events/EventMajorSeasonCropCalendar";
 import EventPoultryCalendar from "./events/EventPoultryCalendar";
-import ScrollToTop from "./components/ScrollToTop";
 import OurServices from "./pages/OurServices";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
@@ -36,8 +33,6 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import ProductDetail from "./components/ProductDetail";
 import MarketPage from "./components/MarketPage";
-import ProductList from "./components/ProductList";
-import ProductCard from "./components/ProductCard";
 import YellowMaizeImage from "./assets/images/yellow maize.png";
 import WhiteMaizeImage from "./assets/images/white maize.png";
 import YellowSoyaImage from "./assets/images/yellow soya.png";
@@ -58,9 +53,9 @@ import Cassava from "./assets/images/cassava.png";
 import Sorghum from "./assets/images/sorghum.png";
 import Modal from "./components/Modal";
 import AgrometAdvisory from "./pages/AgroMetAdvisory ";
-import AdminHeader from "./adminDashboard/Header";
-import AdminSidebar from "./adminDashboard/Sidebar";
-import AdminDashboard from "./adminDashboard/AdminDashboard";
+import { RouterProvider } from "react-router-dom";
+import RootLayout from "./layouts/RootLayout";
+import AdminLayout from "./layouts/adminLayout";
 
 const products = [
   {
@@ -244,97 +239,65 @@ const products = [
   },
 ];
 function App() {
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootLayout />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "forecast", element: <Forecast /> },
+        { path: "climate", element: <Climate /> },
+        { path: "about", element: <About /> },
+        { path: "weather", element: <Weather /> },
+        { path: "crop-calendar", element: <CropCalendar /> },
+        { path: "news", element: <NewsUpdates /> },
+        { path: "5-days-forecast", element: <FiveDaysForecast /> },
+        { path: "7-days-forecast", element: <SevenDaysForecast /> },
+        { path: "agro-bulletins", element: <AgroBulletins /> },
+        { path: "flood-drought", element: <FloodDrought /> },
+        { path: "subseasonal-forecast", element: <SubseasonalForecast /> },
+        { path: "monthly-forecast", element: <MonthlyForecast /> },
+        { path: "climate-report", element: <ClimateReport /> },
+        { path: "poultry-calendar", element: <PoultryCalendar /> },
+        { path: "seasonal-forecast", element: <SeasonalForecast /> },
+        { path: "blog/gmet-visit", element: <BlogGmetVisit /> },
+        {
+          path: "blog/national-assembly-visit",
+          element: <BlogNationalAssemblyVisit />,
+        },
+        { path: "blog/son-forecast", element: <BlogSonForecast /> },
+        {
+          path: "events/crop-calendar",
+          element: <EventMajorSeasonCropCalendar />,
+        },
+        { path: "events/poultry-calendar", element: <EventPoultryCalendar /> },
+        {
+          path: "events/climate-report-release",
+          element: <EventClimateReportRelease />,
+        },
+        { path: "poultry-advisory", element: <PoultryAdvisory /> },
+        { path: "crop-advisory", element: <CropAdvisory /> },
+        { path: "services", element: <OurServices /> },
+        { path: "contact", element: <Contact /> },
+        { path: "careers", element: <Careers /> },
+        { path: "privacy", element: <PrivacyPolicy /> },
+        { path: "terms", element: <TermsOfService /> },
+        { path: "market-page", element: <MarketPage /> },
+        { path: "modal", element: <Modal /> },
+        { path: "product/:id", element: <ProductDetail products={products} /> },
 
-  const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle);
-  };
+        { path: "agro-advisory", element: <AgrometAdvisory /> },
+        { path: "*", element: <NotFound /> }, // 404 page for undefined routes
+      ],
+    },
+    {
+      path: "/dashboard",
+      element: <AdminLayout />,
+      children: [{ index: true, element: <DashboardPage /> }],
+    },
+  ]);
 
-  return (
-    <Router>
-      <ScrollToTop />
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/forecast" element={<Forecast />} />
-            <Route path="/climate" element={<Climate />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/weather" element={<Weather />} />
-
-            <Route path="/crop-calendar" element={<CropCalendar />} />
-            <Route path="/news" element={<NewsUpdates />} />
-            <Route path="/5-days-forecast" element={<FiveDaysForecast />} />
-            <Route path="/7-days-forecast" element={<SevenDaysForecast />} />
-            <Route path="/agro-bulletins" element={<AgroBulletins />} />
-            <Route path="/flood-drought" element={<FloodDrought />} />
-            <Route
-              path="/subseasonal-forecast"
-              element={<SubseasonalForecast />}
-            />
-            <Route path="/monthly-forecast" element={<MonthlyForecast />} />
-            <Route path="/climate-report" element={<ClimateReport />} />
-            <Route path="/poultry-calendar" element={<PoultryCalendar />} />
-            <Route path="/seasonal-forecast" element={<SeasonalForecast />} />
-            <Route path="/blog/gmet-visit" element={<BlogGmetVisit />} />
-            <Route
-              path="/blog/national-assembly-visit"
-              element={<BlogNationalAssemblyVisit />}
-            />
-            <Route path="/blog/son-forecast" element={<BlogSonForecast />} />
-            <Route
-              path="/events/crop-calen"
-              element={<EventMajorSeasonCropCalendar />}
-            />
-            <Route
-              path="/events/poult-calendar"
-              element={<EventPoultryCalendar />}
-            />
-
-            <Route
-              path="/events/clim-rep-rel"
-              element={<EventClimateReportRelease />}
-            />
-            <Route path="/poultry-advisory" element={<PoultryAdvisory />} />
-            <Route path="/crop-advisory" element={<CropAdvisory />} />
-            <Route path="/services" element={<OurServices />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/careers" element={<Careers />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<TermsOfService />} />
-            <Route path="/card" element={<ProductCard />} />
-            <Route path="/" element={<ProductList products={products} />} />
-            <Route path="/market-page" element={<MarketPage />} />
-            <Route path="/modal" element={<Modal />} />
-            <Route
-              path="/product/:id"
-              element={<ProductDetail products={products} />}
-            />
-            {/* <Route
-              path="/admin-header"
-              element={<AdminHeader OpenSidebar={OpenSidebar} />}
-            /> */}
-
-            {/* <Route
-              path="/admin-sidebar"
-              element={
-                <AdminSidebar
-                  openSidebarToggle={openSidebarToggle}
-                  OpenSidebar={OpenSidebar}
-                />
-              }
-            /> */}
-            <Route path="*" element={<NotFound />} />
-            <Route path="/agro-advisory" element={<AgrometAdvisory />} />
-            <Route path="admin" element={<AdminDashboard />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-      {/* </div> */}
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

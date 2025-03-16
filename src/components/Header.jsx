@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
-import logo2 from "../assets/images/agropulse-high-resolution-logo-transparent.png";
+import logo2 from "../assets/images/deepdive-transparent.png";
 
 // Dropdown Component
 const Dropdown = ({ links, title }) => {
@@ -36,7 +36,7 @@ const Dropdown = ({ links, title }) => {
       onMouseLeave={() => setIsDropdownOpen(false)}
       ref={dropdownRef}
     >
-      <button className="block px-4 text-blue-900 font-semibold border-b-2 border-transparent hover:border-blue-600 text-sm">
+      <button className="block px-4 text-gray-50 font-semibold border-b-2 border-transparent hover:border-blue-600 text-sm">
         {title} <FaChevronDown className="inline ml-1" />
       </button>
 
@@ -125,7 +125,7 @@ const Header = () => {
 
   return (
     <header
-      className="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90%] md:w-full p-1 md:p-2 z-10  
+      className="fixed top-0 left-1/2 transform -translate-x-1/2 w-[100%] md:w-full p-1 md:p-2 z-10  
     bg-white/5 
     backdrop-blur-[100px] 
     border border-white/20 
@@ -139,7 +139,7 @@ const Header = () => {
             <img
               src={logo2}
               alt="agropulse logo"
-              className="h-8 md:h-12 rounded-lg p-1"
+              className="h-8 md:h-10 rounded-lg p-1"
             />
           </Link>
         </div>
@@ -168,13 +168,13 @@ const Header = () => {
               location.pathname === "/"
                 ? "border-blue-600"
                 : "border-transparent"
-            } hover:border-blue-600 flex flex-col items-center py-2`}
+            } hover:border-blue-600 flex flex-row items-center py-2`}
           >
-            <FaHome className="mb-1 text-2xl" />
+            <FaHome className="mb-1 text-2xl mr-2" />
             <span>Home</span>
           </Link>
 
-          <div className="flex flex-col items-center">
+          <div className="flex flex-row items-center">
             <FaCloudSun className="mb-1 text-3xl " />
             <Dropdown
               links={forecastLinks}
@@ -193,7 +193,7 @@ const Header = () => {
             />
           </div>
 
-          <div className="flex flex-col items-center">
+          <div className="flex flex-row items-center">
             <FaSeedling className="mb-1 text-3xl " />
             <Dropdown
               links={agricultureLinks}
@@ -218,9 +218,9 @@ const Header = () => {
               location.pathname === "/market-page"
                 ? "border-blue-600"
                 : "border-transparent"
-            } hover:border-blue-600 flex flex-col items-center`}
+            } hover:border-blue-600 flex flex-row items-center`}
           >
-            <FaShoppingCart className="mb-1 text-2xl" />
+            <FaShoppingCart className="mb-1 text-2xl mr-2" />
             <span>Market</span>
           </Link>
         </div>
@@ -228,11 +228,11 @@ const Header = () => {
         {/* Notification Bell - Hidden on mobile and tablet */}
         <div className="hidden lg:flex flex-col items-center mx-4 relative">
           <Link to="/agro-advisory" className="flex flex-col items-center">
-            <FaArchive className="mb-1 text-3xl text-white" />
+            <FaArchive className="mb-1 text-3xl text-blue-900" />
           </Link>
-          <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+          {/* <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
             3
-          </span>
+          </span> */}
         </div>
 
         <div className="hidden lg:flex flex-col border-l border-gray-300 h-8 mx-4" />

@@ -242,31 +242,31 @@ const Home = () => {
 
   const settings = {
     infinite: true,
-    slidesToShow: 5, // Default for larger screens
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 1200, // At screen width less than 1200px
+        breakpoint: 1200,
         settings: {
           slidesToShow: 4,
         },
       },
       {
-        breakpoint: 992, // At screen width less than 992px (tablet)
+        breakpoint: 992,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 768, // At screen width less than 768px (large mobile)
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 576, // At screen width less than 576px (mobile)
+        breakpoint: 576,
         settings: {
           slidesToShow: 2,
         },
@@ -279,7 +279,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentDateTime(new Date());
-    }, 1000); // Update every second
+    }, 1000);
 
     return () => clearInterval(timer);
   }, []);
@@ -317,14 +317,14 @@ const Home = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
-        WebkitBackgroundSize: "1200px 800px", // For Safari compatibility
-        MozBackgroundSize: "1200px 800px", // For Firefox compatibility
+        WebkitBackgroundSize: "1200px 800px",
+        MozBackgroundSize: "1200px 800px",
       }}
     >
       <main className="flex-grow mt-8 md:mt-16 container mx-auto">
-        <div className="pt-8 md:pt-12 lg:pt-16">
+        <div className="pt-8 md:pt-12 lg:pt-2">
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white text-center my-8 md:my-10 lg:my-16">
-            Customized Agro-Climatic Information Services
+            Agro-Climatic Information Services
           </h1>
           <div className="bg-[#218af300] rounded-lg shadow-lg p-4 mb-8">
             <div className="flex justify-between items-center mb-4">
