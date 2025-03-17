@@ -2331,7 +2331,7 @@ const CropCalendar = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-200 min-h-screen p-0 lg:pt-20 pt-14">
       <div className="container mx-auto bg-white rounded-lg shadow-lg p-6">
-        <div className="flex flex-col md:flex-row justify-between items-center my-8 mb-10">
+        <div className="flex flex-col md:flex-row justify-between items-center my-6 mb-10">
           <h1 className="text-gray-800 text-3xl font-bold mb-4 text-center">
             Production Calendar for Major Season
           </h1>
@@ -2370,7 +2370,7 @@ const CropCalendar = () => {
         </div>
 
         {/* Dropdowns for Region, District, Crop, and Year/Season */}
-        <div className="flex flex-col md:flex-row mb-4 justify-between gap-1">
+        <div className="flex flex-col md:flex-row mb-4 justify-between my-10">
           <div className="w-full md:w-1/4 mb-4 md:mb-0">
             <label className="text-lg font-semibold mr-2 block">
               Select Year & Season
@@ -2387,6 +2387,25 @@ const CropCalendar = () => {
               ))}
             </select>
           </div>
+
+          <div className="w-full md:w-1/4 mb-4 md:mb-0">
+            <label className="text-lg font-semibold mr-2 block">
+              Select Crop
+            </label>
+            <select
+              value={selectedCrop}
+              onChange={handleCropChange}
+              className="border border-gray-300 rounded p-2 w-[60%]"
+            >
+              <option value="all">All Crops</option>
+              <option value="maize">Maize</option>
+              <option value="rice">Rice</option>
+              <option value="sorghum">Sorghum</option>
+              <option value="tomato">Tomato</option>
+              <option value="soybean">Soybean</option>
+            </select>
+          </div>
+
           <div className="w-full md:w-1/4 mb-4 md:mb-0">
             <label className="text-lg font-semibold mr-2 block">
               Select Region
@@ -2428,24 +2447,6 @@ const CropCalendar = () => {
                 ))}
             </select>
           </div>
-
-          <div className="w-full md:w-1/4 mb-4 md:mb-0">
-            <label className="text-lg font-semibold mr-2 block">
-              Select Crop
-            </label>
-            <select
-              value={selectedCrop}
-              onChange={handleCropChange}
-              className="border border-gray-300 rounded p-2 w-[60%]"
-            >
-              <option value="all">All Crops</option>
-              <option value="maize">Maize</option>
-              <option value="rice">Rice</option>
-              <option value="sorghum">Sorghum</option>
-              <option value="tomato">Tomato</option>
-              <option value="soybean">Soybean</option>
-            </select>
-          </div>
         </div>
 
         {/* Loading state */}
@@ -2453,12 +2454,12 @@ const CropCalendar = () => {
 
         {/* Calendar Table */}
         <div className="overflow-x-auto">
-          <table className="min-w-full border-collapse border border-gray-300">
+          <table className="min-w-max border-collapse border border-gray-300">
             <thead>
               {/* Row 1: Months */}
               <tr className="bg-gray-200">
                 <th
-                  className="border border-gray-300 p-0 text-start sticky left-0 bg-gray-200 z-50"
+                  className="border border-gray-300 p-2 text-left sticky left-0 bg-gray-200 z-50"
                   rowSpan="2"
                 >
                   Stage of Activity
@@ -2483,7 +2484,7 @@ const CropCalendar = () => {
                     return (
                       <th
                         key={i}
-                        className="border border-gray-300 p-1 text-left"
+                        className="border border-gray-300 p-2"
                         colSpan={weeksInMonth.length}
                       >
                         {month}
@@ -2508,7 +2509,7 @@ const CropCalendar = () => {
             <tbody>
               {farmingActivities.map((activity, index) => (
                 <tr key={index}>
-                  <td className="border border-gray-300 p-0 sticky left-0 bg-white z-10">
+                  <td className="border border-gray-300 p-3">
                     {activity.activity}
                   </td>
                   {weeksData.map((week, weekIndex) => {
@@ -2533,10 +2534,10 @@ const CropCalendar = () => {
           {/* Tooltip for crop advisory */}
           {hoveredActivity && (
             <div
-              className="absolute bg-gray-800 w-[200px] text-white text-sm p-2 rounded whitespace-pre-wrap"
+              className="absolute bg-gray-800 w-[220px] text-white text-sm p-2 rounded"
               style={{
-                top: tooltipPosition.y + 6,
-                left: tooltipPosition.x + 6,
+                top: tooltipPosition.y + 10,
+                left: tooltipPosition.x + 10,
               }}
             >
               <p className="font-semibold">{hoveredActivity.activity}</p>
