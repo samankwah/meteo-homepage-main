@@ -55,7 +55,7 @@ import Modal from "./components/Modal";
 import AgrometAdvisory from "./pages/AgroMetAdvisory ";
 import { RouterProvider } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
-import AdminLayout from "./layouts/adminLayout";
+import AdminLayout from "./layouts/AdminLayout.jsx";
 
 const products = [
   {

@@ -6,9 +6,9 @@ import Header from "../components/Header";
 const AdminLayout = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
