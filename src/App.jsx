@@ -287,7 +287,7 @@ function App() {
         { path: "product/:id", element: <ProductDetail products={products} /> },
 
         { path: "agro-advisory", element: <AgrometAdvisory /> },
-        { path: "*", element: <NotFound /> }, // 404 page for undefined routes
+        { path: "*", element: <NotFound /> },
       ],
     },
     {
