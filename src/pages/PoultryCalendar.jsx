@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { districtOfGhana } from "../districts";
+import { FaDownload, FaShareAlt } from "react-icons/fa";
 
 // Base poultry production activities for layers and broilers
 const basePoultryActivities = {
@@ -366,25 +367,43 @@ const PoultryCalendar = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-0 lg:pt-20 pt-14">
+    <div className="bg-gradient-to-br from-blue-50 to-gray-200 min-h-screen p-0 lg:pt-20 pt-14">
       <div className="container mx-auto bg-white rounded-lg shadow-lg p-6">
         <div className="flex flex-col md:flex-row justify-between items-center my-6 mb-10">
-          <h1 className="text-gray-600 text-3xl font-bold mb-4 text-center">
+          <h1 className="text-gray-800 text-3xl font-bold mb-4 text-center">
             Poultry Calendar for Major Season
           </h1>
+
           <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
-            <button
-              onClick={handleDownload}
-              className="p-2 px-4 w-full md:w-auto bg-green-500 text-white rounded-full text-center"
-            >
-              Download
-            </button>
-            <button
-              onClick={handleShare}
-              className="p-2 px-4 w-full md:w-auto bg-blue-500 text-white rounded-full text-center"
-            >
-              Share
-            </button>
+            {/* Download Icon Button */}
+            <div className="relative group">
+              <button
+                onClick={handleDownload}
+                className="p-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors duration-200"
+                aria-label="Download Calendar"
+              >
+                <FaDownload size={20} />
+              </button>
+              {/* Tooltip */}
+              <span className="absolute top-[-40px] left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                Download
+              </span>
+            </div>
+
+            {/* Share Icon Button */}
+            <div className="relative group">
+              <button
+                onClick={handleShare}
+                className="p-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors duration-200"
+                aria-label="Share Calendar"
+              >
+                <FaShareAlt size={20} />
+              </button>
+              {/* Tooltip */}
+              <span className="absolute top-[-40px] left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                Share
+              </span>
+            </div>
           </div>
         </div>
         {/* Dropdown for Poultry and Region Selection - Same Row */}

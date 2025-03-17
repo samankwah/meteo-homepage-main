@@ -415,7 +415,7 @@ const Marketplace = () => {
         MozBackgroundSize: "1200px 800px", // For Firefox compatibility
       }}
     >
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div className="max-w-[1440px] mx-auto px-0 sm:px-6 lg:px-8 pt-20">
         {/* Back Button */}
         <button
           onClick={() => navigate("/")}

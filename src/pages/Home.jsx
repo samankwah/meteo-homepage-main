@@ -1213,7 +1213,7 @@ const Home = () => {
     shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
     rounded-xl p-3"
             >
-              <h2 className="text-blue-600 font-bold text-xl">
+              <h2 className="text-blue-600 font-bold text-xl mb-2">
                 Other Forecasts
               </h2>
               <ul className="space-y-3">

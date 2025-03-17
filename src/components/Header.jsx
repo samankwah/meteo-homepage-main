@@ -6,7 +6,7 @@ import {
   FaShoppingCart,
   FaSeedling,
   FaCloudSun,
-  FaArchive,
+  FaComments,
 } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -41,7 +41,10 @@ const Dropdown = ({ links, title }) => {
       </button>
 
       {isDropdownOpen && (
-        <div className="absolute left-0 z-10 mt-1 w-48 bg-white shadow-lg rounded-md">
+        <div
+          className="absolute left-0 z-10 w-48 bg-white/80 backdrop-blur-md border border-white/30 rounded-md shadow-lg"
+          style={{ top: "100%" }} // Positions dropdown directly below button
+        >
           <ul className="py-1">
             {links.map((link) => (
               <li key={link.to}>
@@ -116,21 +119,26 @@ const Header = () => {
         setIsMobileMenuOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [mobileMenuRef]);
 
+  // Determine text color based on the current route
+  const textColorClass =
+    location.pathname === "/" || location.pathname === "/market-page"
+      ? "text-white"
+      : "text-blue-900";
+
   return (
     <header
       className="fixed top-0 left-1/2 transform -translate-x-1/2 w-[100%] md:w-full p-1 md:p-2 z-10  
-    bg-white/5 
-    backdrop-blur-[100px] 
-    border border-white/20 
-    shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
-    rounded-3xl mt-1"
+        bg-white/20 
+        backdrop-blur-[100px] 
+        border border-white/30 
+        shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
+        rounded-full mt-1"
       style={{ maxWidth: "1400px" }}
     >
       <div className="container mx-auto flex items-center justify-between">
@@ -143,28 +151,22 @@ const Header = () => {
             />
           </Link>
         </div>
-
-        {/* Show menu button for mobile and tablet */}
+        {/* Mobile menu button */}
         <div className="flex items-center lg:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2"
           >
-            <FaBars className="h-6 w-6 text-gray-50" />
+            <FaBars className="h-6 w-6 text-blue-700" />
           </button>
         </div>
-
-        {/* Centered Navbar Links - Hidden on mobile and tablet */}
+        {/* Desktop Navbar Links */}
         <div
-          className={`hidden ${
-            location.pathname === "/" || location.pathname === "/market-page"
-              ? "text-white"
-              : "text-blue-900"
-          } lg:flex align-middle items-center justify-center flex-1 space-x-8`}
+          className={`hidden ${textColorClass} lg:flex align-middle items-center justify-center flex-1 space-x-8`}
         >
           <Link
             to="/"
-            className={`block px-4  font-semibold text-sm ${
+            className={`block px-4 font-semibold text-sm border-b-2 ${
               location.pathname === "/"
                 ? "border-blue-600"
                 : "border-transparent"
@@ -178,18 +180,7 @@ const Header = () => {
             <FaCloudSun className="mb-1 text-2xl" />
             <Dropdown
               links={forecastLinks}
-              title={
-                <span
-                  className={`${
-                    location.pathname === "/" ||
-                    location.pathname === "/market-page"
-                      ? "text-white"
-                      : "text-blue-900"
-                  }`}
-                >
-                  Weather
-                </span>
-              }
+              title={<span className={`${textColorClass}`}>Weather</span>}
             />
           </div>
 
@@ -197,47 +188,37 @@ const Header = () => {
             <FaSeedling className="mb-1 text-2xl" />
             <Dropdown
               links={agricultureLinks}
-              title={
-                <span
-                  className={`${
-                    location.pathname === "/" ||
-                    location.pathname === "/market-page"
-                      ? "text-white"
-                      : "text-blue-900"
-                  }`}
-                >
-                  Agriculture
-                </span>
-              }
+              title={<span className={`${textColorClass}`}>Agriculture</span>}
             />
           </div>
 
           <Link
             to="/market-page"
-            className={`block px-4  font-semibold border-b-2 text-sm ${
+            className={`block px-4 font-semibold border-b-2 text-sm ${
               location.pathname === "/market-page"
                 ? "border-blue-600"
                 : "border-transparent"
-            } hover:border-blue-600 flex flex-row items-center`}
+            } hover:border-blue-600 flex flex-row items-center py-2`}
           >
             <FaShoppingCart className="mb-1 text-2xl mr-2" />
             <span>Market</span>
           </Link>
-        </div>
 
-        {/* Notification Bell - Hidden on mobile and tablet */}
-        <div className="hidden lg:flex flex-col items-center mx-4 relative">
-          <Link to="/agro-advisory" className="flex flex-col items-center">
-            <FaArchive className="mb-1 text-2xl text-gray-50" />
+          <Link
+            to="/agro-advisory"
+            className={`block px-4 font-semibold border-b-2 text-sm ${
+              location.pathname === "/agro-advisory"
+                ? "border-blue-600"
+                : "border-transparent"
+            } hover:border-blue-600 flex flex-row items-center py-2`}
+          >
+            <FaComments className="mb-1 text-2xl mr-2" />
+            <span>Agromet Advisory</span>
           </Link>
-          {/* <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-            3
-          </span> */}
         </div>
 
         <div className="hidden lg:flex flex-col border-l border-gray-300 h-8 mx-4" />
 
-        {/* Clientele Dropdown - Hidden on mobile and tablet */}
         <div className="hidden lg:flex flex-col align-middle items-center justify-end flex-2 mx-22">
           <Dropdown
             links={gmetLinks.map((link) => ({
@@ -253,15 +234,14 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div
           className="absolute top-12 left-8 w-11/12 
-              bg-white/100 
-              backdrop-blur-none 
-              shadow-lg 
-              rounded-lg 
-              p-4 
-              mx-0 
-              z-10 
-              border 
-              border-white/30"
+            bg-white/80 
+            backdrop-blur-md 
+            border border-white/30 
+            shadow-lg 
+            rounded-lg 
+            p-4 
+            mx-0 
+            z-10"
           ref={mobileMenuRef}
         >
           <nav className="flex flex-col text-left space-y-4 py-4">
@@ -278,6 +258,14 @@ const Header = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <FaShoppingCart className="inline mr-2" /> Market
+            </Link>
+
+            <Link
+              to="/agro-advisory"
+              className="block px-4 py-2 text-blue-900 font-semibold hover:text-blue-800 rounded-md hover:bg-blue-100 transition duration-200 text-sm"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <FaComments className="inline mr-2" /> Agromet Advisory
             </Link>
 
             {/* Mobile Dropdown for Weather */}
