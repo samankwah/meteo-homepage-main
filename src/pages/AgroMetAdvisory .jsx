@@ -798,7 +798,7 @@
 
 import { useState } from "react";
 import prismaImage from "../assets/images/prisma.png";
-import { districtOfGhana } from "../districts";
+import { districtOfGhana } from "../district";
 import { FaEye, FaDownload } from "react-icons/fa";
 import html2pdf from "html2pdf.js";
 
@@ -824,7 +824,7 @@ const AgroMetAdvisory = () => {
       "BONO EAST",
       "CENTRAL",
     ],
-    variety: ["Hybrid Maize - A123", "Local Maize", "Improved Maize"],
+    // variety: ["Hybrid Maize - A123", "Local Maize", "Improved Maize"],
     month: [
       "January",
       "February",
