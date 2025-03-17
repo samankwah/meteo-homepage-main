@@ -376,7 +376,7 @@ const Home = () => {
     shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
     rounded-xl  p-4 sticky h-full"
             >
-              <h2 className="text-gray-700 font-bold mb-2">
+              <h2 className="text-gray-50 font-bold mb-2">
                 <i className="fas fa-calendar-alt mr-2"></i>
                 {`${formattedDate} - ${formattedTime}`}
               </h2>

@@ -150,7 +150,7 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2"
           >
-            <FaBars className="h-6 w-6 text-blue-900" />
+            <FaBars className="h-6 w-6 text-gray-50" />
           </button>
         </div>
 
@@ -175,7 +175,7 @@ const Header = () => {
           </Link>
 
           <div className="flex flex-row items-center">
-            <FaCloudSun className="mb-1 text-3xl " />
+            <FaCloudSun className="mb-1 text-2xl" />
             <Dropdown
               links={forecastLinks}
               title={
@@ -194,7 +194,7 @@ const Header = () => {
           </div>
 
           <div className="flex flex-row items-center">
-            <FaSeedling className="mb-1 text-3xl " />
+            <FaSeedling className="mb-1 text-2xl" />
             <Dropdown
               links={agricultureLinks}
               title={
@@ -228,7 +228,7 @@ const Header = () => {
         {/* Notification Bell - Hidden on mobile and tablet */}
         <div className="hidden lg:flex flex-col items-center mx-4 relative">
           <Link to="/agro-advisory" className="flex flex-col items-center">
-            <FaArchive className="mb-1 text-3xl text-blue-900" />
+            <FaArchive className="mb-1 text-2xl text-gray-50" />
           </Link>
           {/* <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
             3
@@ -252,13 +252,13 @@ const Header = () => {
       {/* Mobile and Tablet Menu */}
       {isMobileMenuOpen && (
         <div
-          className="absolute top-16 left-0 w-11/12 
-              bg-white/80 
-              backdrop-blur-md 
+          className="absolute top-12 left-8 w-11/12 
+              bg-white/100 
+              backdrop-blur-none 
               shadow-lg 
               rounded-lg 
               p-4 
-              mx-2 
+              mx-0 
               z-10 
               border 
               border-white/30"
