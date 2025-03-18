@@ -345,7 +345,7 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
             {/* Left Sidebar: Weather Warnings */}
             <div
-              className="lg:col-span-0 bg-white/20 
+              className="left-sidebar lg:col-span-0 bg-white/20 
     backdrop-blur-[5px] 
     border border-white/20 
     shadow-[0_4px_30px_rgba(0,0,0,0.1)] 

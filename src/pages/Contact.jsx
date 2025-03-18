@@ -1,21 +1,9 @@
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-
-const containerStyle = {
-  width: "100%",
-  height: "100%",
-};
-
-const center = {
-  lat: 5.6037,
-  lng: -0.187,
-};
-
 const Contact = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-1 lg:pt-16">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-extrabold text-blue-900 mb-4">
@@ -92,9 +80,7 @@ const Contact = () => {
                   <h3 className="font-semibold text-lg text-gray-700">
                     Our Office
                   </h3>
-                  <p className="text-gray-600">
-                    123 Climate Street, Accra, Ghana
-                  </p>
+                  <p className="text-gray-600">Accra, Ghana</p>
                 </div>
               </div>
 
@@ -112,9 +98,11 @@ const Contact = () => {
               <div className="flex items-start">
                 <FaEnvelope className="h-6 w-6 text-blue-900 mr-4" />
                 <div>
-                  <h3 className="font-semibold text-lg text-gray-700">Email</h3>
-                  <p className="text-gray-600">info@weatherapp.com</p>
-                  <p className="text-gray-600">support@weatherapp.com</p>
+                  <h3 className="flex flex-row font-semibold text-lg text-gray-700">
+                    Email
+                  </h3>
+                  <p className="text-gray-600">deepdiveteam@fsrp.org.gh</p>
+                  <p className="text-gray-600">info@fsrp.org.gh</p>
                 </div>
               </div>
             </div>
@@ -126,9 +114,8 @@ const Contact = () => {
           <h2 className="text-2xl font-semibold text-blue-900 mb-4 text-center">
             Find Us on the Map
           </h2>
-          <div className="bg-gray-300 rounded-lg h-64">
-            {/* Google Maps Integration */}
-            <LoadScript
+          <div className="bg-gray-300 rounded-lg h-94">
+            {/* <LoadScript
               googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
             >
               <GoogleMap
@@ -138,7 +125,16 @@ const Contact = () => {
               >
                 <Marker position={center} />
               </GoogleMap>
-            </LoadScript>
+            </LoadScript> */}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.4294557739663!2d-0.16714722413944483!3d5.650843632686896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9ca15e56390f%3A0xe32353079eab7d22!2sGHANA%20METEOROLOGICAL%20AGENCY!5e0!3m2!1sen!2sgh!4v1742294036187!5m2!1sen!2sgh"
+              width="100%"
+              height="260"
+              // style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
