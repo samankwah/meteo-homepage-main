@@ -678,9 +678,9 @@ const CropCalendar = () => {
         );
         if (district) {
           const climateOffsets = {
-            "Greater Accra": 3,
-            Ashanti: 2,
-            Northern: 4,
+            "Greater Accra": 2,
+            Ashanti: 0,
+            Northern: 3,
             Eastern: 2,
             Western: 3,
             Volta: 2,

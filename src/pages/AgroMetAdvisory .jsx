@@ -62,60 +62,6 @@ const AgroMetAdvisory = () => {
   const [smsSummary, setSmsSummary] = useState("");
   const [userPhoneNumber] = useState("0243999631");
 
-  // const [data] = useState({
-  //   summary:
-  //     "This week's weather outlook for maize farmers in the Nkwanta South district of the Oti region indicates favorable conditions for crop establishment and early growth. Rainfall is expected to be moderate, sufficient for planting activities, while temperatures will support optimal germination and development. However, high humidity may promote fungal diseases; apply fungicides as a preventive measure. Monitor soil moisture closely.",
-  //   advisoryTable: {
-  //     parameters: [
-  //       "RAINFALL",
-  //       "TEMPERATURE",
-  //       "EVAPO-TRANSPIRATION",
-  //       "SOIL MOISTURE",
-  //       "HUMIDITY",
-  //       "SOIL TEMPERATURE",
-  //       "DAY LENGTH",
-  //       "WIND DXN",
-  //       "WIND SPEED",
-  //       "PRESSURE",
-  //     ],
-  //     forecast: [
-  //       "50% Prob. of occurrence",
-  //       "35°C (Day) / 24°C (Night)",
-  //       "4 mm/day",
-  //       "Moderate",
-  //       "75%",
-  //       "22°C",
-  //       "12 hours",
-  //       "North-East",
-  //       "15 km/h",
-  //       "1015 hPa",
-  //     ],
-  //     implication: [
-  //       "Favorable for planting; avoid waterlogging.",
-  //       "Optimal for germination and seedling growth.",
-  //       "May increase water stress on plants.",
-  //       "Good for root growth but risks drying out fast.",
-  //       "Promotes disease spread like blight.",
-  //       "Favors seed germination.",
-  //       "Supports photosynthesis and plant growth.",
-  //       "Low risk for wind damage.",
-  //       "Minimal effects on crop canopy.",
-  //       "Stable weather conditions.",
-  //     ],
-  //     advisory: [
-  //       "Use well-drained plots.",
-  //       "Begin sowing crops; monitor heat stress.",
-  //       "Apply irrigation efficiently.",
-  //       "Irrigate if dry spells last more than 2 days.",
-  //       "Apply fungicide; ensure airflow in the field.",
-  //       "Maintain soil cover (mulch).",
-  //       "No special action required.",
-  //       "Monitor for dry winds.",
-  //       "Maintain crop support if required.",
-  //       "Continue normal operations.",
-  //     ],
-  //   },
-  // });
   const [data] = useState({
     advisoryTable: {
       parameters: [
@@ -230,7 +176,7 @@ const AgroMetAdvisory = () => {
         MozBackgroundSize: "1200px 800px",
       }}
     >
-      <div className="container mx-auto p-3 md:p-5 shadow-xl rounded-lg mt-14 md:mt-16 bg-white/90 backdrop-blur-md mb-16">
+      <div className="container mx-auto p-3 md:p-5 shadow-xl rounded-lg mt-14 md:mt-16 bg-white/90 backdrop-blur-md">
         <div className="relative text-center mb-5 bg-gradient-to-r from-green-500 to-blue-600 py-5 rounded-t-lg shadow-lg">
           <h1 className="text-2xl md:text-3xl font-bold uppercase text-white">
             West Africa Food System Resilience Programme
