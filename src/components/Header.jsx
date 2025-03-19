@@ -229,7 +229,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className="hidden lg:flex flex-col border-l border-gray-300 h-8 mx-4" />
+        <div className="hidden lg:flex flex-col border-2 border-gray-300 h-8 mx-4" />
 
         <div className="hidden lg:flex flex-col align-middle items-center justify-end flex-2 mx-22">
           <Dropdown
