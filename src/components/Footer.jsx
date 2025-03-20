@@ -16,7 +16,7 @@ const Footer = () => {
           </a>
 
           <p className="text-sm text-gray-300 text-start md:text-left">
-            DeepDive Team is committed to providing top-notch solutions that
+            Deep Dive Team is committed to providing top-notch solutions that
             drive agribusiness success. Stay connected and discover more about
             our services.
           </p>
