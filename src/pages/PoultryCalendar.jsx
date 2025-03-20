@@ -371,7 +371,7 @@ const PoultryCalendar = () => {
       <div className="container mx-auto bg-white rounded-lg shadow-lg p-6">
         <div className="flex flex-col md:flex-row justify-between items-center my-6 mb-10">
           <h1 className="text-gray-800 text-3xl font-bold mb-4 text-center">
-            Poultry Calendar for Major Season
+            Production Calendar
           </h1>
 
           <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">

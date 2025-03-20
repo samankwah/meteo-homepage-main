@@ -835,7 +835,7 @@ const CropCalendar = () => {
       <div className="container mx-auto bg-white rounded-lg shadow-lg p-6">
         <div className="flex flex-col md:flex-row justify-between items-center my-6 mb-10">
           <h1 className="text-gray-800 text-3xl font-bold mb-4 text-center">
-            Production Calendar for Major Season
+            Production Calendar
           </h1>
           {/* Slider with year and season */}
           <div className="relative overflow-hidden w-full md:w-1/2 h-16">
