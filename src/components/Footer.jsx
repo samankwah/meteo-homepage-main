@@ -16,9 +16,8 @@ const Footer = () => {
           </a>
 
           <p className="text-sm text-gray-300 text-start md:text-left">
-            Deep Dive Team is committed to providing top-notch solutions that
-            drive agribusiness success. Stay connected and discover more about
-            our services.
+            Deep Dive’s Climate Information App delivers real-time, reliable
+            agrometeorological advisories for planning and monitoring.
           </p>
         </div>
 
