@@ -1593,7 +1593,7 @@ Overall assessment: Current weather conditions are particularly important for we
         
         <div style="margin-top: 30px; text-align: center; font-size: 12px; color: #666;">
           <p>Issued on: ${new Date().toLocaleDateString()}</p>
-          <p>For more information, contact the West Africa Food System Resilience Programme</p>
+          <p>For more information, contact the District Agriculture Office</p>
         </div>
       </div>
     `;
