@@ -56,6 +56,9 @@ import AgrometAdvisory from "./pages/AgroMetAdvisory ";
 import { RouterProvider } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
 import AdminLayout from "./layouts/AdminLayout.jsx";
+import AdminLogin from "./pages/AdminLogin.jsx";
+import CreateCropCalendar from "./components/Dashboard/CreateCalendar.jsx";
+import MediaPage from "./pages/MediaPage.jsx";
 
 const products = [
   {
@@ -238,6 +241,7 @@ const products = [
     reviewsCount: 5,
   },
 ];
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -287,6 +291,8 @@ function App() {
         { path: "product/:id", element: <ProductDetail products={products} /> },
 
         { path: "agro-advisory", element: <AgrometAdvisory /> },
+        { path: "media-page", element: <MediaPage /> },
+        { path: "admin-login", element: <AdminLogin /> },
         { path: "*", element: <NotFound /> },
       ],
     },
@@ -295,6 +301,10 @@ function App() {
       element: <AdminLayout />,
       children: [{ index: true, element: <DashboardPage /> }],
     },
+    { path: "/production/provisional", element: <CreateCropCalendar /> },
+
+    { path: "/production/2024-minor", element: <CreateCropCalendar /> },
+    { path: "/production/2025-major", element: <CreateCropCalendar /> },
   ]);
 
   return <RouterProvider router={router} />;

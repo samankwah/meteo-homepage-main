@@ -527,7 +527,7 @@ const adjustActivitiesForSeason = (baseActivities, season) => {
 
   // For Minor Season (September to December), compress the timeline
   const majorSeasonMonths = baseActivities.map(
-    (activity) => months.find((m) => m.month === activity.start).monthNo
+    (activity) => months.find((m) => m?.month === activity.start).monthNo
   );
   const minMajorMonth = Math.min(...majorSeasonMonths);
   const maxMajorMonth = Math.max(...majorSeasonMonths);
@@ -539,10 +539,10 @@ const adjustActivitiesForSeason = (baseActivities, season) => {
 
   return baseActivities.map((activity) => {
     const activityStartMonth = months.find(
-      (m) => m.month === activity.start
+      (m) => m?.month === activity.start
     ).monthNo;
     const activityEndMonth = months.find(
-      (m) => m.month === activity.end
+      (m) => m?.month === activity.end
     ).monthNo;
 
     // Calculate the relative position of the activity in the Major Season timeline
@@ -560,8 +560,8 @@ const adjustActivitiesForSeason = (baseActivities, season) => {
 
     const newStartMonth = months.find(
       (m) => m.monthNo === newStartMonthNo
-    ).month;
-    const newEndMonth = months.find((m) => m.monthNo === newEndMonthNo).month;
+    )?.month;
+    const newEndMonth = months.find((m) => m.monthNo === newEndMonthNo)?.month;
 
     return {
       ...activity,
@@ -591,9 +591,9 @@ const generateRegionActivities = (baseActivities, offset) => {
   ];
 
   const adjustMonth = (monthName, offset) => {
-    const monthIndex = months.findIndex((m) => m.month === monthName);
+    const monthIndex = months.findIndex((m) => m?.month === monthName);
     const adjustedIndex = (monthIndex + offset + 12) % 12;
-    return months[adjustedIndex].month;
+    return months[adjustedIndex]?.month;
   };
 
   regionsOfGhana.forEach((region) => {
@@ -783,7 +783,7 @@ const CropCalendar = () => {
     const headers = [
       "Activity",
       ...weeksData.map(
-        (week) => `${week.month} ${week.week} (${week.dateRange})`
+        (week) => `${week?.month} ${week.week} (${week.dateRange})`
       ),
     ];
     const csvRows = [headers.join(",")];
@@ -792,7 +792,7 @@ const CropCalendar = () => {
       const row = [
         activity.activity,
         ...weeksData.map((week) => {
-          const month = week.month;
+          const month = week?.month;
           const isActive = month >= activity.start && month <= activity.end;
           return isActive ? "✔️" : "";
         }),
@@ -998,7 +998,7 @@ const CropCalendar = () => {
                       { month: "long" }
                     );
                     const weeksInMonth = weeksData.filter(
-                      (week) => week.month === month
+                      (week) => week?.month === month
                     );
                     return (
                       <th
@@ -1032,7 +1032,7 @@ const CropCalendar = () => {
                     {activity.activity}
                   </td>
                   {weeksData.map((week, weekIndex) => {
-                    const month = week.month;
+                    const month = week?.month;
                     const isActive =
                       month >= activity.start && month <= activity.end;
                     return (

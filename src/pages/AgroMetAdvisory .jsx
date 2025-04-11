@@ -313,13 +313,13 @@ const AgroMetAdvisory = () => {
               <p className="text-sm text-gray-700 mb-4 bg-white p-2 rounded border">
                 {smsSummary}
               </p>
-              <button
+              {/* <button
                 onClick={sendSMS}
                 className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-all duration-300 shadow-md"
               >
                 <FaPaperPlane className="text-lg" />
                 Send SMS
-              </button>
+              </button> */}
             </div>
 
             <div className="flex justify-center mt-4">
