@@ -1249,7 +1249,6 @@ const MediaPage = () => {
 
   // Filter data - only crop and region/district needed since dates are automatic
   const filterData = {
-    crop: ["Maize", "Rice", "Sorghum", "Soyabean", "Tomato"],
     region: [
       "OTI",
       "VOLTA",
@@ -1268,13 +1267,14 @@ const MediaPage = () => {
       "BONO EAST",
       "CENTRAL",
     ],
+    crop: ["Maize", "Rice", "Sorghum", "Soyabean", "Tomato"],
   };
 
   // User selections
   const [selected, setSelected] = useState({
-    crop: "",
     region: "",
     district: "",
+    crop: "",
   });
 
   // Display states
@@ -1635,25 +1635,6 @@ Overall assessment: Current weather conditions are particularly important for we
 
         <div className="p-4 bg-gradient-to-br from-gray-50 to-gray-200 rounded-lg shadow-lg mb-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            {/* Only show crop and location filters */}
-            <div className="flex flex-col">
-              <label className="text-sm font-medium mb-1 capitalize text-gray-800">
-                Crop
-              </label>
-              <select
-                value={selected.crop || ""}
-                onChange={(e) => handleFilterChange(e, "crop")}
-                className="p-2 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 focus:ring-2 focus:ring-green-500 transition-all duration-300"
-              >
-                <option value="">Select Crop</option>
-                {filterData.crop.map((value) => (
-                  <option key={value} value={value}>
-                    {value}
-                  </option>
-                ))}
-              </select>
-            </div>
-
             <div className="flex flex-col">
               <label className="text-sm font-medium mb-1 capitalize text-gray-800">
                 Region
@@ -1693,6 +1674,24 @@ Overall assessment: Current weather conditions are particularly important for we
                       {district.name}
                     </option>
                   ))}
+              </select>
+            </div>
+            {/* Only show crop and location filters */}
+            <div className="flex flex-col">
+              <label className="text-sm font-medium mb-1 capitalize text-gray-800">
+                Commodity
+              </label>
+              <select
+                value={selected.crop || ""}
+                onChange={(e) => handleFilterChange(e, "crop")}
+                className="p-2 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 focus:ring-2 focus:ring-green-500 transition-all duration-300"
+              >
+                <option value="">Select Crop</option>
+                {filterData.crop.map((value) => (
+                  <option key={value} value={value}>
+                    {value}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
