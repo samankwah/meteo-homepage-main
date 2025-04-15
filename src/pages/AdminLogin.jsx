@@ -1,139 +1,6 @@
-// import React, { useState } from "react";
+// import { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
-// import { Eye, EyeOff, Lock, Mail, Shield } from "lucide-react";
-
-// const AdminLogin = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [showPassword, setShowPassword] = useState(false);
-//   const [isLoading, setIsLoading] = useState(false);
-//   const navigate = useNavigate();
-
-//   const handleLogin = async (e) => {
-//     e.preventDefault();
-//     setIsLoading(true);
-
-//     // Simulate network delay
-//     await new Promise((resolve) => setTimeout(resolve, 1500));
-
-//     // Mock authentication (Replace with real backend authentication)
-//     if (email === "admin@example.com" && password === "admin123") {
-//       // Add more sophisticated success handling
-//       navigate("/admin-dashboard", {
-//         state: {
-//           welcomeMessage: `Welcome back, ${email}!`,
-//         },
-//       });
-//     } else {
-//       // More user-friendly error handling
-//       alert("Invalid credentials. Please check your email and password.");
-//     }
-//     setIsLoading(false);
-//   };
-
-//   return (
-//     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-4">
-//       <div className="w-full max-w-md">
-//         <div className="bg-white shadow-2xl rounded-2xl overflow-hidden">
-//           {/* Header Section */}
-//           <div className="bg-blue-600 text-white p-6 text-center">
-//             <Shield className="mx-auto mb-4" size={48} strokeWidth={1.5} />
-//             <h2 className="text-3xl font-bold">Admin Portal</h2>
-//             <p className="text-blue-100 mt-2">Secure Access Required</p>
-//           </div>
-
-//           {/* Login Form */}
-//           <form onSubmit={handleLogin} className="p-6 space-y-6">
-//             {/* Email Input */}
-//             <div>
-//               <label className="block text-gray-700 mb-2 flex items-center">
-//                 <Mail className="mr-2 text-blue-500" size={20} />
-//                 Email Address
-//               </label>
-//               <div className="relative">
-//                 <input
-//                   type="email"
-//                   value={email}
-//                   onChange={(e) => setEmail(e.target.value)}
-//                   required
-//                   placeholder="Enter your admin email"
-//                   className="w-full p-3 pl-10 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition"
-//                 />
-//                 <Mail
-//                   className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-//                   size={20}
-//                 />
-//               </div>
-//             </div>
-
-//             {/* Password Input */}
-//             <div>
-//               <label className="block text-gray-700 mb-2 flex items-center">
-//                 <Lock className="mr-2 text-blue-500" size={20} />
-//                 Password
-//               </label>
-//               <div className="relative">
-//                 <input
-//                   type={showPassword ? "text" : "password"}
-//                   value={password}
-//                   onChange={(e) => setPassword(e.target.value)}
-//                   required
-//                   placeholder="Enter your password"
-//                   className="w-full p-3 pl-10 pr-12 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition"
-//                 />
-//                 <Lock
-//                   className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-//                   size={20}
-//                 />
-//                 <button
-//                   type="button"
-//                   onClick={() => setShowPassword(!showPassword)}
-//                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-blue-600"
-//                 >
-//                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-//                 </button>
-//               </div>
-//             </div>
-
-//             {/* Login Button */}
-//             <button
-//               type="submit"
-//               disabled={isLoading}
-//               className={`w-full py-3 rounded-lg text-white font-semibold transition duration-300 ${
-//                 isLoading
-//                   ? "bg-blue-400 cursor-not-allowed"
-//                   : "bg-blue-600 hover:bg-blue-700"
-//               }`}
-//             >
-//               {isLoading ? "Logging in..." : "Login"}
-//             </button>
-
-//             {/* Forgot Password Link */}
-//             <div className="text-center">
-//               <a
-//                 href="/forgot-password"
-//                 className="text-blue-500 hover:underline text-sm"
-//               >
-//                 Forgot Password?
-//               </a>
-//             </div>
-//           </form>
-//         </div>
-
-//         {/* Additional Security Message */}
-//         <div className="text-center text-gray-500 mt-4 text-sm">
-//           <p>Secured with end-to-end encryption</p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AdminLogin;
-
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { Eye, EyeOff, Lock, Mail, Shield } from "lucide-react";
+// import { Eye, EyeOff, Lock, Mail, Shield, Terminal } from "lucide-react";
 
 // const AdminLogin = () => {
 //   const [email, setEmail] = useState("");
@@ -141,7 +8,29 @@
 //   const [showPassword, setShowPassword] = useState(false);
 //   const [isLoading, setIsLoading] = useState(false);
 //   const [error, setError] = useState("");
+//   const [matrixText, setMatrixText] = useState("");
 //   const navigate = useNavigate();
+
+//   // Matrix code rain effect for background text
+//   useEffect(() => {
+//     const characters =
+//       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+//     let interval;
+
+//     if (!isLoading) {
+//       interval = setInterval(() => {
+//         let result = "";
+//         for (let i = 0; i < 3; i++) {
+//           result += characters.charAt(
+//             Math.floor(Math.random() * characters.length)
+//           );
+//         }
+//         setMatrixText((prev) => (prev + result).slice(-100));
+//       }, 150);
+//     }
+
+//     return () => clearInterval(interval);
+//   }, [isLoading]);
 
 //   const handleLogin = async (e) => {
 //     e.preventDefault();
@@ -153,11 +42,14 @@
 //       await new Promise((resolve) => setTimeout(resolve, 1500));
 
 //       // Mock authentication (Replace with real backend authentication)
-//       if (email === "admin@example.com" && password === "admin123") {
-//         // Store authentication state (you might want to use more secure methods in production)
+//       if (
+//         email === "stephen.amankwah@meteo.gov.gh" &&
+//         password === "admin123"
+//       ) {
+//         // Store authentication state
 //         localStorage.setItem("isAuthenticated", "true");
 
-//         // Navigate to dashboard with some state
+//         // Navigate to dashboard
 //         navigate("/dashboard", {
 //           state: {
 //             welcomeMessage: `Welcome back, Admin!`,
@@ -166,25 +58,49 @@
 //         });
 //       } else {
 //         // Set error message for invalid credentials
-//         setError("Invalid email or password. Please try again.");
+//         setError("Access denied: Invalid credentials detected");
 //       }
-//     } catch (err) {
+//     } catch {
 //       // Handle any unexpected errors
-//       setError("An unexpected error occurred. Please try again.");
+//       setError("System error: Authentication protocol failure");
 //     } finally {
 //       setIsLoading(false);
 //     }
 //   };
 
 //   return (
-//     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-4">
-//       <div className="w-full max-w-md">
-//         <div className="bg-white shadow-2xl rounded-2xl overflow-hidden">
+//     <div className="flex items-center justify-center min-h-screen bg-black p-4 relative overflow-hidden">
+//       {/* Matrix code rain effect in background */}
+//       <div className="absolute inset-0 opacity-20 text-green-500 overflow-hidden font-mono text-xs tracking-wide">
+//         <div className="animate-pulse">
+//           {matrixText.split("").map((char, index) => (
+//             <span
+//               key={index}
+//               className="absolute"
+//               style={{
+//                 top: `${Math.random() * 100}%`,
+//                 left: `${Math.random() * 100}%`,
+//                 opacity: Math.random() * 0.9 + 0.1,
+//                 animation: `fallDown ${Math.random() * 5 + 2}s linear infinite`,
+//               }}
+//             >
+//               {char}
+//             </span>
+//           ))}
+//         </div>
+//       </div>
+
+//       <div className="w-full max-w-md relative z-10">
+//         <div className="bg-gray-900 border border-green-500 shadow-2xl rounded-lg overflow-hidden">
 //           {/* Header Section */}
-//           <div className="bg-blue-600 text-white p-6 text-center">
-//             <Shield className="mx-auto mb-4" size={48} strokeWidth={1.5} />
-//             <h2 className="text-3xl font-bold">Admin Portal</h2>
-//             <p className="text-blue-100 mt-2">Secure Access Required</p>
+//           <div className="bg-black border-b border-green-500 text-green-500 p-6 text-center">
+//             <Terminal className="mx-auto mb-4" size={48} strokeWidth={1.5} />
+//             <h2 className="text-3xl font-bold font-mono tracking-wider">
+//               ADMIN TERMINAL
+//             </h2>
+//             <p className="text-green-400 mt-2 font-mono text-sm">
+//               SECURE AUTHENTICATION REQUIRED
+//             </p>
 //           </div>
 
 //           {/* Login Form */}
@@ -192,60 +108,63 @@
 //             {/* Error Message */}
 //             {error && (
 //               <div
-//                 className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded relative"
+//                 className="bg-red-900/30 border border-red-500 text-red-400 px-4 py-3 rounded relative font-mono text-sm"
 //                 role="alert"
 //               >
-//                 {error}
+//                 <div className="flex items-center">
+//                   <Shield className="mr-2" size={16} />
+//                   {error}
+//                 </div>
 //               </div>
 //             )}
 
 //             {/* Email Input */}
 //             <div>
-//               <label className="block text-gray-700 mb-2 flex items-center">
-//                 <Mail className="mr-2 text-blue-500" size={20} />
-//                 Email Address
+//               <label className="block text-green-400 mb-2 flex items-center font-mono text-sm">
+//                 <Mail className="mr-2 text-green-500" size={18} />
+//                 USER IDENTIFIER
 //               </label>
-//               <div className="relative">
+//               <div className="relative group">
 //                 <input
 //                   type="email"
 //                   value={email}
 //                   onChange={(e) => setEmail(e.target.value)}
 //                   required
-//                   placeholder="Enter your admin email"
-//                   className="w-full p-3 pl-10 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition"
+//                   placeholder="Enter admin email"
+//                   className="w-full p-3 pl-10 bg-black border-2 border-green-500 rounded text-green-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition font-mono placeholder-green-700"
 //                 />
 //                 <Mail
-//                   className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-//                   size={20}
+//                   className="absolute left-3 top-1/2 -translate-y-1/2 text-green-700 group-focus-within:text-green-400"
+//                   size={18}
 //                 />
 //               </div>
 //             </div>
 
 //             {/* Password Input */}
 //             <div>
-//               <label className="block text-gray-700 mb-2 flex items-center">
-//                 <Lock className="mr-2 text-blue-500" size={20} />
-//                 Password
+//               <label className="block text-green-400 mb-2 flex items-center font-mono text-sm">
+//                 <Lock className="mr-2 text-green-500" size={18} />
+//                 ACCESS KEY
 //               </label>
-//               <div className="relative">
+//               <div className="relative group">
 //                 <input
 //                   type={showPassword ? "text" : "password"}
 //                   value={password}
 //                   onChange={(e) => setPassword(e.target.value)}
 //                   required
-//                   placeholder="Enter your password"
-//                   className="w-full p-3 pl-10 pr-12 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition"
+//                   placeholder="Enter access key"
+//                   className="w-full p-3 pl-10 pr-12 bg-black border-2 border-green-500 rounded text-green-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition font-mono placeholder-green-700"
 //                 />
 //                 <Lock
-//                   className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-//                   size={20}
+//                   className="absolute left-3 top-1/2 -translate-y-1/2 text-green-700 group-focus-within:text-green-400"
+//                   size={18}
 //                 />
 //                 <button
 //                   type="button"
 //                   onClick={() => setShowPassword(!showPassword)}
-//                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-blue-600"
+//                   className="absolute right-3 top-1/2 -translate-y-1/2 text-green-700 hover:text-green-400"
 //                 >
-//                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+//                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
 //                 </button>
 //               </div>
 //             </div>
@@ -254,30 +173,42 @@
 //             <button
 //               type="submit"
 //               disabled={isLoading}
-//               className={`w-full py-3 rounded-lg text-white font-semibold transition duration-300 ${
+//               className={`w-full py-3 rounded font-mono tracking-wider border-2 transition duration-300 flex items-center justify-center ${
 //                 isLoading
-//                   ? "bg-blue-400 cursor-not-allowed"
-//                   : "bg-blue-600 hover:bg-blue-700"
+//                   ? "bg-green-900/30 border-green-700 text-green-700 cursor-not-allowed"
+//                   : "bg-black border-green-500 text-green-500 hover:bg-green-900/30"
 //               }`}
 //             >
-//               {isLoading ? "Logging in..." : "Login"}
+//               {isLoading ? (
+//                 <>
+//                   <span className="mr-2">AUTHENTICATING</span>
+//                   <div className="flex space-x-1">
+//                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+//                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse delay-100"></div>
+//                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse delay-200"></div>
+//                   </div>
+//                 </>
+//               ) : (
+//                 "INITIATE ACCESS"
+//               )}
 //             </button>
 
 //             {/* Forgot Password Link */}
 //             <div className="text-center">
 //               <a
 //                 href="/forgot-password"
-//                 className="text-blue-500 hover:underline text-sm"
+//                 className="text-green-600 hover:text-green-400 text-sm font-mono"
 //               >
-//                 Forgot Password?
+//                 [RESET ACCESS KEY]
 //               </a>
 //             </div>
 //           </form>
 //         </div>
 
 //         {/* Additional Security Message */}
-//         <div className="text-center text-gray-500 mt-4 text-sm">
-//           <p>Secured with end-to-end encryption</p>
+//         <div className="text-center text-green-700 mt-4 text-xs font-mono flex items-center justify-center">
+//           <Shield size={12} className="mr-2" />
+//           <p>ENCRYPTED SECURE CONNECTION ESTABLISHED</p>
 //         </div>
 //       </div>
 //     </div>
@@ -286,9 +217,9 @@
 
 // export default AdminLogin;
 
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Eye, EyeOff, Lock, Mail, Shield } from "lucide-react";
+import { Eye, EyeOff, Lock, Mail, Shield, Terminal } from "lucide-react";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
@@ -296,7 +227,29 @@ const AdminLogin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [matrixText, setMatrixText] = useState("");
   const navigate = useNavigate();
+
+  // Matrix code rain effect for background text
+  useEffect(() => {
+    const characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let interval;
+
+    if (!isLoading) {
+      interval = setInterval(() => {
+        let result = "";
+        for (let i = 0; i < 3; i++) {
+          result += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+          );
+        }
+        setMatrixText((prev) => (prev + result).slice(-100));
+      }, 150);
+    }
+
+    return () => clearInterval(interval);
+  }, [isLoading]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -304,18 +257,29 @@ const AdminLogin = () => {
     setError("");
 
     try {
-      // Simulate network delay
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Use the API URL from environment variable
+      const apiUrl = import.meta.env.VITE_API_URL;
+      // Updated endpoint to /api/v1/auth/login (assumed correct endpoint)
+      const response = await fetch(`${apiUrl}/api/v1/auth/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+      });
 
-      // Mock authentication (Replace with real backend authentication)
-      if (
-        email === "stephen.amankwah@meteo.gov.gh" &&
-        password === "admin123"
-      ) {
-        // Store authentication state (you might want to use more secure methods in production)
+      const data = await response.json();
+
+      if (response.ok) {
+        // On successful login, store the token and user info in localStorage
         localStorage.setItem("isAuthenticated", "true");
+        localStorage.setItem("token", data.data.token);
+        localStorage.setItem("user", JSON.stringify(data.data.user));
 
-        // Navigate to dashboard with some state
+        // Navigate to dashboard with welcome message
         navigate("/dashboard", {
           state: {
             welcomeMessage: `Welcome back, Admin!`,
@@ -323,26 +287,50 @@ const AdminLogin = () => {
           },
         });
       } else {
-        // Set error message for invalid credentials
-        setError("Invalid email or password. Please try again.");
+        // Handle error response from API
+        setError(data.message || "Access denied: Invalid credentials detected");
       }
-    } catch {
-      // Handle any unexpected errors
-      setError("An unexpected error occurred. Please try again.");
+    } catch (err) {
+      // Handle network or unexpected errors
+      setError("System error: Authentication protocol failure");
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 p-4">
-      <div className="w-full max-w-md">
-        <div className="bg-white shadow-2xl rounded-2xl overflow-hidden">
+    <div className="flex items-center justify-center min-h-screen bg-black p-4 relative overflow-hidden">
+      {/* Matrix code rain effect in background */}
+      <div className="absolute inset-0 opacity-20 text-green-500 overflow-hidden font-mono text-xs tracking-wide">
+        <div className="animate-pulse">
+          {matrixText.split("").map((char, index) => (
+            <span
+              key={index}
+              className="absolute"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                opacity: Math.random() * 0.9 + 0.1,
+                animation: `fallDown ${Math.random() * 5 + 2}s linear infinite`,
+              }}
+            >
+              {char}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="w-full max-w-md relative z-10">
+        <div className="bg-gray-900 border border-green-500 shadow-2xl rounded-lg overflow-hidden">
           {/* Header Section */}
-          <div className="bg-blue-600 text-white p-6 text-center">
-            <Shield className="mx-auto mb-4" size={48} strokeWidth={1.5} />
-            <h2 className="text-3xl font-bold">Admin Portal</h2>
-            <p className="text-blue-100 mt-2">Secure Access Required</p>
+          <div className="bg-black border-b border-green-500 text-green-500 p-6 text-center">
+            <Terminal className="mx-auto mb-4" size={48} strokeWidth={1.5} />
+            <h2 className="text-3xl font-bold font-mono tracking-wider">
+              ADMIN TERMINAL
+            </h2>
+            <p className="text-green-400 mt-2 font-mono text-sm">
+              SECURE AUTHENTICATION REQUIRED
+            </p>
           </div>
 
           {/* Login Form */}
@@ -350,60 +338,63 @@ const AdminLogin = () => {
             {/* Error Message */}
             {error && (
               <div
-                className="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded relative"
+                className="bg-red-900/30 border border-red-500 text-red-400 px-4 py-3 rounded relative font-mono text-sm"
                 role="alert"
               >
-                {error}
+                <div className="flex items-center">
+                  <Shield className="mr-2" size={16} />
+                  {error}
+                </div>
               </div>
             )}
 
             {/* Email Input */}
             <div>
-              <label className="block text-gray-700 mb-2 flex items-center">
-                <Mail className="mr-2 text-blue-500" size={20} />
-                Email Address
+              <label className="block text-green-400 mb-2 flex items-center font-mono text-sm">
+                <Mail className="mr-2 text-green-500" size={18} />
+                USER IDENTIFIER
               </label>
-              <div className="relative">
+              <div className="relative group">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  placeholder="Enter your admin email"
-                  className="w-full p-3 pl-10 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition"
+                  placeholder="Enter admin email"
+                  className="w-full p-3 pl-10 bg-black border-2 border-green-500 rounded text-green-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition font-mono placeholder-green-700"
                 />
                 <Mail
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                  size={20}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-green-700 group-focus-within:text-green-400"
+                  size={18}
                 />
               </div>
             </div>
 
             {/* Password Input */}
             <div>
-              <label className="block text-gray-700 mb-2 flex items-center">
-                <Lock className="mr-2 text-blue-500" size={20} />
-                Password
+              <label className="block text-green-400 mb-2 flex items-center font-mono text-sm">
+                <Lock className="mr-2 text-green-500" size={18} />
+                ACCESS KEY
               </label>
-              <div className="relative">
+              <div className="relative group">
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  placeholder="Enter your password"
-                  className="w-full p-3 pl-10 pr-12 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 transition"
+                  placeholder="Enter access key"
+                  className="w-full p-3 pl-10 pr-12 bg-black border-2 border-green-500 rounded text-green-400 focus:outline-none focus:ring-2 focus:ring-green-500 transition font-mono placeholder-green-700"
                 />
                 <Lock
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                  size={20}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-green-700 group-focus-within:text-green-400"
+                  size={18}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-blue-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-green-700 hover:text-green-400"
                 >
-                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </div>
             </div>
@@ -412,30 +403,42 @@ const AdminLogin = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className={`w-full py-3 rounded-lg text-white font-semibold transition duration-300 ${
+              className={`w-full py-3 rounded font-mono tracking-wider border-2 transition duration-300 flex items-center justify-center ${
                 isLoading
-                  ? "bg-blue-400 cursor-not-allowed"
-                  : "bg-blue-600 hover:bg-blue-700"
+                  ? "bg-green-900/30 border-green-700 text-green-700 cursor-not-allowed"
+                  : "bg-black border-green-500 text-green-500 hover:bg-green-900/30"
               }`}
             >
-              {isLoading ? "Logging in..." : "Login"}
+              {isLoading ? (
+                <>
+                  <span className="mr-2">AUTHENTICATING</span>
+                  <div className="flex space-x-1">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse delay-100"></div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse delay-200"></div>
+                  </div>
+                </>
+              ) : (
+                "INITIATE ACCESS"
+              )}
             </button>
 
             {/* Forgot Password Link */}
             <div className="text-center">
               <a
                 href="/forgot-password"
-                className="text-blue-500 hover:underline text-sm"
+                className="text-green-600 hover:text-green-400 text-sm font-mono"
               >
-                Forgot Password?
+                [RESET ACCESS KEY]
               </a>
             </div>
           </form>
         </div>
 
         {/* Additional Security Message */}
-        <div className="text-center text-gray-500 mt-4 text-sm">
-          <p>Secured with end-to-end encryption</p>
+        <div className="text-center text-green-700 mt-4 text-xs font-mono flex items-center justify-center">
+          <Shield size={12} className="mr-2" />
+          <p>ENCRYPTED SECURE CONNECTION ESTABLISHED</p>
         </div>
       </div>
     </div>
