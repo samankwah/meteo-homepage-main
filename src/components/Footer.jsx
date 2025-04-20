@@ -83,7 +83,7 @@ const Footer = () => {
               <img src={linkedinIcon} alt="LinkedIn" className="h-6 w-6" />
             </a>
             <a
-              href="https://chat.whatsapp.com/H0G98ipn2zD7wbNKa16hyh"
+              href="https://chat.whatsapp.com/IKNqrHOpAYmI1s5prZtQs6"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="whatsapp"

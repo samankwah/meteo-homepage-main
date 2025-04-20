@@ -1,23 +1,23 @@
 import { useState } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import hero from "../assets/images/signin.png";
+import { Link, useNavigate } from "react-router-dom";
+import hero from "../assets/images/signup.png";
 import googlelogo from "../assets/images/googlelogo.svg";
 import axios from "axios";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const AdminLogin = () => {
+const AdminSignUp = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
-
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [apiError, setApiError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -37,6 +37,10 @@ const AdminLogin = () => {
   const validateForm = () => {
     const newErrors = {};
 
+    if (!formData.name.trim()) {
+      newErrors.name = "Full name is required";
+    }
+
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
@@ -45,6 +49,12 @@ const AdminLogin = () => {
 
     if (!formData.password) {
       newErrors.password = "Password is required";
+    } else if (formData.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match";
     }
 
     setErrors(newErrors);
@@ -63,14 +73,15 @@ const AdminLogin = () => {
 
     try {
       const response = await axios.post(
-        "https://agropulse.onrender.com/sign-in",
+        "https://agropulse.onrender.com/sign-up",
         {
+          name: formData.name,
           email: formData.email,
           password: formData.password,
         }
       );
 
-      console.log("Login response:", response.data);
+      console.log("Signup response:", response.data);
 
       if (response.data && response.data.token) {
         localStorage.setItem("token", response.data.token);
@@ -79,19 +90,21 @@ const AdminLogin = () => {
           localStorage.setItem("user", JSON.stringify(response.data.user));
         }
 
-        navigate("/dashboard");
+        navigate("/admin-login", {
+          state: { message: "Account created successfully! Please log in." },
+        });
       } else {
         setApiError(
-          "Login successful but authentication token not received. Please try again."
+          "Registration completed but authentication token not received. Please try logging in."
         );
       }
     } catch (error) {
-      console.error("Login error:", error);
+      console.error("Registration error:", error);
 
       const errorMessage =
         error.response?.data?.message ||
         error.response?.data?.error ||
-        "Failed to login. Please check your credentials and try again.";
+        "Failed to register. Please try again.";
 
       setApiError(errorMessage);
     } finally {
@@ -106,19 +119,18 @@ const AdminLogin = () => {
         className="lg:col-span-2 flex flex-col justify-center items-center bg-cover bg-center p-6 sm:p-8 lg:p-10 text-white relative"
         style={{ backgroundImage: `url(${hero})` }}
       >
-        <div className="absolute inset-0 bg-black/40"></div>{" "}
-        {/* Overlay for readability */}
-        <h2 className="relative text-3xl sm:text-4xl font-bold mb-4 text-center pt-12">
-          Welcome Back
+        <div className="absolute inset-0 bg-black/40"></div>
+        <h2 className="relative text-3xl sm:text-4xl font-bold mb-4 text-center pt-10">
+          Hello, Friend!
         </h2>
         <p className="relative text-sm sm:text-base mb-6 text-center max-w-xs">
-          Enter your details to continue your journey with us
+          To keep connected with us, provide us with your information
         </p>
         <Link
-          to="/admin-signup"
+          to="/admin-login"
           className="relative text-white bg-gray-500 hover:bg-gray-700 px-6 py-4 rounded-lg"
         >
-          Sign Up
+          Sign In
         </Link>
       </div>
 
@@ -128,14 +140,8 @@ const AdminLogin = () => {
           Deep <span className="text-[#7848F4]">Dive</span>
         </h1>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-gray-900">
-          Sign In to Deep Dive
+          Sign Up to Deep Dive
         </h2>
-
-        {location.state?.message && (
-          <div className="w-full max-w-md bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg mb-6 shadow-sm">
-            {location.state.message}
-          </div>
-        )}
 
         {apiError && (
           <div className="w-full max-w-md bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg mb-6 shadow-sm">
@@ -147,6 +153,28 @@ const AdminLogin = () => {
           className="w-full max-w-md flex flex-col gap-5"
           onSubmit={handleSubmit}
         >
+          <div className="mb-2">
+            <label
+              className="block text-gray-700 text-sm font-semibold mb-2"
+              htmlFor="name"
+            >
+              Full Name
+            </label>
+            <input
+              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7848F4] focus:border-transparent transition-all ${
+                errors.name ? "border-red-400" : ""
+              }`}
+              id="name"
+              type="text"
+              placeholder="Enter your full name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            {errors.name && (
+              <p className="text-red-500 text-xs mt-1.5">{errors.name}</p>
+            )}
+          </div>
+
           <div className="mb-2">
             <label
               className="block text-gray-700 text-sm font-semibold mb-2"
@@ -198,23 +226,39 @@ const AdminLogin = () => {
             )}
           </div>
 
-          <div className="flex items-center justify-between mb-4 text-sm">
-            <div className="flex items-center">
-              <input
-                id="remember-me"
-                type="checkbox"
-                className="h-4 w-4 text-[#7848F4] rounded focus:ring-[#7848F4]"
-              />
-              <label htmlFor="remember-me" className="ml-2 text-gray-600">
-                Remember me
-              </label>
-            </div>
-            <Link
-              to="/forgot-password"
-              className="text-[#7848F4] hover:underline"
+          <div className="mb-2 relative">
+            <label
+              className="block text-gray-700 text-sm font-semibold mb-2"
+              htmlFor="confirmPassword"
             >
-              Forgot Password?
-            </Link>
+              Confirm Password
+            </label>
+            <input
+              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7848F4] focus:border-transparent transition-all ${
+                errors.confirmPassword ? "border-red-400" : ""
+              }`}
+              id="confirmPassword"
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="Confirm your password"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+            />
+            <button
+              type="button"
+              className="absolute right-3 top-11 text-gray-500 hover:text-gray-700 transition-colors"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? (
+                <FaEyeSlash size={20} />
+              ) : (
+                <FaEye size={20} />
+              )}
+            </button>
+            {errors.confirmPassword && (
+              <p className="text-red-500 text-xs mt-1.5">
+                {errors.confirmPassword}
+              </p>
+            )}
           </div>
 
           <div className="flex items-center justify-center mb-4 w-1/2 mx-auto">
@@ -223,7 +267,7 @@ const AdminLogin = () => {
               type="submit"
               disabled={isLoading}
             >
-              {isLoading ? "Signing in..." : "Sign In"}
+              {isLoading ? "Signing up..." : "Sign Up"}
             </button>
           </div>
 
@@ -238,16 +282,16 @@ const AdminLogin = () => {
             }
           >
             <img src={googlelogo} alt="Google logo" className="w-5 h-5" />
-            Sign In with Google
+            Sign Up with Google
           </button>
 
           <div className="text-center text-sm mt-4 text-gray-600">
-            Don’t have an account?{" "}
+            Already have an account?{" "}
             <Link
-              to="/admin-signup"
+              to="/admin-login"
               className="text-[#7848F4] font-semibold hover:underline"
             >
-              Sign Up
+              Sign In
             </Link>
           </div>
         </form>
@@ -256,4 +300,4 @@ const AdminLogin = () => {
   );
 };
 
-export default AdminLogin;
+export default AdminSignUp;

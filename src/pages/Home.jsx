@@ -370,13 +370,13 @@ const Home = () => {
 
             {/* Right: Interactive Map */}
             <div
-              className="lg:col-span-2 bbg-white/20 
+              className="lg:col-span-2 bg-white/0 
     backdrop-blur-[5px] 
     border border-white/20 
     shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
     rounded-xl  p-4 sticky h-full"
             >
-              <h2 className="text-gray-50 font-bold mb-2">
+              <h2 className="text-gray-50 font-bold mb-2 rounded-lg">
                 <i className="fas fa-calendar-alt mr-2"></i>
                 {`${formattedDate} - ${formattedTime}`}
               </h2>
@@ -1207,7 +1207,7 @@ const Home = () => {
 
             {/* Sidebar Forecast */}
             <div
-              className="bg-white/20 
+              className="bg-white/0 
     backdrop-blur-[5px] 
     border border-white/20 
     shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
@@ -1233,7 +1233,7 @@ const Home = () => {
                     className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
                   >
                     <h3 className="text-blue-600 font-semibold">
-                      7 Days Forecast
+                      Weekly Forecast
                     </h3>
                   </Link>
                 </li>
@@ -1247,16 +1247,7 @@ const Home = () => {
                     </h3>
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    to="/flood-drought"
-                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
-                  >
-                    <h3 className="text-blue-600 font-semibold">
-                      Flood and Drought Bulletins
-                    </h3>
-                  </Link>
-                </li>
+
                 <li>
                   <Link
                     to="/subseasonal-forecast"
@@ -1264,6 +1255,16 @@ const Home = () => {
                   >
                     <h3 className="text-blue-600 font-semibold">
                       Subseasonal 2 Seasonal Forecast
+                    </h3>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/flood-drought"
+                    className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
+                  >
+                    <h3 className="text-blue-600 font-semibold">
+                      Flood and Drought Bulletins
                     </h3>
                   </Link>
                 </li>
@@ -1293,7 +1294,7 @@ const Home = () => {
                     className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
                   >
                     <h3 className="text-blue-600 font-semibold">
-                      State of the Climate Report 2023
+                      State of the Climate Report
                     </h3>
                   </Link>
                 </li>
@@ -1303,7 +1304,7 @@ const Home = () => {
                     className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
                   >
                     <h3 className="text-blue-600 font-semibold">
-                      Crop Calendar 2024
+                      Crop Calendar
                     </h3>
                   </Link>
                 </li>
@@ -1313,7 +1314,7 @@ const Home = () => {
                     className="block p-4 bg-gray-100 rounded-lg shadow hover:bg-gray-200 transition duration-200"
                   >
                     <h3 className="text-blue-600 font-semibold">
-                      Poultry Calendar 2024
+                      Poultry Calendar
                     </h3>
                   </Link>
                 </li>
@@ -1340,7 +1341,7 @@ const Home = () => {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col space-y-4 m-8 p-4 max-w-full mx-auto">
+          <div className="flex flex-col space-y-4 m-4 max-w-full mx-auto">
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
               {/* News Section */}
               <div

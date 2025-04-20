@@ -25,7 +25,7 @@ import CropAdvisory from "./pages/CropAdvisory";
 import NotFound from "./components/NotFound";
 import EventClimateReportRelease from "./events/EventClimateReportRelease";
 import EventMajorSeasonCropCalendar from "./events/EventMajorSeasonCropCalendar";
-import EventPoultryCalendar from "./events/EventPoultryCalendar";
+import EventPoultryCalendar from "./events/EventPoultryCalendar.jsx";
 import OurServices from "./pages/OurServices";
 import Contact from "./pages/Contact";
 import Careers from "./pages/Careers";
@@ -59,6 +59,7 @@ import AdminLayout from "./layouts/AdminLayout.jsx";
 import AdminLogin from "./pages/AdminLogin.jsx";
 import CreateCropCalendar from "./components/Dashboard/CreateCalendar.jsx";
 import MediaPage from "./pages/MediaPage.jsx";
+import AdminSignUp from "./pages/AdminSignUp.jsx";
 
 const products = [
   {
@@ -271,12 +272,12 @@ function App() {
         },
         { path: "blog/son-forecast", element: <BlogSonForecast /> },
         {
-          path: "events/crop-calendar",
+          path: "events/crop-calen",
           element: <EventMajorSeasonCropCalendar />,
         },
-        { path: "events/poultry-calendar", element: <EventPoultryCalendar /> },
+        { path: "events/poult-calendar", element: <EventPoultryCalendar /> },
         {
-          path: "events/climate-report-release",
+          path: "events/clim-rep-rel",
           element: <EventClimateReportRelease />,
         },
         { path: "poultry-advisory", element: <PoultryAdvisory /> },
@@ -293,6 +294,7 @@ function App() {
         { path: "agro-advisory", element: <AgrometAdvisory /> },
         { path: "media-page", element: <MediaPage /> },
         { path: "admin-login", element: <AdminLogin /> },
+        { path: "admin-signup", element: <AdminSignUp /> },
         { path: "*", element: <NotFound /> },
       ],
     },
