@@ -397,7 +397,7 @@ const AdminLogin = () => {
       {/* Right Section (Form) */}
       <div className="lg:col-span-3 flex flex-col justify-center items-center p-6 sm:p-8 lg:p-10 bg-white sm:bg-[#F8F8FA]">
         <h1 className="text-xl sm:text-2xl font-bold mb-2 text-gray-800">
-          Deep <span className="text-[#7848F4]">Dive</span>
+          Deep <span className="text-blue-600">Dive</span>
         </h1>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-gray-900">
           Sign In to Deep Dive
@@ -427,7 +427,7 @@ const AdminLogin = () => {
               Email
             </label>
             <input
-              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7848F4] focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all ${
                 errors.email ? "border-red-400" : ""
               }`}
               id="email"
@@ -449,7 +449,7 @@ const AdminLogin = () => {
               Password
             </label>
             <input
-              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7848F4] focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all ${
                 errors.password ? "border-red-400" : ""
               }`}
               id="password"
@@ -476,7 +476,7 @@ const AdminLogin = () => {
               <input
                 id="remember-me"
                 type="checkbox"
-                className="h-4 w-4 text-[#7848F4] rounded focus:ring-[#7848F4]"
+                className="h-4 w-4 text-blue-600 rounded focus:ring-blue-200"
               />
               <label htmlFor="remember-me" className="ml-2 text-gray-600">
                 Remember me
@@ -484,15 +484,15 @@ const AdminLogin = () => {
             </div>
             <Link
               to="/forgot-password"
-              className="text-[#7848F4] hover:underline"
+              className="text-blue-500 hover:underline"
             >
               Forgot Password?
             </Link>
           </div>
 
-          <div className="flex items-center justify-center mb-4 w-full">
+          <div className="flex items-center justify-center mb-4 w-1/2 mx-auto">
             <button
-              className="w-full bg-[#7848F4] hover:bg-[#6a3dd8] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50 disabled:cursor-not-allowed"
               type="submit"
               disabled={isLoading}
             >
@@ -518,7 +518,7 @@ const AdminLogin = () => {
             Don’t have an account?{" "}
             <Link
               to="/admin-signup"
-              className="text-[#7848F4] font-semibold hover:underline"
+              className="text-blue-500 font-semibold hover:underline"
             >
               Sign Up
             </Link>

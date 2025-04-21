@@ -137,7 +137,7 @@ const AdminSignUp = () => {
       {/* Right Section (Form) */}
       <div className="lg:col-span-3 flex flex-col justify-center items-center p-6 sm:p-8 lg:p-10 bg-white sm:bg-[#F8F8FA]">
         <h1 className="text-xl sm:text-2xl font-bold mb-2 text-gray-800">
-          Deep <span className="text-[#7848F4]">Dive</span>
+          Deep <span className="text-blue-600">Dive</span>
         </h1>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-gray-900">
           Sign Up to Deep Dive
@@ -161,7 +161,7 @@ const AdminSignUp = () => {
               Full Name
             </label>
             <input
-              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7848F4] focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all ${
                 errors.name ? "border-red-400" : ""
               }`}
               id="name"
@@ -183,7 +183,7 @@ const AdminSignUp = () => {
               Email
             </label>
             <input
-              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7848F4] focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all ${
                 errors.email ? "border-red-400" : ""
               }`}
               id="email"
@@ -205,7 +205,7 @@ const AdminSignUp = () => {
               Password
             </label>
             <input
-              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7848F4] focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all ${
                 errors.password ? "border-red-400" : ""
               }`}
               id="password"
@@ -234,7 +234,7 @@ const AdminSignUp = () => {
               Confirm Password
             </label>
             <input
-              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#7848F4] focus:border-transparent transition-all ${
+              className={`w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-300 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent transition-all ${
                 errors.confirmPassword ? "border-red-400" : ""
               }`}
               id="confirmPassword"
@@ -263,7 +263,7 @@ const AdminSignUp = () => {
 
           <div className="flex items-center justify-center mb-4 w-1/2 mx-auto">
             <button
-              className="w-full bg-[#7848F4] hover:bg-[#6a3dd8] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-50 disabled:cursor-not-allowed"
               type="submit"
               disabled={isLoading}
             >
@@ -289,7 +289,7 @@ const AdminSignUp = () => {
             Already have an account?{" "}
             <Link
               to="/admin-login"
-              className="text-[#7848F4] font-semibold hover:underline"
+              className="text-blue-500 font-semibold hover:underline"
             >
               Sign In
             </Link>
