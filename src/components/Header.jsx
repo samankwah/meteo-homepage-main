@@ -1383,7 +1383,7 @@ const Header = () => {
 
   return (
     <header
-      className="fixed top-0 left-1/2 transform -translate-x-1/2 w-[100%] md:w-[98%] p-1 md:p-2 z-50  
+      className="fixed top-0 left-1/2 transform -translate-x-1/2 w-[94%] md:w-[98%] p-1 md:p-2 z-50  
         bg-white/20 
         backdrop-blur-[100px] 
         border border-white/30 
