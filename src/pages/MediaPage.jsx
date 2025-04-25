@@ -1622,7 +1622,7 @@ Overall assessment: Current weather conditions are particularly important for we
         MozBackgroundSize: "1200px 800px",
       }}
     >
-      <div className="container mx-auto p-3 md:p-5 shadow-xl rounded-lg mt-14 md:mt-16 bg-white/90 backdrop-blur-md">
+      <div className="container mx-auto p-3 md:p-5 shadow-xl rounded-lg mt-20 md:mt-28 mb-12 bg-white/90 backdrop-blur-md">
         <div className="relative text-center mb-5 bg-gradient-to-r from-green-500 to-blue-600 py-5 rounded-t-lg shadow-lg">
           <h1 className="text-2xl md:text-3xl font-bold uppercase text-white">
             West Africa Food System Resilience Programme
@@ -1696,10 +1696,27 @@ Overall assessment: Current weather conditions are particularly important for we
             </div>
           </div>
 
-          <div className="flex justify-center mt-3">
+          {/* <div className="flex justify-center mt-3">
             <button
               onClick={handleViewAdvisories}
               className="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition-all duration-300 shadow-md"
+            >
+              <FaEye className="text-lg" />
+              View Advisories
+            </button>
+          </div> */}
+
+          <div className="flex justify-center mt-3">
+            <button
+              onClick={handleViewAdvisories}
+              disabled={
+                !selected.crop || !selected.region || !selected.district
+              }
+              className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 shadow-md ${
+                !selected.crop || !selected.region || !selected.district
+                  ? "bg-gray-400 cursor-not-allowed text-gray-100"
+                  : "bg-green-500 text-white hover:bg-green-600"
+              }`}
             >
               <FaEye className="text-lg" />
               View Advisories

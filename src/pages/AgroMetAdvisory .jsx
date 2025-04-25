@@ -702,7 +702,7 @@ const AgroMetAdvisory = () => {
         MozBackgroundSize: "1200px 800px",
       }}
     >
-      <div className="container mx-auto p-3 md:p-5 shadow-xl rounded-lg mt-14 md:mt-16 bg-white/90 backdrop-blur-md">
+      <div className="container mx-auto p-3 md:p-5 shadow-xl rounded-lg mt-20 md:mt-28 mb-12 bg-white/90 backdrop-blur-md">
         <div className="relative text-center mb-5 bg-gradient-to-r from-green-500 to-blue-600 py-5 rounded-t-lg shadow-lg">
           <h1 className="text-2xl md:text-3xl font-bold uppercase text-white">
             West Africa Food System Resilience Programme
