@@ -3881,7 +3881,7 @@ const Home = () => {
             </div> */}
 
             <div className="bg-white/20 backdrop-blur-[5px] border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] rounded-xl p-4 w-full h-full max-w-md">
-              <h2 className="text-gray-100 font-bold text-xl mb-4 flex items-center">
+              <h2 className="text-gray-100 font-bold text-xl md:text-xl mb-4 flex items-center">
                 {/* <CloudRain className="mr-2 text-blue-600" /> */}
                 Weather & Climate Resources
               </h2>
@@ -3930,7 +3930,7 @@ const Home = () => {
             </div>
           </div>
           <div className="mt-8 bg-white/20 backdrop-blur-[5px] border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] rounded-xl p-6 mb-14">
-            <h2 className="text-white text-2xl md:text-2xl font-bold mb-6">
+            <h2 className="text-white text-3xl md:text-2xl font-bold mb-6">
               Latest News & Updates
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
