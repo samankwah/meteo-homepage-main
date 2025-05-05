@@ -24,7 +24,8 @@
     "chart.js": "^4.4.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "dotenv": "^16.4.7",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
     "file-saver": "^2.0.5",
     "firebase": "^11.0.1",
     "html2pdf.js": "^0.10.3",
@@ -46,7 +47,7 @@
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.14",
     "tailwindcss-animate": "^1.0.7",
-    "twilio": "^5.5.0"
+    "twilio": "^5.5.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
@@ -62,5 +63,10 @@
     "postcss": "^8.4.45",
     "tailwindcss": "^3.4.10",
     "vite": "^5.4.1"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "apiService.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
