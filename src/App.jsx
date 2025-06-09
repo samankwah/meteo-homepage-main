@@ -60,7 +60,6 @@ import AdminLogin from "./pages/AdminLogin.jsx";
 import CreateCropCalendar from "./components/Dashboard/CreateCalendar.jsx";
 import MediaPage from "./pages/MediaPage.jsx";
 import AdminSignUp from "./pages/AdminSignUp.jsx";
-import CropDiagnosticTool from "./components/CropDiagnosticTool.jsx";
 
 const products = [
   {
@@ -290,7 +289,6 @@ function App() {
         { path: "terms", element: <TermsOfService /> },
         { path: "market-page", element: <MarketPage /> },
         { path: "modal", element: <Modal /> },
-        { path: "crop-diagnose", element: <CropDiagnosticTool /> },
         { path: "product/:id", element: <ProductDetail products={products} /> },
 
         { path: "agro-advisory", element: <AgrometAdvisory /> },
